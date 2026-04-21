@@ -1,0 +1,12 @@
+pandas
+pyarrow
+python-calamine
+dvc[gdrive]
+scikit-learn
+mlflow
+streamlit
+plotly
+pytest
+requests
+shap
+python-dotenv
