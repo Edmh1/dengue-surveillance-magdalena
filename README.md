@@ -124,9 +124,3 @@ pip install -r requirements.txt
 
 ## Conclusion
 > En construcción :)
-
-## License
-This project is free for academic, research, and personal use.
-Commercial use requires explicit written permission from the author. See [LICENSE](LICENSE) for details. <br>
-Use this repo wisely :) May the force be with you!! <br><br>
-![License](https://img.shields.io/badge/License-MIT%20%2B%20Commons%20Clause-red)
