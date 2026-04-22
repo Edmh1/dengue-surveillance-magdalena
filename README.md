@@ -134,4 +134,4 @@ dvc pull
 MIT - data sources are publicly available via INS, NASA, and DANE open
 data portals. <br>
 Use this repo wisely :) May the force be with you!! <br><br>
-![License](https://img.shields.io/badge/License-MIT-green) 
+![License](https://img.shields.io/badge/License-MIT%20%2B%20Commons%20Clause-red)
