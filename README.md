@@ -3,7 +3,6 @@
 > End-to-end epidemiological surveillance pipeline for dengue in Magdalena, Colombia.
 
 ![Python](https://img.shields.io/badge/Python-3.14-blue)
-![DVC](https://img.shields.io/badge/DVC-data%20versioning-purple)
 ![MLflow](https://img.shields.io/badge/MLflow-experiment%20tracking-orange)
 ![Streamlit](https://img.shields.io/badge/Streamlit-dashboard-red)
 
@@ -32,8 +31,7 @@ the same surveillance infrastructure.
   methods in parallel
 - Climate feature ingestion via NASA Power API (temperature, precipitation,
   humidity)
-- Reproducible preprocessing pipeline with scikit-learn and DVC stage
-  tracking
+- Reproducible preprocessing pipeline with scikit-learn
 - Systematic comparison of 6 model families with MLflow experiment tracking
 - Model interpretability with SHAP for the selected production model
 - Interactive Streamlit dashboard with exploratory analysis and forecasting
@@ -47,7 +45,6 @@ the same surveillance infrastructure.
 | Layer | Technology |
 |---|---|
 | Data ingestion | pandas, python-calamine, pyarrow |
-| Data versioning | DVC |
 | Climate data | NASA Power API via requests |
 | ML pipeline | scikit-learn, Pipelines |
 | Experiment tracking | MLflow |
@@ -121,8 +118,6 @@ source .venv/bin/activate  # on Windows: .venv\Scripts\activate
 # install dependencies
 pip install -r requirements.txt
 
-# pull data (requires DVC remote access)
-dvc pull
 ```
 
 ---
@@ -131,7 +126,7 @@ dvc pull
 > En construcción :)
 
 ## License
-MIT - data sources are publicly available via INS, NASA, and DANE open
-data portals. <br>
+This project is free for academic, research, and personal use.
+Commercial use requires explicit written permission from the author. See [LICENSE](LICENSE) for details. <br>
 Use this repo wisely :) May the force be with you!! <br><br>
 ![License](https://img.shields.io/badge/License-MIT%20%2B%20Commons%20Clause-red)
