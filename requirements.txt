@@ -1,6 +1,8 @@
 pandas
 pyarrow
 python-calamine
+xlrd
+openpyxl
 dvc[gdrive]
 scikit-learn
 mlflow
