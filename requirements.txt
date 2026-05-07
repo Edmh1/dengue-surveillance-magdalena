@@ -12,3 +12,6 @@ pytest
 requests
 shap
 python-dotenv
+seaborn
+geopandas
+wordcloud
