@@ -2,4 +2,7 @@
 data/interim
 data/processed
 data/raw
+data/external/ideam
 __pycache__
+.cache**
+**.png
