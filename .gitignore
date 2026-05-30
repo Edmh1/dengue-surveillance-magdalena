@@ -6,3 +6,4 @@ data/external/ideam
 __pycache__
 .cache**
 **.png
+clima**
