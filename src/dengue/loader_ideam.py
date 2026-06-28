@@ -26,7 +26,7 @@ CREDENTIALS = {
     "grant_type" : "password",
 }
 
-FECHA_INICIO = "2019-1-1T05:00:00.000Z"
+FECHA_INICIO = "2007-1-1T05:00:00.000Z"
 FECHA_FIN    = "2024-12-31T05:00:00.000Z"
 
 VARIABLES = {
@@ -305,6 +305,20 @@ def descargar_variable(nombre_var: str, parametro: str, etiqueta: str) -> None:
         print(f"  Sin datos para {nombre_var}.")
         return
     
+    print("\n=== DIAGNOSTICO ===")
+    print(f"Estaciones solicitadas: {len(ids)}")
+
+    ids_descargados = resultado["CodigoEstacion"].astype(str).unique()  #type:ignore
+
+    print(f"Estaciones con datos: {len(ids_descargados)}")
+
+    faltantes = set(ids) - set(ids_descargados)
+
+    print(f"Estaciones sin datos: {len(faltantes)}")
+
+    for est in sorted(faltantes):
+        print(est)
+
     _consolidar(nombre_var, dir_var, parquet_out, estaciones, resultado) #type:ignore
 
     time.sleep(2)
@@ -346,7 +360,7 @@ def _consolidar(
 
 
 if __name__ == "__main__":
-    print("Descarga automatica IDEAM - Magdalena 2019-2024")
+    print("Descarga automatica IDEAM - Magdalena 2007-2024")
     print(f"Departamento: {ID_DEPARTAMENTO} (Magdalena)")
     print(f"Variables: {list(VARIABLES.keys())}")
     print(f"Periodo: {FECHA_INICIO[:10]} -> {FECHA_FIN[:10]}")
