@@ -1,0 +1,10 @@
+Cluster,Municipio,frac_semanas_reporte,Metodo,N_semanas_test,MAE_cluster,MAE_departamental,pct_semanas_gana_cluster,wilcoxon_p
+0,Guamal,0.351,SARIMA,141,2.5812,2.7895,53.2,0.065
+0,Guamal,0.351,XGBoost,141,2.9303,2.8482,48.9,0.4519
+0,Guamal,0.351,N-BEATS,141,2.624,2.6135,46.1,0.4273
+1,Ariguani,0.383,SARIMA,141,3.1836,3.2012,47.5,0.9074
+1,Ariguani,0.383,XGBoost,141,3.1482,3.4236,53.2,0.3132
+1,Ariguani,0.383,N-BEATS,141,4.1567,3.3005,44.0,0.1757
+2,Santa Marta,0.939,SARIMA,141,0.7416,0.7564,53.2,0.1365
+2,Santa Marta,0.939,XGBoost,141,0.7445,0.7612,48.2,0.5255
+2,Santa Marta,0.939,N-BEATS,141,0.7621,0.7417,47.5,0.4433
