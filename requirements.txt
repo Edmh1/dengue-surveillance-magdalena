@@ -19,16 +19,25 @@ folium
 # --- Dashboard ---
 streamlit
 
+# --- Ejecucion de notebooks ---
+ipykernel
+nbconvert
+
 # --- ML / modelado ---
+# Las librerias de los modelos que se exportan al tablero van con la misma
+# version MAYOR que usa el tablero (public-health-surveillance-system): un
+# paquete exportado con otra version mayor se rechaza al subirlo
+# (paquete.comprobar_compatibilidad). Ver ENTORNO.md.
 scikit-learn
-statsmodels
+statsmodels>=0.14,<1
 pmdarima
-prophet
-xgboost
-lightgbm
-tensorflow
+prophet>=1.1,<2
+xgboost>=3,<4
+lightgbm>=4,<5
+tensorflow>=2.16,<3
+keras>=3,<4
+optuna>=4,<5
 darts[torch]
-scikeras
 shap
 mlflow
 numba
@@ -54,7 +63,9 @@ python-dotenv
 # --- Testing ---
 pytest
 
-# --- GPU (opcional) ---
-# darts[torch] instala PyTorch CPU por defecto. Para usar la GPU NVIDIA en N-BEATS,
-# reinstala torch con CUDA DESPUES de este requirements (misma version, build cu126):
+# --- GPU (opcional, Linux o WSL2) ---
+# TensorFlow solo usa la GPU en Linux o WSL2: alli se instala con
+#   pip install "tensorflow[and-cuda]>=2.16,<3"
+# darts[torch] instala PyTorch CPU por defecto. Para usar la GPU NVIDIA en N-BEATS
+# (notebooks 03 y 05), reinstala torch con CUDA DESPUES de este requirements:
 #   pip install torch==2.12.1+cu126 --index-url https://download.pytorch.org/whl/cu126
