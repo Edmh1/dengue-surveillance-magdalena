@@ -203,5 +203,66 @@ covers the data pipeline, feature engineering and modeling.
 
 ---
 
+## Experimentation hardware
+
+All experimentation runs on two machines. Machine A produces the official results
+(the ones in `outputs/`, the notebooks and the dashboard packages); machine B
+repeats the same methodology on different hardware, with TensorFlow on GPU, and
+also runs the sensitivity analysis of the deep learning search. Its full results
+go to `resultados_cluster/`, next to machine A's, so both can be compared openly.
+
+| | Machine A (official run) | Machine B (cluster) |
+|---|---|---|
+| CPU | Intel Core i7-13650HX (14 cores), 24 GB RAM | to be recorded |
+| GPU | NVIDIA RTX 5050, 8 GB | NVIDIA RTX 6000 Ada, 48 GB (gpu2) |
+| OS / Python | Windows 11 / 3.12.10 | Rocky Linux / 3.12 |
+| TensorFlow | CPU (no GPU support on native Windows) | GPU |
+| PyTorch | GPU (CUDA 13.0) | GPU |
+| Runs | notebooks 03, 05, 06, 07 | notebooks 03, 05, 06, 07 + sensitivity analysis (`SENSIBILIDAD=1`) |
+| Results | `outputs/` | `resultados_cluster/` |
+
+Run times on machine A (full mode, chains 03→05 and 06→07 in parallel):
+
+| Notebook | Minutes |
+|---|---|
+| 03 Modeling with climate | 94 |
+| 05 Climate vs. lags ablation | 154 |
+| 06 Production: statistical and ML | 67 |
+| 07 Production: deep learning | 150 |
+
+Notebooks 01, 02 and 04 were not re-run (they need the raw SIVIGILA files and
+Earth Engine credentials); their outputs come from the original data preparation.
+
+---
+
 ## Conclusion
-> En construcción :)
+
+Results of the official full run on machine A (MODO_RAPIDO = 0, 7 November 2026).
+Details and library versions are in section 13 of
+[METODOLOGIA_PRONOSTICO.md](METODOLOGIA_PRONOSTICO.md); all tables are in
+`outputs/RESULTADOS_PARA_INFORME.md`.
+
+Dashboard winners (dashboard series, test April 2022 to December 2024, global
+RMSE over horizons 1 to 6; persistence 18.12):
+
+| Family | Winner | RMSE | R² | RMSE / persistence | RMSE 2025 (persistence 38.73) |
+|---|---|---|---|---|---|
+| Statistical | Prophet-AR | 16.21 | 0.768 | 0.894 | 41.74 |
+| Machine learning | XGBoost | 20.15 | 0.641 | 1.112 | 44.24 |
+| Deep learning | LSTM (5 seeds) | 18.86 ± 0.38 | 0.685 | 1.041 | 44.58 ± 0.65 |
+
+- Prophet-AR is the best of the seven candidates and the only one that beats
+  persistence on the test period (horizons 2 to 6).
+- In 2025, an outbreak larger than anything in the history, no winner beats
+  persistence.
+- Recommended horizon: 4 weeks, the longest horizon at which all three winners
+  explain at least 60 % of the weekly variation on the test period (R² 0.750,
+  0.624 and 0.658); in 2025 they still explain about half (0.537, 0.532, 0.469).
+- Climate (notebook 05) improves five of the seven research models, little at one
+  week and more at long horizons, but not every family. It was measured with
+  observed climate inside the horizon, and there is no climate data for 2025. The
+  dashboard therefore forecasts without climate in this version; adding climate
+  is future work.
+- Machine B's full run and the sensitivity analysis of the deep learning search
+  (`SENSIBILIDAD=1`) will be added in `resultados_cluster/` and compared with
+  this run.

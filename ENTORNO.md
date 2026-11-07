@@ -22,6 +22,14 @@ En Windows TensorFlow funciona solo con CPU: la LSTM del 03 y el 05 y las redes 
 pip install torch==2.12.1+cu126 --index-url https://download.pytorch.org/whl/cu126
 ```
 
+Las GPU de la serie RTX 50 (arquitectura Blackwell) no funcionan con las builds cu126 de PyTorch: necesitan CUDA 12.8 o superior. En la corrida oficial (RTX 5050) se usó:
+
+```bash
+pip install torch==2.14.1+cu130 --index-url https://download.pytorch.org/whl/cu130
+```
+
+Para ejecutar los notebooks con papermill (guarda el notebook después de cada celda y deja ver el avance en un log), además de nbconvert: `pip install papermill`.
+
 # 3. Instalación en Linux con GPU NVIDIA
 
 TensorFlow solo usa la GPU en Linux o en WSL2. Con el controlador de NVIDIA instalado (nvidia-smi debe responder):
@@ -51,12 +59,14 @@ El tablero rechaza un paquete exportado con otra versión mayor de la librería 
 
 | Librería | Modelos | Versión mayor | Instalada en este repositorio | Instalada en el tablero |
 |---|---|---|---|---|
-| statsmodels | ARIMA, SARIMA | 0 | 0.14.6 | 0.15.0 |
-| prophet | Prophet-AR | 1 | 1.3.0 | 1.4.0 |
-| xgboost | XGBoost | 3 | 3.2.0 | 3.4.1 |
-| lightgbm | LightGBM | 4 | 4.6.0 | 4.7.0 |
+| statsmodels | ARIMA, SARIMA | 0 | 0.15.0 | 0.15.0 |
+| prophet | Prophet-AR | 1 | 1.5.0 | 1.4.0 |
+| xgboost | XGBoost | 3 | 3.4.1 | 3.4.1 |
+| lightgbm | LightGBM | 4 | 4.7.0 | 4.7.0 |
 | tensorflow | LSTM, N-BEATS | 2 | 2.21.0 | 2.22.0rc0 |
-| keras | LSTM, N-BEATS | 3 | 3.14.1 | 3.16.0.dev |
+| keras | LSTM, N-BEATS | 3 | 3.15.1 | 3.16.0.dev |
+
+La columna de este repositorio corresponde al entorno de la corrida oficial del 7 de noviembre de 2026 (METODOLOGIA_PRONOSTICO.md, sección 13), con la que se exportaron los paquetes.
 
 Las columnas de versiones instaladas corresponden a los entornos locales de los dos repositorios; las versiones menores pueden diferir, y el tablero las acepta y las registra. El servidor del tablero instala sus librerías al construir la imagen Docker, sin versiones fijas: antes de subir un paquete conviene revisar que la imagen tenga la misma versión mayor. Los notebooks 06 y 07 revisan cada paquete exportado con paquete.revisar_paquete, la misma revisión que hace el tablero al subirlo, contra las versiones instaladas en el equipo donde se exportó.
 
@@ -116,14 +126,16 @@ timeout=-1 quita el límite de tiempo por celda: las búsquedas de las redes dur
 
 Dependencias entre notebooks: el 05 lee el JSON del 03 y el 07 lee el del 06; no hay otras. Las dos cadenas (03 y luego 05; 06 y luego 07) pueden correr en paralelo, en dos sesiones de tmux, y así el tiempo total es el de la cadena más larga. El 06 no usa GPU.
 
-Duración aproximada del modo completo, medida a partir del modo rápido (una época de una red de tamaño medio cuesta del orden de medio segundo en CPU):
+Duración del modo completo. La estimación previa salió del modo rápido (una época de una red de tamaño medio cuesta del orden de medio segundo en CPU); la última columna es lo que tardó la corrida oficial (i7-13650HX con 14 núcleos, TensorFlow en CPU, las dos cadenas en paralelo):
 
-| Notebook | Parte más cara | Duración aproximada |
-|---|---|---|
-| 03 | búsquedas de LSTM y N-BEATS (20 pruebas de 5 semillas cada una) y SARIMA con s = 52 | 3 a 7 horas |
-| 05 | búsquedas de LSTM y N-BEATS | 2 a 6 horas |
-| 06 | SARIMA (25 pruebas de 1 a 4 minutos) | 1 a 2 horas |
-| 07 | búsquedas de LSTM y N-BEATS (30 pruebas de 5 semillas cada una) | 2 a 6 horas |
+| Notebook | Parte más cara | Estimación | Corrida oficial |
+|---|---|---|---|
+| 03 | búsquedas de LSTM y N-BEATS (20 pruebas de 5 semillas cada una) y SARIMA con s = 52 | 3 a 7 horas | 94 minutos |
+| 05 | búsquedas de LSTM y N-BEATS | 2 a 6 horas | 154 minutos |
+| 06 | SARIMA (25 pruebas de 1 a 4 minutos) | 1 a 2 horas | 67 minutos |
+| 07 | búsquedas de LSTM y N-BEATS (30 pruebas de 5 semillas cada una) | 2 a 6 horas | 150 minutos |
+
+El modo de sensibilidad del 07 (SENSIBILIDAD=1, METODOLOGIA_PRONOSTICO.md sección 6) duplica el presupuesto de las redes y permite redes más grandes, así que tarda bastante más.
 
 El rango depende de cuántas configuraciones pode Optuna y del tamaño de las redes que proponga; en redes tan pequeñas la GPU acelera poco frente a una CPU moderna. El número de pruebas de cada modelo está en PRUEBAS de src/dengue/investigacion.py (03 y 05) y de src/dengue/produccion.py (06 y 07).
 

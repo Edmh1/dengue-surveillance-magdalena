@@ -1,0 +1,1362 @@
+{
+  "estudio": "07_lstm",
+  "muestreador": "TPESampler",
+  "semilla_muestreador": 42,
+  "podador": "MedianPruner",
+  "pruebas": [
+    {
+      "numero": 0,
+      "estado": "COMPLETE",
+      "valor": 13.016473815493853,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 112,
+        "unidades_capa2": 60,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.00020511104188433984,
+        "ventana_semanas": 8,
+        "dropout": 0.4330880728874676,
+        "log2_batch_size": 5
+      },
+      "atributos": {
+        "rmse_media": 13.016473815493853,
+        "rmse_sd": 0.3452820909366742,
+        "mae": 9.218999066815027,
+        "rmse_semillas": [
+          13.10226803095785,
+          12.774732882572787,
+          12.799205972571382,
+          13.586636628574198,
+          12.819525562793045
+        ],
+        "mae_semillas": [
+          9.256361411818375,
+          9.03853185577032,
+          9.04302047330437,
+          9.70656299929247,
+          9.050518593889601
+        ],
+        "epocas": [
+          148,
+          188,
+          179,
+          154,
+          184
+        ],
+        "hiperparametros": {
+          "ventana_semanas": 8,
+          "unidades": [
+            112,
+            60
+          ],
+          "dropout": 0.4330880728874676,
+          "optimizador": {
+            "class_name": "Adam",
+            "config": {
+              "learning_rate": 0.00020511104188433984
+            }
+          },
+          "batch_size": 32,
+          "paciencia_tasa_aprendizaje": 10,
+          "epocas_maximas": 200,
+          "paciencia": 20,
+          "fraccion_validacion": 0.17647058823529413
+        },
+        "segundos": 139.8
+      },
+      "valores_intermedios": {
+        "0": 13.10226803095785,
+        "1": 12.938500456765318,
+        "2": 12.892068962034008,
+        "3": 13.065710878669055,
+        "4": 13.016473815493853
+      },
+      "duracion_segundos": 139.793062
+    },
+    {
+      "numero": 1,
+      "estado": "COMPLETE",
+      "valor": 13.224285025258126,
+      "parametros": {
+        "capas": 3,
+        "unidades_capa1": 8,
+        "unidades_capa2": 118,
+        "unidades_capa3": 80,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.00023270677083837802,
+        "ventana_semanas": 20,
+        "dropout": 0.2623782158161189,
+        "log2_batch_size": 4
+      },
+      "atributos": {
+        "rmse_media": 13.224285025258126,
+        "rmse_sd": 0.358564655698457,
+        "mae": 9.245675546452228,
+        "rmse_semillas": [
+          12.855395711732825,
+          12.885534115079011,
+          13.2259458748622,
+          13.661645168438676,
+          13.49290425617793
+        ],
+        "mae_semillas": [
+          9.012849839302946,
+          9.129510981534953,
+          9.264652386906581,
+          9.39917471786481,
+          9.422189806651843
+        ],
+        "epocas": [
+          157,
+          199,
+          173,
+          166,
+          192
+        ],
+        "hiperparametros": {
+          "ventana_semanas": 20,
+          "unidades": [
+            8,
+            118,
+            80
+          ],
+          "dropout": 0.2623782158161189,
+          "optimizador": {
+            "class_name": "Adam",
+            "config": {
+              "learning_rate": 0.00023270677083837802
+            }
+          },
+          "batch_size": 16,
+          "paciencia_tasa_aprendizaje": 10,
+          "epocas_maximas": 200,
+          "paciencia": 20,
+          "fraccion_validacion": 0.17647058823529413
+        },
+        "segundos": 420.3
+      },
+      "valores_intermedios": {
+        "0": 12.855395711732825,
+        "1": 12.870464913405918,
+        "2": 12.988958567224678,
+        "3": 13.157130217528177,
+        "4": 13.224285025258126
+      },
+      "duracion_segundos": 420.341374
+    },
+    {
+      "numero": 2,
+      "estado": "COMPLETE",
+      "valor": 12.939242625468733,
+      "parametros": {
+        "capas": 1,
+        "unidades_capa1": 43,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.0005404103854647331,
+        "ventana_semanas": 27,
+        "dropout": 0.3925879806965068,
+        "log2_batch_size": 3
+      },
+      "atributos": {
+        "rmse_media": 12.939242625468733,
+        "rmse_sd": 0.22388730066572812,
+        "mae": 8.993855945663814,
+        "rmse_semillas": [
+          13.00382597336576,
+          12.965397769759953,
+          13.026990966583751,
+          12.55672591733004,
+          13.143272500304164
+        ],
+        "mae_semillas": [
+          8.989518344825042,
+          9.085384671569717,
+          8.967637590764545,
+          8.80746555779279,
+          9.119273563366974
+        ],
+        "epocas": [
+          60,
+          99,
+          63,
+          61,
+          57
+        ],
+        "hiperparametros": {
+          "ventana_semanas": 27,
+          "unidades": [
+            43
+          ],
+          "dropout": 0.3925879806965068,
+          "optimizador": {
+            "class_name": "RMSprop",
+            "config": {
+              "learning_rate": 0.0005404103854647331
+            }
+          },
+          "batch_size": 8,
+          "paciencia_tasa_aprendizaje": 10,
+          "epocas_maximas": 200,
+          "paciencia": 20,
+          "fraccion_validacion": 0.17647058823529413
+        },
+        "segundos": 103.4
+      },
+      "valores_intermedios": {
+        "0": 13.00382597336576,
+        "1": 12.984611871562857,
+        "2": 12.998738236569821,
+        "3": 12.888235156759876,
+        "4": 12.939242625468733
+      },
+      "duracion_segundos": 103.446498
+    },
+    {
+      "numero": 3,
+      "estado": "COMPLETE",
+      "valor": 20.36920439497603,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 40,
+        "unidades_capa2": 9,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.00013492834268013249,
+        "ventana_semanas": 50,
+        "dropout": 0.4828160165372797,
+        "log2_batch_size": 6
+      },
+      "atributos": {
+        "rmse_media": 20.36920439497603,
+        "rmse_sd": 1.518738261418304,
+        "mae": 14.75119930508571,
+        "rmse_semillas": [
+          19.56730609821547,
+          22.698395988100355,
+          20.953262651091187,
+          18.771282117898995,
+          19.85577511957413
+        ],
+        "mae_semillas": [
+          14.357667828282565,
+          16.27071459919003,
+          15.132316585973644,
+          13.563037418586424,
+          14.432260093395874
+        ],
+        "epocas": [
+          96,
+          75,
+          110,
+          108,
+          108
+        ],
+        "hiperparametros": {
+          "ventana_semanas": 50,
+          "unidades": [
+            40,
+            9
+          ],
+          "dropout": 0.4828160165372797,
+          "optimizador": {
+            "class_name": "Adam",
+            "config": {
+              "learning_rate": 0.00013492834268013249
+            }
+          },
+          "batch_size": 64,
+          "paciencia_tasa_aprendizaje": 10,
+          "epocas_maximas": 200,
+          "paciencia": 20,
+          "fraccion_validacion": 0.17647058823529413
+        },
+        "segundos": 130.7
+      },
+      "valores_intermedios": {
+        "0": 19.56730609821547,
+        "1": 21.132851043157913,
+        "2": 21.07298824580234,
+        "3": 20.497561713826503,
+        "4": 20.36920439497603
+      },
+      "duracion_segundos": 130.6649
+    },
+    {
+      "numero": 4,
+      "estado": "PRUNED",
+      "valor": 14.260121464360747,
+      "parametros": {
+        "capas": 1,
+        "unidades_capa1": 10,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.00017541893487450815,
+        "ventana_semanas": 29,
+        "dropout": 0.017194260557609198,
+        "log2_batch_size": 6
+      },
+      "atributos": {
+        "rmse_semillas": [
+          14.260121464360747
+        ]
+      },
+      "valores_intermedios": {
+        "0": 14.260121464360747
+      },
+      "duracion_segundos": 23.689442
+    },
+    {
+      "numero": 5,
+      "estado": "PRUNED",
+      "valor": 13.970310628716792,
+      "parametros": {
+        "capas": 1,
+        "unidades_capa1": 49,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.0012399967836846098,
+        "ventana_semanas": 14,
+        "dropout": 0.4847923138822793,
+        "log2_batch_size": 6
+      },
+      "atributos": {
+        "rmse_semillas": [
+          13.970310628716792
+        ]
+      },
+      "valores_intermedios": {
+        "0": 13.970310628716792
+      },
+      "duracion_segundos": 13.207417
+    },
+    {
+      "numero": 6,
+      "estado": "COMPLETE",
+      "valor": 13.135730589969167,
+      "parametros": {
+        "capas": 3,
+        "unidades_capa1": 95,
+        "unidades_capa2": 41,
+        "unidades_capa3": 103,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.00012315571723666037,
+        "ventana_semanas": 21,
+        "dropout": 0.194338644844741,
+        "log2_batch_size": 4
+      },
+      "atributos": {
+        "rmse_media": 13.135730589969167,
+        "rmse_sd": 0.8049207683258827,
+        "mae": 9.174547992868627,
+        "rmse_semillas": [
+          12.709881604830118,
+          14.566425686353444,
+          12.780663480116901,
+          12.696440633978819,
+          12.925241544566562
+        ],
+        "mae_semillas": [
+          8.93518937225883,
+          9.941741957450308,
+          8.995971632905604,
+          8.929576083559798,
+          9.070260918168593
+        ],
+        "epocas": [
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "hiperparametros": {
+          "ventana_semanas": 21,
+          "unidades": [
+            95,
+            41,
+            103
+          ],
+          "dropout": 0.194338644844741,
+          "optimizador": {
+            "class_name": "RMSprop",
+            "config": {
+              "learning_rate": 0.00012315571723666037
+            }
+          },
+          "batch_size": 16,
+          "paciencia_tasa_aprendizaje": 10,
+          "epocas_maximas": 200,
+          "paciencia": 20,
+          "fraccion_validacion": 0.17647058823529413
+        },
+        "segundos": 607.2
+      },
+      "valores_intermedios": {
+        "0": 12.709881604830118,
+        "1": 13.638153645591782,
+        "2": 13.352323590433487,
+        "3": 13.18835285131982,
+        "4": 13.135730589969167
+      },
+      "duracion_segundos": 607.211536
+    },
+    {
+      "numero": 7,
+      "estado": "PRUNED",
+      "valor": 13.47088425634498,
+      "parametros": {
+        "capas": 3,
+        "unidades_capa1": 21,
+        "unidades_capa2": 17,
+        "unidades_capa3": 35,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.00014096175149815865,
+        "ventana_semanas": 52,
+        "dropout": 0.3861223846483287,
+        "log2_batch_size": 3
+      },
+      "atributos": {
+        "rmse_semillas": [
+          13.47088425634498
+        ]
+      },
+      "valores_intermedios": {
+        "0": 13.47088425634498
+      },
+      "duracion_segundos": 295.030149
+    },
+    {
+      "numero": 8,
+      "estado": "PRUNED",
+      "valor": 14.443016533818188,
+      "parametros": {
+        "capas": 1,
+        "unidades_capa1": 76,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.0034877126245459306,
+        "ventana_semanas": 9,
+        "dropout": 0.1792328642721363,
+        "log2_batch_size": 3
+      },
+      "atributos": {
+        "rmse_semillas": [
+          14.443016533818188
+        ]
+      },
+      "valores_intermedios": {
+        "0": 14.443016533818188
+      },
+      "duracion_segundos": 12.11579
+    },
+    {
+      "numero": 9,
+      "estado": "PRUNED",
+      "valor": 14.296802930463652,
+      "parametros": {
+        "capas": 3,
+        "unidades_capa1": 44,
+        "unidades_capa2": 19,
+        "unidades_capa3": 9,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.002878805718308925,
+        "ventana_semanas": 35,
+        "dropout": 0.44360637128816327,
+        "log2_batch_size": 4
+      },
+      "atributos": {
+        "rmse_semillas": [
+          14.296802930463652
+        ]
+      },
+      "valores_intermedios": {
+        "0": 14.296802930463652
+      },
+      "duracion_segundos": 39.751184
+    },
+    {
+      "numero": 10,
+      "estado": "COMPLETE",
+      "valor": 13.094246580431971,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 21,
+        "unidades_capa2": 8,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.0006228997444898865,
+        "ventana_semanas": 40,
+        "dropout": 0.007797399829228169,
+        "log2_batch_size": 5
+      },
+      "atributos": {
+        "rmse_media": 13.094246580431971,
+        "rmse_sd": 0.40796417510987254,
+        "mae": 9.074821515568042,
+        "rmse_semillas": [
+          12.933371621937502,
+          13.447752972466178,
+          12.928404541582143,
+          12.587379931741813,
+          13.574323834432215
+        ],
+        "mae_semillas": [
+          8.943157558463708,
+          9.158561757833963,
+          9.097095860375298,
+          8.949650648356048,
+          9.225641752811189
+        ],
+        "epocas": [
+          112,
+          136,
+          122,
+          111,
+          118
+        ],
+        "hiperparametros": {
+          "ventana_semanas": 40,
+          "unidades": [
+            21,
+            8
+          ],
+          "dropout": 0.007797399829228169,
+          "optimizador": {
+            "class_name": "RMSprop",
+            "config": {
+              "learning_rate": 0.0006228997444898865
+            }
+          },
+          "batch_size": 32,
+          "paciencia_tasa_aprendizaje": 10,
+          "epocas_maximas": 200,
+          "paciencia": 20,
+          "fraccion_validacion": 0.17647058823529413
+        },
+        "segundos": 208.2
+      },
+      "valores_intermedios": {
+        "0": 12.933371621937502,
+        "1": 13.19056229720184,
+        "2": 13.103176378661942,
+        "3": 12.97422726693191,
+        "4": 13.094246580431971
+      },
+      "duracion_segundos": 208.176215
+    },
+    {
+      "numero": 11,
+      "estado": "COMPLETE",
+      "valor": 12.621702653879009,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 125,
+        "unidades_capa2": 124,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.00048495298048291694,
+        "ventana_semanas": 8,
+        "dropout": 0.3470769395976111,
+        "log2_batch_size": 5
+      },
+      "atributos": {
+        "rmse_media": 12.621702653879009,
+        "rmse_sd": 0.2039863941440536,
+        "mae": 8.918831988598438,
+        "rmse_semillas": [
+          12.472525921985714,
+          12.676217586913282,
+          12.52870945162055,
+          12.955281364375251,
+          12.475778944500242
+        ],
+        "mae_semillas": [
+          8.781011276493118,
+          8.929751084487771,
+          8.821613870332145,
+          9.274088912540012,
+          8.787694799139144
+        ],
+        "epocas": [
+          182,
+          200,
+          200,
+          73,
+          173
+        ],
+        "hiperparametros": {
+          "ventana_semanas": 8,
+          "unidades": [
+            125,
+            124
+          ],
+          "dropout": 0.3470769395976111,
+          "optimizador": {
+            "class_name": "Adam",
+            "config": {
+              "learning_rate": 0.00048495298048291694
+            }
+          },
+          "batch_size": 32,
+          "paciencia_tasa_aprendizaje": 10,
+          "epocas_maximas": 200,
+          "paciencia": 20,
+          "fraccion_validacion": 0.17647058823529413
+        },
+        "segundos": 213.5
+      },
+      "valores_intermedios": {
+        "0": 12.472525921985714,
+        "1": 12.574371754449498,
+        "2": 12.559150986839848,
+        "3": 12.6581835812237,
+        "4": 12.621702653879009
+      },
+      "duracion_segundos": 213.532653
+    },
+    {
+      "numero": 12,
+      "estado": "COMPLETE",
+      "valor": 12.726225726361928,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 65,
+        "unidades_capa2": 100,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.0005386108299712676,
+        "ventana_semanas": 22,
+        "dropout": 0.30658688491537506,
+        "log2_batch_size": 5
+      },
+      "atributos": {
+        "rmse_media": 12.726225726361928,
+        "rmse_sd": 0.2556467151661634,
+        "mae": 8.917056693196578,
+        "rmse_semillas": [
+          12.535419280380609,
+          12.655318076788983,
+          13.173170948880331,
+          12.594426874511035,
+          12.672793451248685
+        ],
+        "mae_semillas": [
+          8.863332130102965,
+          8.921680608257898,
+          9.038693167075479,
+          8.87741516724264,
+          8.88416239330391
+        ],
+        "epocas": [
+          103,
+          75,
+          82,
+          146,
+          100
+        ],
+        "hiperparametros": {
+          "ventana_semanas": 22,
+          "unidades": [
+            65,
+            100
+          ],
+          "dropout": 0.30658688491537506,
+          "optimizador": {
+            "class_name": "Adam",
+            "config": {
+              "learning_rate": 0.0005386108299712676
+            }
+          },
+          "batch_size": 32,
+          "paciencia_tasa_aprendizaje": 10,
+          "epocas_maximas": 200,
+          "paciencia": 20,
+          "fraccion_validacion": 0.17647058823529413
+        },
+        "segundos": 182.7
+      },
+      "valores_intermedios": {
+        "0": 12.535419280380609,
+        "1": 12.595368678584796,
+        "2": 12.787969435349973,
+        "3": 12.73958379514024,
+        "4": 12.726225726361928
+      },
+      "duracion_segundos": 182.694498
+    },
+    {
+      "numero": 13,
+      "estado": "COMPLETE",
+      "valor": 12.595866504834996,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 70,
+        "unidades_capa2": 127,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.000534064422315006,
+        "ventana_semanas": 16,
+        "dropout": 0.3002648551536244,
+        "log2_batch_size": 5
+      },
+      "atributos": {
+        "rmse_media": 12.595866504834996,
+        "rmse_sd": 0.21218059922527144,
+        "mae": 8.92030676701954,
+        "rmse_semillas": [
+          12.74226384949998,
+          12.42509207037998,
+          12.590975454479812,
+          12.86450264416555,
+          12.35649850564966
+        ],
+        "mae_semillas": [
+          8.97390141780213,
+          8.84929611609619,
+          8.80192883527589,
+          9.101261534589403,
+          8.875145931334078
+        ],
+        "epocas": [
+          200,
+          79,
+          134,
+          153,
+          169
+        ],
+        "hiperparametros": {
+          "ventana_semanas": 16,
+          "unidades": [
+            70,
+            127
+          ],
+          "dropout": 0.3002648551536244,
+          "optimizador": {
+            "class_name": "Adam",
+            "config": {
+              "learning_rate": 0.000534064422315006
+            }
+          },
+          "batch_size": 32,
+          "paciencia_tasa_aprendizaje": 10,
+          "epocas_maximas": 200,
+          "paciencia": 20,
+          "fraccion_validacion": 0.17647058823529413
+        },
+        "segundos": 251.9
+      },
+      "valores_intermedios": {
+        "0": 12.74226384949998,
+        "1": 12.58367795993998,
+        "2": 12.586110458119924,
+        "3": 12.65570850463133,
+        "4": 12.595866504834996
+      },
+      "duracion_segundos": 251.938908
+    },
+    {
+      "numero": 14,
+      "estado": "COMPLETE",
+      "valor": 12.744401423438699,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 128,
+        "unidades_capa2": 128,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.0012776862157558625,
+        "ventana_semanas": 14,
+        "dropout": 0.33620897274726763,
+        "log2_batch_size": 5
+      },
+      "atributos": {
+        "rmse_media": 12.744401423438699,
+        "rmse_sd": 0.2136068960893651,
+        "mae": 8.995306408884394,
+        "rmse_semillas": [
+          12.513557309301289,
+          12.783756325248165,
+          12.540852636612733,
+          13.006007051470137,
+          12.87783379456118
+        ],
+        "mae_semillas": [
+          8.857455688165434,
+          9.00118341795378,
+          8.876683177113815,
+          9.19485590756644,
+          9.04635385362251
+        ],
+        "epocas": [
+          97,
+          65,
+          87,
+          45,
+          106
+        ],
+        "hiperparametros": {
+          "ventana_semanas": 14,
+          "unidades": [
+            128,
+            128
+          ],
+          "dropout": 0.33620897274726763,
+          "optimizador": {
+            "class_name": "Adam",
+            "config": {
+              "learning_rate": 0.0012776862157558625
+            }
+          },
+          "batch_size": 32,
+          "paciencia_tasa_aprendizaje": 10,
+          "epocas_maximas": 200,
+          "paciencia": 20,
+          "fraccion_validacion": 0.17647058823529413
+        },
+        "segundos": 159.2
+      },
+      "valores_intermedios": {
+        "0": 12.513557309301289,
+        "1": 12.648656817274727,
+        "2": 12.612722090387395,
+        "3": 12.71104333065808,
+        "4": 12.744401423438699
+      },
+      "duracion_segundos": 159.254142
+    },
+    {
+      "numero": 15,
+      "estado": "PRUNED",
+      "valor": 13.021822168000945,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 71,
+        "unidades_capa2": 75,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.0003777344995875106,
+        "ventana_semanas": 14,
+        "dropout": 0.24847538233649274,
+        "log2_batch_size": 5
+      },
+      "atributos": {
+        "rmse_semillas": [
+          13.021822168000945
+        ]
+      },
+      "valores_intermedios": {
+        "0": 13.021822168000945
+      },
+      "duracion_segundos": 38.018706
+    },
+    {
+      "numero": 16,
+      "estado": "PRUNED",
+      "valor": 12.895919393505952,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 27,
+        "unidades_capa2": 51,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.008589213472547309,
+        "ventana_semanas": 7,
+        "dropout": 0.15993628679844388,
+        "log2_batch_size": 4
+      },
+      "atributos": {
+        "rmse_semillas": [
+          12.895919393505952
+        ]
+      },
+      "valores_intermedios": {
+        "0": 12.895919393505952
+      },
+      "duracion_segundos": 18.906316
+    },
+    {
+      "numero": 17,
+      "estado": "PRUNED",
+      "valor": 13.30539559657906,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 81,
+        "unidades_capa2": 82,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.0009959160066805347,
+        "ventana_semanas": 16,
+        "dropout": 0.33326781965385943,
+        "log2_batch_size": 6
+      },
+      "atributos": {
+        "rmse_semillas": [
+          13.30539559657906
+        ]
+      },
+      "valores_intermedios": {
+        "0": 13.30539559657906
+      },
+      "duracion_segundos": 54.873729
+    },
+    {
+      "numero": 18,
+      "estado": "PRUNED",
+      "valor": 12.896869006925021,
+      "parametros": {
+        "capas": 3,
+        "unidades_capa1": 58,
+        "unidades_capa2": 39,
+        "unidades_capa3": 8,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.0003151766599544728,
+        "ventana_semanas": 26,
+        "dropout": 0.10392868848267903,
+        "log2_batch_size": 5
+      },
+      "atributos": {
+        "rmse_semillas": [
+          12.896869006925021
+        ]
+      },
+      "valores_intermedios": {
+        "0": 12.896869006925021
+      },
+      "duracion_segundos": 53.22692
+    },
+    {
+      "numero": 19,
+      "estado": "PRUNED",
+      "valor": 13.763465053129508,
+      "parametros": {
+        "capas": 1,
+        "unidades_capa1": 100,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.0026795873402914246,
+        "ventana_semanas": 6,
+        "dropout": 0.2819873495107164,
+        "log2_batch_size": 4
+      },
+      "atributos": {
+        "rmse_semillas": [
+          13.763465053129508
+        ]
+      },
+      "valores_intermedios": {
+        "0": 13.763465053129508
+      },
+      "duracion_segundos": 24.388293
+    },
+    {
+      "numero": 20,
+      "estado": "PRUNED",
+      "valor": 12.911824840222645,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 28,
+        "unidades_capa2": 83,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.0009573374135001821,
+        "ventana_semanas": 11,
+        "dropout": 0.22316100422501808,
+        "log2_batch_size": 5
+      },
+      "atributos": {
+        "rmse_semillas": [
+          12.911824840222645
+        ]
+      },
+      "valores_intermedios": {
+        "0": 12.911824840222645
+      },
+      "duracion_segundos": 17.963916
+    },
+    {
+      "numero": 21,
+      "estado": "COMPLETE",
+      "valor": 12.634373156089094,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 61,
+        "unidades_capa2": 109,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.0006070300377592732,
+        "ventana_semanas": 21,
+        "dropout": 0.3216735987083842,
+        "log2_batch_size": 5
+      },
+      "atributos": {
+        "rmse_media": 12.634373156089094,
+        "rmse_sd": 0.4308604205301984,
+        "mae": 8.917021756927454,
+        "rmse_semillas": [
+          12.640510225196651,
+          12.414348555544272,
+          13.374486597597398,
+          12.434067680462434,
+          12.30845272164472
+        ],
+        "mae_semillas": [
+          8.916292633570677,
+          8.791633235647323,
+          9.295748125576804,
+          8.82903186536568,
+          8.752402924476787
+        ],
+        "epocas": [
+          84,
+          130,
+          63,
+          104,
+          109
+        ],
+        "hiperparametros": {
+          "ventana_semanas": 21,
+          "unidades": [
+            61,
+            109
+          ],
+          "dropout": 0.3216735987083842,
+          "optimizador": {
+            "class_name": "Adam",
+            "config": {
+              "learning_rate": 0.0006070300377592732
+            }
+          },
+          "batch_size": 32,
+          "paciencia_tasa_aprendizaje": 10,
+          "epocas_maximas": 200,
+          "paciencia": 20,
+          "fraccion_validacion": 0.17647058823529413
+        },
+        "segundos": 206.5
+      },
+      "valores_intermedios": {
+        "0": 12.640510225196651,
+        "1": 12.527429390370461,
+        "2": 12.80978179277944,
+        "3": 12.715853264700188,
+        "4": 12.634373156089094
+      },
+      "duracion_segundos": 206.540183
+    },
+    {
+      "numero": 22,
+      "estado": "COMPLETE",
+      "valor": 12.586674017965489,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 90,
+        "unidades_capa2": 126,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.00036531236053328293,
+        "ventana_semanas": 18,
+        "dropout": 0.3681465439943041,
+        "log2_batch_size": 5
+      },
+      "atributos": {
+        "rmse_media": 12.586674017965489,
+        "rmse_sd": 0.06015576686875728,
+        "mae": 8.889976745745251,
+        "rmse_semillas": [
+          12.501233130111066,
+          12.602544234408105,
+          12.647799068982534,
+          12.630588892541176,
+          12.551204763784568
+        ],
+        "mae_semillas": [
+          8.878777061512002,
+          8.900604046828358,
+          8.920203060123091,
+          8.907505645255952,
+          8.84279391500685
+        ],
+        "epocas": [
+          103,
+          95,
+          126,
+          124,
+          127
+        ],
+        "hiperparametros": {
+          "ventana_semanas": 18,
+          "unidades": [
+            90,
+            126
+          ],
+          "dropout": 0.3681465439943041,
+          "optimizador": {
+            "class_name": "Adam",
+            "config": {
+              "learning_rate": 0.00036531236053328293
+            }
+          },
+          "batch_size": 32,
+          "paciencia_tasa_aprendizaje": 10,
+          "epocas_maximas": 200,
+          "paciencia": 20,
+          "fraccion_validacion": 0.17647058823529413
+        },
+        "segundos": 239.9
+      },
+      "valores_intermedios": {
+        "0": 12.501233130111066,
+        "1": 12.551888682259586,
+        "2": 12.583858811167234,
+        "3": 12.59554133151072,
+        "4": 12.586674017965489
+      },
+      "duracion_segundos": 239.955014
+    },
+    {
+      "numero": 23,
+      "estado": "PRUNED",
+      "valor": 12.996422912613655,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 126,
+        "unidades_capa2": 122,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.0002832330800888502,
+        "ventana_semanas": 17,
+        "dropout": 0.366335054505043,
+        "log2_batch_size": 6
+      },
+      "atributos": {
+        "rmse_semillas": [
+          12.996422912613655
+        ]
+      },
+      "valores_intermedios": {
+        "0": 12.996422912613655
+      },
+      "duracion_segundos": 45.515805
+    },
+    {
+      "numero": 24,
+      "estado": "PRUNED",
+      "valor": 13.03877584821668,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 92,
+        "unidades_capa2": 67,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.0004408307442352516,
+        "ventana_semanas": 11,
+        "dropout": 0.3710956033556866,
+        "log2_batch_size": 5
+      },
+      "atributos": {
+        "rmse_semillas": [
+          13.03877584821668
+        ]
+      },
+      "valores_intermedios": {
+        "0": 13.03877584821668
+      },
+      "duracion_segundos": 38.088788
+    },
+    {
+      "numero": 25,
+      "estado": "COMPLETE",
+      "valor": 12.38500371947848,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 88,
+        "unidades_capa2": 92,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.000815247496243202,
+        "ventana_semanas": 18,
+        "dropout": 0.2871958869310786,
+        "log2_batch_size": 4
+      },
+      "atributos": {
+        "rmse_media": 12.38500371947848,
+        "rmse_sd": 0.07184061975337602,
+        "mae": 8.801286953729942,
+        "rmse_semillas": [
+          12.437324627072755,
+          12.357656039537295,
+          12.404214906926821,
+          12.273990972611925,
+          12.451832051243603
+        ],
+        "mae_semillas": [
+          8.853856024730854,
+          8.737216010443143,
+          8.800038053070681,
+          8.730446690363241,
+          8.884877990041783
+        ],
+        "epocas": [
+          173,
+          54,
+          77,
+          63,
+          48
+        ],
+        "hiperparametros": {
+          "ventana_semanas": 18,
+          "unidades": [
+            88,
+            92
+          ],
+          "dropout": 0.2871958869310786,
+          "optimizador": {
+            "class_name": "Adam",
+            "config": {
+              "learning_rate": 0.000815247496243202
+            }
+          },
+          "batch_size": 16,
+          "paciencia_tasa_aprendizaje": 10,
+          "epocas_maximas": 200,
+          "paciencia": 20,
+          "fraccion_validacion": 0.17647058823529413
+        },
+        "segundos": 220.6
+      },
+      "valores_intermedios": {
+        "0": 12.437324627072755,
+        "1": 12.397490333305026,
+        "2": 12.399731857845623,
+        "3": 12.368296636537199,
+        "4": 12.38500371947848
+      },
+      "duracion_segundos": 220.56077
+    },
+    {
+      "numero": 26,
+      "estado": "PRUNED",
+      "valor": 13.07410620334697,
+      "parametros": {
+        "capas": 1,
+        "unidades_capa1": 53,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.001925463306288408,
+        "ventana_semanas": 31,
+        "dropout": 0.2936347090519562,
+        "log2_batch_size": 4
+      },
+      "atributos": {
+        "rmse_semillas": [
+          13.07410620334697
+        ]
+      },
+      "valores_intermedios": {
+        "0": 13.07410620334697
+      },
+      "duracion_segundos": 23.964269
+    },
+    {
+      "numero": 27,
+      "estado": "COMPLETE",
+      "valor": 12.542068200426858,
+      "parametros": {
+        "capas": 3,
+        "unidades_capa1": 81,
+        "unidades_capa2": 90,
+        "unidades_capa3": 25,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.000903762175141142,
+        "ventana_semanas": 24,
+        "dropout": 0.422942004531585,
+        "log2_batch_size": 4
+      },
+      "atributos": {
+        "rmse_media": 12.542068200426858,
+        "rmse_sd": 0.07162627355317604,
+        "mae": 8.94114177920294,
+        "rmse_semillas": [
+          12.526379531912381,
+          12.507662501431039,
+          12.49215693571436,
+          12.515914243280822,
+          12.668227789795688
+        ],
+        "mae_semillas": [
+          8.909675649435526,
+          8.938721013125516,
+          8.943318338258893,
+          8.915974805259253,
+          8.99801908993552
+        ],
+        "epocas": [
+          102,
+          113,
+          100,
+          72,
+          105
+        ],
+        "hiperparametros": {
+          "ventana_semanas": 24,
+          "unidades": [
+            81,
+            90,
+            25
+          ],
+          "dropout": 0.422942004531585,
+          "optimizador": {
+            "class_name": "Adam",
+            "config": {
+              "learning_rate": 0.000903762175141142
+            }
+          },
+          "batch_size": 16,
+          "paciencia_tasa_aprendizaje": 10,
+          "epocas_maximas": 200,
+          "paciencia": 20,
+          "fraccion_validacion": 0.17647058823529413
+        },
+        "segundos": 375.3
+      },
+      "valores_intermedios": {
+        "0": 12.526379531912381,
+        "1": 12.517021016671709,
+        "2": 12.508732989685926,
+        "3": 12.510528303084651,
+        "4": 12.542068200426858
+      },
+      "duracion_segundos": 375.284464
+    },
+    {
+      "numero": 28,
+      "estado": "PRUNED",
+      "valor": 12.7631461932911,
+      "parametros": {
+        "capas": 3,
+        "unidades_capa1": 89,
+        "unidades_capa2": 50,
+        "unidades_capa3": 26,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.0008322036901881049,
+        "ventana_semanas": 34,
+        "dropout": 0.41601962616861693,
+        "log2_batch_size": 3
+      },
+      "atributos": {
+        "rmse_semillas": [
+          12.7631461932911
+        ]
+      },
+      "valores_intermedios": {
+        "0": 12.7631461932911
+      },
+      "duracion_segundos": 116.847343
+    },
+    {
+      "numero": 29,
+      "estado": "PRUNED",
+      "valor": 12.986210096287806,
+      "parametros": {
+        "capas": 3,
+        "unidades_capa1": 36,
+        "unidades_capa2": 90,
+        "unidades_capa3": 21,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.0016790214793167377,
+        "ventana_semanas": 24,
+        "dropout": 0.4485296583267734,
+        "log2_batch_size": 4
+      },
+      "atributos": {
+        "rmse_semillas": [
+          12.986210096287806
+        ]
+      },
+      "valores_intermedios": {
+        "0": 12.986210096287806
+      },
+      "duracion_segundos": 50.979128
+    }
+  ]
+}

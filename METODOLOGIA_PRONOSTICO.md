@@ -16,7 +16,7 @@ Notebooks de producción (06 y 07). Usan el mismo código de pronóstico del tab
 | Qué fuente climática usar para cada variable | 02 Variables climáticas | fuente ganadora por variable, validada contra las estaciones del IDEAM |
 | Cómo se transforma la serie, qué entradas reciben los modelos, qué familias son viables y cómo se evalúan | 03 Modelado con clima | transformación log1p; entradas autorregresivas, con los rezagos de 1, 2, 4 y 8 semanas y la ventana de 12 semanas como configuración de partida; las familias estadística, de aprendizaje automático y de aprendizaje profundo como candidatas; evaluación multipaso, porque la evaluación a un paso no distingue entre modelos |
 | Cómo se agrupan los municipios según su clima y sus condiciones sociales | 04 Agrupamiento de municipios | caracterización territorial; no entra en el pronóstico |
-| Cuánto aporta el clima frente a los rezagos de casos en cada horizonte | 05 Clima contra rezagos | el pronóstico se hace sin clima, porque su aporte en el rango operativo de 1 a 6 semanas no compensa el costo de adquirir, actualizar y validar series climáticas cada semana |
+| Cuánto aporta el clima frente a los rezagos de casos en cada horizonte | 05 Clima contra rezagos | el pronóstico de esta versión del tablero se hace sin clima: el clima mejora cinco de los siete modelos, poco a una semana y más en los horizontes largos, pero no a todas las familias; su ganancia se midió con clima observado dentro del horizonte (un techo), no hay clima de 2025 para la prueba final ni para el modelo definitivo, y operarlo exige adquirir, actualizar y validar tres fuentes cada semana (sección 13) |
 | Qué modelo concreto y qué hiperparámetros ocupan cada familia, y cómo se comporta en un año no visto | 06 y 07 Producción | con las decisiones anteriores fijas, el ganador de cada familia y sus hiperparámetros, evaluados en la serie que el tablero pronostica y con su propio código; la prueba final en 2025 y la exportación de los paquetes |
 
 Los notebooks 06 y 07 ajustan de nuevo los hiperparámetros en lugar de reutilizar los del 03 y el 05, por tres razones. Primero, cambian las entradas: sin clima, el conjunto de predictores es otro y su óptimo también. Segundo, cambia la serie: el tablero pronostica los casos notificados, con otra asignación de la semana epidemiológica y con datos hasta 2025 (sección 2), y un óptimo encontrado en otra serie no tiene por qué serlo en esta. Tercero, el tablero ejecuta su propio código: para que lo evaluado sea exactamente lo que corre, la búsqueda, la evaluación y la exportación se hacen con las clases de pathologies/dengue/pronostico, cuyo espacio de hiperparámetros es el que esas clases aceptan.
@@ -29,7 +29,7 @@ Serie de investigación (notebooks 03 y 05): dataset_modelado_magdalena.parquet,
 
 Serie del tablero (notebooks 06 y 07): consolidado de dengue del tablero. Casos notificados con código de evento 210 o 220 (probables y confirmados, la misma definición que usan los indicadores del tablero y del protocolo de vigilancia del INS), ocurrencia en el Magdalena, por semana epidemiológica según las columnas año y semana de SIVIGILA (convención CDC), sin covariables climáticas. Periodo 2007 a 2025. Las semanas sin casos notificados se completan con cero. No se filtra por casos confirmados: el pronóstico es una herramienta de alerta temprana sobre lo que observa la vigilancia, la confirmación de laboratorio llega con retraso y su proporción varía entre años (13 % en 2010, 97 % en 2025), lo que introduciría en la serie variaciones que no son epidemiológicas.
 
-En los años recientes los totales anuales coinciden; en los primeros años difieren hasta en un 4 % y algunos casos caen en semanas distintas por la forma de asignar la semana. Por eso las métricas de los notebooks 03 y 05 no se comparan con las de 06 y 07 ni con las que muestra el tablero.
+La definición de caso es la misma en las dos series; cambia la asignación de la semana. La serie de investigación calcula la semana desde la fecha de notificación porque se cruza día a día con el clima, que viene por fecha; la del tablero usa la semana epidemiológica oficial de SIVIGILA, la que reporta el INS y usan los demás indicadores del tablero. En 2007 a 2024 (939 semanas) el total difiere en un 1,0 % (27.114 casos en la serie de investigación y 27.390 en la del tablero), la correlación semanal es 0,97 y la diferencia anual va de −5,4 % (2018) a +6,1 % (2016): la curva es la misma, pero una parte de los casos cae en la semana anterior o la siguiente. Por eso las métricas de los notebooks 03 y 05 no se comparan con las de 06 y 07 ni con las que muestra el tablero, y los modelos de producción se ajustan de nuevo sobre la serie del tablero.
 
 # 3. Familias y modelos candidatos
 
@@ -79,7 +79,9 @@ Estadísticos y aprendizaje automático (esquema 85/15). Dentro del 85 % de entr
 
 Aprendizaje profundo (esquema 70/15/15). El 85 % se divide en entrenamiento (2007 a agosto de 2019, 70 %) y validación (agosto de 2019 a abril de 2022, 15 %). La validación cumple dos funciones: decide cuándo detener el entrenamiento (parada temprana, restaurando los mejores pesos) y es el periodo con el que Optuna compara configuraciones, con el mismo procedimiento de la sección 5. Las redes necesitan este bloque aparte porque la parada temprana no puede usar el periodo de prueba. Para que las configuraciones malas no consuman el presupuesto, la búsqueda usa poda por mediana: si después de una semilla el RMSE de una configuración es peor que la mediana de las anteriores en ese mismo punto, se descarta sin entrenar las demás.
 
-Estabilidad de las redes. Una misma configuración da resultados distintos según la semilla aleatoria: con N-BEATS se observaron RMSE de 16,6 y 23,2 con la misma configuración y los mismos datos. Por eso cada configuración se entrena con 5 semillas, con el determinismo de TensorFlow activado, y se registran la media y la dispersión. Regla de elección: entre las configuraciones cuyo RMSE global medio está a menos de un 5 % del mejor, se elige la de menor dispersión entre semillas. No se usan ensambles.
+Estabilidad de las redes. Una misma configuración da resultados distintos según la semilla aleatoria: en la búsqueda del notebook 07 de la corrida oficial, una misma configuración de N-BEATS dio, con los mismos datos, RMSE de validación entre 33,9 y 248,0 según la semilla (la configuración elegida, entre 13,3 y 14,1). Por eso cada configuración se entrena con 5 semillas, con el determinismo de TensorFlow activado, y se registran la media y la dispersión. Regla de elección: entre las configuraciones cuyo RMSE global medio está a menos de un 5 % del mejor, se elige la de menor dispersión entre semillas. No se usan ensambles.
+
+Presupuesto de las redes y análisis de sensibilidad. Las redes tienen 30 pruebas en producción (20 en investigación) porque cada prueba entrena hasta 5 redes. En la corrida oficial las dos búsquedas del notebook 07 llegaron a una meseta: desde la prueba 11 (LSTM) y la 10 (N-BEATS) el mejor valor mejoró menos de un 2 %, la misma tolerancia con que se declara un empate entre candidatos. Dos hiperparámetros quedaron cerca del borde de su rango: la segunda capa de la LSTM, entre 124 y 127 unidades en tres de las cinco mejores configuraciones (techo 128), y la tasa de aprendizaje de N-BEATS, cerca de 0,01 en dos de las cinco mejores. Para comprobar si ampliar la búsqueda cambia el resultado, el notebook 07 tiene un modo de sensibilidad (variable de entorno SENSIBILIDAD=1, en src/dengue/produccion.py): 60 pruebas por red, hasta 300 épocas, LSTM hasta 256 unidades por capa, N-BEATS hasta 512 de ancho y tasa de aprendizaje hasta 0,03, con todas sus salidas en subcarpetas _sensibilidad. No cambia la corrida oficial ni los paquetes exportados.
 
 # 7. Selección del ganador de cada familia
 
@@ -101,6 +103,8 @@ Se calcula el reporte completo: MAE, RMSE, MAPE y R² en los horizontes 1 a 6 y 
 # 9. Horizonte recomendado
 
 Se decide con los resultados de la prueba y de la prueba final: el horizonte máximo en el que el error sigue siendo útil y el ganador supera a la persistencia. En el tablero se configura en HORIZONTE_RECOMENDADO_SEMANAS (pathologies/dengue/pronostico/configuracion.py).
+
+El notebook 07 calcula una propuesta con una regla estricta: el mayor h tal que, en todos los horizontes de 1 a h, los tres ganadores tienen un RMSE menor que la persistencia en la prueba y en 2025 y un R² de al menos 0,5 en la prueba. En la corrida oficial ningún horizonte la cumple: a una semana la persistencia es muy difícil de superar en una serie con tanta inercia, y en el brote de 2025 ninguno de los tres la supera en ningún horizonte. Como la persistencia es un control y no un criterio de selección (sección 7), el horizonte recomendado se fija por la confiabilidad del pronóstico de los tres ganadores: el mayor h en el que los tres explican al menos el 60 % de la variación semanal en la prueba (R² ≥ 0,6). Ese horizonte es 4 semanas (R² de 0,750, 0,624 y 0,658 para Prophet-AR, XGBoost y LSTM); en 2025, con un brote mayor que todo lo observado, a 4 semanas todavía explican cerca de la mitad (0,537, 0,532 y 0,469). A 5 semanas XGBoost baja a 0,502 en la prueba y en 2025 los tres caen por debajo de 0,41. El valor coincide con el que ya tenía el tablero (4), que no cambia.
 
 # 10. Exportación al tablero
 
@@ -139,3 +143,33 @@ El modelo definitivo se entrena con 2025 porque el tablero pronostica a partir d
 Todas las gráficas se guardan en outputs/figures a 300 dpi, con un ancho pensado para el documento técnico.
 
 Orden: 01, 02, 04, 03, 05, 06, 07. Las instrucciones de instalación para Windows y Linux están en ENTORNO.md.
+
+# 13. Corrida oficial y resultados principales
+
+Los resultados de los notebooks 03, 05, 06 y 07 son los de la corrida completa (MODO_RAPIDO = 0) del 7 de noviembre de 2026 en la máquina A (tabla de equipos al final de esta sección). TensorFlow corrió en CPU (en Windows no usa la GPU) y PyTorch en GPU (CUDA 13.0), así que en el 03 y el 05 N-BEATS (darts) entrenó en GPU y las demás redes en CPU. Versiones: statsmodels 0.15.0, prophet 1.5.0, xgboost 3.4.1, lightgbm 4.7.0, tensorflow 2.21.0, keras 3.15.1, torch 2.14.1, darts 0.48.1, optuna 4.9.0. Los notebooks 01, 02 y 04 no se reejecutaron. Las tablas completas están en outputs/RESULTADOS_PARA_INFORME.md, generado desde los JSON.
+
+Clima (notebook 05, serie de investigación). Quitar el clima reduce el R² en cinco de los siete modelos (ARIMA y SARIMA frente a SARIMAX, Prophet-AR, XGBoost desde el horizonte 3 y N-BEATS) y lo mejora en LightGBM y LSTM. A una semana la diferencia es casi nula (de 0,001 a 0,026 de R² en los modelos que mejoran con clima) y crece con el horizonte, hasta 0,22 a seis semanas en Prophet-AR y N-BEATS. La decisión de pronosticar sin clima en esta versión se sostiene en tres hechos: la ganancia se midió con clima observado también dentro del horizonte (con el rezago mínimo de 4 semanas, los horizontes 5 y 6 usan clima posterior a la semana de origen, que en operación sería un pronóstico), así que es un techo; el dataset climático termina en 2024, de modo que un modelo con clima no podría pasar la prueba final de 2025 ni entrenarse hasta 2025; y operarlo exige adquirir, actualizar y validar tres fuentes cada semana. Incorporar el clima, empezando por extender las series a 2025 y usar solo clima disponible en la semana de origen, queda como trabajo futuro.
+
+Ganadores (serie del tablero, prueba de abril de 2022 a diciembre de 2024, RMSE global de H1 a H6; persistencia 18,12):
+
+| Familia | Ganador | RMSE | MAE | R² | RMSE / persistencia | RMSE en 2025 (persistencia 38,73) |
+|---|---|---|---|---|---|---|
+| Estadística | Prophet-AR | 16,21 | 11,65 | 0,768 | 0,894 | 41,74 |
+| Aprendizaje automático | XGBoost | 20,15 | 13,47 | 0,641 | 1,112 | 44,24 |
+| Aprendizaje profundo | LSTM (5 semillas) | 18,86 ± 0,38 | 12,93 ± 0,12 | 0,685 | 1,041 | 44,58 ± 0,65 |
+
+Prophet-AR es el mejor de los siete candidatos y el único que supera a la persistencia en la prueba, en los horizontes 2 a 6. En 2025, un brote mayor que todo lo observado, ningún ganador supera a la persistencia; Prophet-AR queda entre un 4 % y un 7 % por encima de ella de H3 a H6. Horizonte recomendado: 4 semanas (sección 9). Los tres paquetes pasan la revisión del tablero.
+
+Equipos de la experimentación. Toda la experimentación se ejecuta en dos equipos:
+
+| | Máquina A (corrida oficial) | Máquina B (clúster) |
+|---|---|---|
+| Procesador | Intel Core i7-13650HX (14 núcleos), 24 GB de RAM | por registrar |
+| GPU | NVIDIA RTX 5050, 8 GB | NVIDIA RTX 6000 Ada, 48 GB (gpu2) |
+| Sistema | Windows 11, Python 3.12.10 | Rocky Linux, Python 3.12 |
+| TensorFlow | CPU | GPU |
+| PyTorch | GPU (CUDA 13.0) | GPU |
+| Qué corre | 03, 05, 06 y 07 | 03, 05, 06 y 07, y el análisis de sensibilidad del 07 (sección 6) |
+| Dónde quedan los resultados | outputs/ (los que usa el tablero) | resultados_cluster/ |
+
+Las cifras de este documento, de los notebooks y los paquetes del tablero son las de la máquina A. Duración en la máquina A, con las cadenas 03-05 y 06-07 en paralelo: 03, 94 minutos; 05, 154; 06, 67; 07, 150. La corrida de la máquina B repite la misma metodología con otro hardware y con TensorFlow en GPU, para comprobar si las decisiones (ganadores, horizonte, aporte del clima) se mantienen; sus resultados completos quedan en resultados_cluster/, junto a los de la máquina A, para que la comparación sea transparente. Entre CPU y GPU las métricas pueden diferir en los últimos decimales (ENTORNO.md, sección 7).

@@ -75,14 +75,22 @@ class Salidas:
         return Path(ruta).resolve().relative_to(RAIZ).as_posix()
 
 
+def modo_sensibilidad() -> bool:
+    """Analisis de sensibilidad de la busqueda de las redes (variable de entorno
+    SENSIBILIDAD=1): rangos y presupuesto ampliados en produccion.espacio_lstm,
+    espacio_nbeats y PRUEBAS, con todas las salidas en subcarpetas _sensibilidad.
+    No cambia la corrida oficial."""
+    return os.environ.get("SENSIBILIDAD") == "1"
+
+
 def configurar_salidas(carpeta_figuras: str, modo_rapido: bool) -> Salidas:
-    sufijo = "_rapido" if modo_rapido else ""
+    sufijo = "_rapido" if modo_rapido else ("_sensibilidad" if modo_sensibilidad() else "")
     salidas_base = RAIZ / "outputs"
     figuras = salidas_base / "figures" / carpeta_figuras
     resultados = salidas_base / "resultados"
     paquetes = salidas_base / "paquetes"
     informe = salidas_base
-    if modo_rapido:
+    if sufijo:
         figuras = figuras / sufijo
         resultados = resultados / sufijo
         paquetes = paquetes / sufijo

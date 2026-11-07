@@ -49,7 +49,19 @@ PRUEBAS = {
 }
 PRUEBAS_RAPIDO = {clave: 3 for clave in PRUEBAS}
 
-EPOCAS_MAXIMAS = 200
+# Analisis de sensibilidad de la busqueda de las redes (SENSIBILIDAD=1, ver
+# experimentacion.modo_sensibilidad). En la corrida oficial la LSTM quedo con
+# la segunda capa cerca del techo de 128 unidades y N-BEATS con la tasa de
+# aprendizaje cerca de 0,01; aqui se amplian esos techos, las epocas y el
+# presupuesto para comprobar si el resultado se mantiene.
+SENSIBILIDAD = os.environ.get("SENSIBILIDAD") == "1"
+if SENSIBILIDAD:
+    PRUEBAS = {**PRUEBAS, "lstm": 60, "nbeats": 60}
+UNIDADES_MAX_LSTM = 256 if SENSIBILIDAD else 128
+TASA_MAX_REDES = 3e-2 if SENSIBILIDAD else 1e-2
+ANCHO_MAX_NBEATS = 512 if SENSIBILIDAD else 256
+
+EPOCAS_MAXIMAS = 300 if SENSIBILIDAD else 200
 PACIENCIA = 20
 EPOCAS_RAPIDO = 4
 PACIENCIA_RAPIDO = 2
@@ -331,9 +343,9 @@ def fijos_redes(modo_rapido: bool) -> dict[str, Any]:
 
 def espacio_lstm(trial, modo_rapido: bool = False) -> dict[str, Any]:
     capas = trial.suggest_int("capas", 1, 3)
-    unidades = [trial.suggest_int(f"unidades_capa{k + 1}", 8, 128, log=True) for k in range(capas)]
+    unidades = [trial.suggest_int(f"unidades_capa{k + 1}", 8, UNIDADES_MAX_LSTM, log=True) for k in range(capas)]
     nombre_optimizador = trial.suggest_categorical("optimizador", ["adam", "rmsprop"])
-    tasa = trial.suggest_float("tasa_aprendizaje", 1e-4, 1e-2, log=True)
+    tasa = trial.suggest_float("tasa_aprendizaje", 1e-4, TASA_MAX_REDES, log=True)
     clase_keras = {"adam": "Adam", "rmsprop": "RMSprop"}[nombre_optimizador]
     return {
         "ventana_semanas": trial.suggest_int("ventana_semanas", 6, 52),
@@ -354,9 +366,9 @@ def espacio_nbeats(trial, modo_rapido: bool = False) -> dict[str, Any]:
         "num_pilas": trial.suggest_int("num_pilas", 2, 30, log=True),
         "bloques_por_pila": trial.suggest_int("bloques_por_pila", 1, 2),
         "capas_por_bloque": trial.suggest_int("capas_por_bloque", 1, 4),
-        "ancho_capa": trial.suggest_int("ancho_capa", 32, 256, log=True),
+        "ancho_capa": trial.suggest_int("ancho_capa", 32, ANCHO_MAX_NBEATS, log=True),
         "dropout": trial.suggest_float("dropout", 0.0, 0.5),
-        "tasa_aprendizaje": trial.suggest_float("tasa_aprendizaje", 1e-4, 1e-2, log=True),
+        "tasa_aprendizaje": trial.suggest_float("tasa_aprendizaje", 1e-4, TASA_MAX_REDES, log=True),
         "batch_size": 2 ** trial.suggest_int("log2_batch_size", 3, 6),
         **fijos_redes(modo_rapido),
     }

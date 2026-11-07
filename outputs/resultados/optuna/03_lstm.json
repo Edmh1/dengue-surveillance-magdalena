@@ -1,0 +1,632 @@
+{
+  "estudio": "03_lstm",
+  "muestreador": "TPESampler",
+  "semilla_muestreador": 42,
+  "podador": "MedianPruner",
+  "pruebas": [
+    {
+      "numero": 0,
+      "estado": "COMPLETE",
+      "valor": 10.521118400291773,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 112,
+        "unidades_capa2": 60,
+        "ventana": 34,
+        "dropout": 0.07800932022121826,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.005399484409787433,
+        "log2_batch_size": 5
+      },
+      "atributos": {
+        "rmse_media": 10.521118400291773,
+        "rmse_sd": 0.6586565642232841,
+        "mae": 7.697152226443514,
+        "rmse_semillas": [
+          9.83594434620835,
+          10.548242744030572,
+          10.292291117379785,
+          10.324448570940602,
+          11.60466522289955
+        ],
+        "mae_semillas": [
+          7.209828533466218,
+          7.6550590937987,
+          7.499480296367151,
+          7.652734652242836,
+          8.468658556342666
+        ],
+        "epocas": [
+          65,
+          44,
+          35,
+          51,
+          30
+        ],
+        "hiperparametros": {
+          "ventana": 34,
+          "unidades": [
+            112,
+            60
+          ],
+          "dropout": 0.07800932022121826,
+          "optimizador": "adam",
+          "tasa_aprendizaje": 0.005399484409787433,
+          "batch_size": 32
+        },
+        "segundos": 127.7
+      },
+      "valores_intermedios": {
+        "0": 9.83594434620835,
+        "1": 10.192093545119462,
+        "2": 10.225492735872903,
+        "3": 10.250231694639828,
+        "4": 10.521118400291773
+      },
+      "duracion_segundos": 127.664835
+    },
+    {
+      "numero": 1,
+      "estado": "COMPLETE",
+      "valor": 12.364107110854896,
+      "parametros": {
+        "capas": 3,
+        "unidades_capa1": 8,
+        "unidades_capa2": 118,
+        "unidades_capa3": 80,
+        "ventana": 15,
+        "dropout": 0.09091248360355031,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.0011207606211860567,
+        "log2_batch_size": 4
+      },
+      "atributos": {
+        "rmse_media": 12.364107110854896,
+        "rmse_sd": 1.6193117573441387,
+        "mae": 8.948924487661625,
+        "rmse_semillas": [
+          11.12621456689036,
+          12.215908729963703,
+          10.605477791775561,
+          14.606143188474542,
+          13.266791277170311
+        ],
+        "mae_semillas": [
+          7.925243564458642,
+          8.650867450427345,
+          7.746512017725131,
+          10.84647909790165,
+          9.57552030779536
+        ],
+        "epocas": [
+          50,
+          175,
+          134,
+          32,
+          95
+        ],
+        "hiperparametros": {
+          "ventana": 15,
+          "unidades": [
+            8,
+            118,
+            80
+          ],
+          "dropout": 0.09091248360355031,
+          "optimizador": "rmsprop",
+          "tasa_aprendizaje": 0.0011207606211860567,
+          "batch_size": 16
+        },
+        "segundos": 280.6
+      },
+      "valores_intermedios": {
+        "0": 11.12621456689036,
+        "1": 11.671061648427031,
+        "2": 11.315867029543208,
+        "3": 12.138436069276041,
+        "4": 12.364107110854896
+      },
+      "duracion_segundos": 280.554273
+    },
+    {
+      "numero": 2,
+      "estado": "COMPLETE",
+      "valor": 10.266991284045172,
+      "parametros": {
+        "capas": 1,
+        "unidades_capa1": 43,
+        "ventana": 12,
+        "dropout": 0.14607232426760908,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.0037183641805732083,
+        "log2_batch_size": 3
+      },
+      "atributos": {
+        "rmse_media": 10.266991284045172,
+        "rmse_sd": 0.5991717269876666,
+        "mae": 7.5073577004487415,
+        "rmse_semillas": [
+          9.625847725932864,
+          11.005187605261954,
+          10.747356184810807,
+          10.181472198106881,
+          9.775092706113366
+        ],
+        "mae_semillas": [
+          7.14963462882045,
+          7.905136052129103,
+          7.842537096640298,
+          7.446614176061671,
+          7.192866548592184
+        ],
+        "epocas": [
+          47,
+          58,
+          92,
+          34,
+          50
+        ],
+        "hiperparametros": {
+          "ventana": 12,
+          "unidades": [
+            43
+          ],
+          "dropout": 0.14607232426760908,
+          "optimizador": "rmsprop",
+          "tasa_aprendizaje": 0.0037183641805732083,
+          "batch_size": 8
+        },
+        "segundos": 101.1
+      },
+      "valores_intermedios": {
+        "0": 9.625847725932864,
+        "1": 10.315517665597408,
+        "2": 10.45946383866854,
+        "3": 10.389965928528126,
+        "4": 10.266991284045172
+      },
+      "duracion_segundos": 101.091546
+    },
+    {
+      "numero": 3,
+      "estado": "COMPLETE",
+      "valor": 10.124871843555358,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 40,
+        "unidades_capa2": 9,
+        "ventana": 34,
+        "dropout": 0.08526206184364576,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.00853618986286683,
+        "log2_batch_size": 6
+      },
+      "atributos": {
+        "rmse_media": 10.124871843555358,
+        "rmse_sd": 0.4714980192431617,
+        "mae": 7.554626032101422,
+        "rmse_semillas": [
+          9.474307450498202,
+          10.402292637044612,
+          10.632505439838953,
+          10.304921765022765,
+          9.810331925372259
+        ],
+        "mae_semillas": [
+          7.0652577987188385,
+          7.980662161079194,
+          7.934173787748283,
+          7.465055108659457,
+          7.327981304301339
+        ],
+        "epocas": [
+          108,
+          44,
+          46,
+          57,
+          37
+        ],
+        "hiperparametros": {
+          "ventana": 34,
+          "unidades": [
+            40,
+            9
+          ],
+          "dropout": 0.08526206184364576,
+          "optimizador": "rmsprop",
+          "tasa_aprendizaje": 0.00853618986286683,
+          "batch_size": 64
+        },
+        "segundos": 71.1
+      },
+      "valores_intermedios": {
+        "0": 9.474307450498202,
+        "1": 9.938300043771406,
+        "2": 10.169701842460588,
+        "3": 10.203506823101133,
+        "4": 10.124871843555358
+      },
+      "duracion_segundos": 71.060935
+    },
+    {
+      "numero": 4,
+      "estado": "PRUNED",
+      "valor": 12.594477772777534,
+      "parametros": {
+        "capas": 1,
+        "unidades_capa1": 10,
+        "ventana": 38,
+        "dropout": 0.22007624686980065,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.00011715937392307068,
+        "log2_batch_size": 6
+      },
+      "atributos": {
+        "rmse_semillas": [
+          12.594477772777534
+        ]
+      },
+      "valores_intermedios": {
+        "0": 12.594477772777534
+      },
+      "duracion_segundos": 18.548917
+    },
+    {
+      "numero": 5,
+      "estado": "PRUNED",
+      "valor": 10.392065984744917,
+      "parametros": {
+        "capas": 1,
+        "unidades_capa1": 49,
+        "ventana": 20,
+        "dropout": 0.2600340105889054,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.00869299151113955,
+        "log2_batch_size": 6
+      },
+      "atributos": {
+        "rmse_semillas": [
+          10.392065984744917
+        ]
+      },
+      "valores_intermedios": {
+        "0": 10.392065984744917
+      },
+      "duracion_segundos": 11.305575
+    },
+    {
+      "numero": 6,
+      "estado": "PRUNED",
+      "valor": 13.1374673860089,
+      "parametros": {
+        "capas": 3,
+        "unidades_capa1": 95,
+        "unidades_capa2": 41,
+        "unidades_capa3": 103,
+        "ventana": 10,
+        "dropout": 0.0979914312095726,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.0005989003672254305,
+        "log2_batch_size": 4
+      },
+      "atributos": {
+        "rmse_semillas": [
+          13.1374673860089
+        ]
+      },
+      "valores_intermedios": {
+        "0": 13.1374673860089
+      },
+      "duracion_segundos": 54.953851
+    },
+    {
+      "numero": 7,
+      "estado": "PRUNED",
+      "valor": 10.1942776316098,
+      "parametros": {
+        "capas": 3,
+        "unidades_capa1": 21,
+        "unidades_capa2": 17,
+        "unidades_capa3": 35,
+        "ventana": 12,
+        "dropout": 0.40109849037701983,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.0035033984911586884,
+        "log2_batch_size": 3
+      },
+      "atributos": {
+        "rmse_semillas": [
+          10.1942776316098
+        ]
+      },
+      "valores_intermedios": {
+        "0": 10.1942776316098
+      },
+      "duracion_segundos": 45.573317
+    },
+    {
+      "numero": 8,
+      "estado": "PRUNED",
+      "valor": 11.493181656063712,
+      "parametros": {
+        "capas": 1,
+        "unidades_capa1": 76,
+        "ventana": 39,
+        "dropout": 0.36450358402049365,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.0005211124595788264,
+        "log2_batch_size": 3
+      },
+      "atributos": {
+        "rmse_semillas": [
+          11.493181656063712
+        ]
+      },
+      "valores_intermedios": {
+        "0": 11.493181656063712
+      },
+      "duracion_segundos": 37.765575
+    },
+    {
+      "numero": 9,
+      "estado": "PRUNED",
+      "valor": 10.215672342286316,
+      "parametros": {
+        "capas": 3,
+        "unidades_capa1": 44,
+        "unidades_capa2": 19,
+        "unidades_capa3": 9,
+        "ventana": 20,
+        "dropout": 0.16259166101337352,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.0059487468132197715,
+        "log2_batch_size": 4
+      },
+      "atributos": {
+        "rmse_semillas": [
+          10.215672342286316
+        ]
+      },
+      "valores_intermedios": {
+        "0": 10.215672342286316
+      },
+      "duracion_segundos": 17.378934
+    },
+    {
+      "numero": 10,
+      "estado": "PRUNED",
+      "valor": 18.002429848767193,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 20,
+        "unidades_capa2": 8,
+        "ventana": 49,
+        "dropout": 0.4808824367892829,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.00010744583847151158,
+        "log2_batch_size": 5
+      },
+      "atributos": {
+        "rmse_semillas": [
+          18.002429848767193
+        ]
+      },
+      "valores_intermedios": {
+        "0": 18.002429848767193
+      },
+      "duracion_segundos": 43.306983
+    },
+    {
+      "numero": 11,
+      "estado": "PRUNED",
+      "valor": 11.417254315201944,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 33,
+        "unidades_capa2": 8,
+        "ventana": 27,
+        "dropout": 0.019557009253129587,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.002254971475628661,
+        "log2_batch_size": 5
+      },
+      "atributos": {
+        "rmse_semillas": [
+          11.417254315201944
+        ]
+      },
+      "valores_intermedios": {
+        "0": 11.417254315201944
+      },
+      "duracion_segundos": 22.317356
+    },
+    {
+      "numero": 12,
+      "estado": "PRUNED",
+      "valor": 10.685742627114122,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 24,
+        "unidades_capa2": 23,
+        "ventana": 6,
+        "dropout": 0.18965920048128393,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.001858214134557666,
+        "log2_batch_size": 3
+      },
+      "atributos": {
+        "rmse_semillas": [
+          10.685742627114122
+        ]
+      },
+      "valores_intermedios": {
+        "0": 10.685742627114122
+      },
+      "duracion_segundos": 23.125195
+    },
+    {
+      "numero": 13,
+      "estado": "PRUNED",
+      "valor": 11.119927694210016,
+      "parametros": {
+        "capas": 1,
+        "unidades_capa1": 62,
+        "ventana": 50,
+        "dropout": 0.008901622269603948,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.009568068878630607,
+        "log2_batch_size": 6
+      },
+      "atributos": {
+        "rmse_semillas": [
+          11.119927694210016
+        ]
+      },
+      "valores_intermedios": {
+        "0": 11.119927694210016
+      },
+      "duracion_segundos": 13.059268
+    },
+    {
+      "numero": 14,
+      "estado": "PRUNED",
+      "valor": 10.605083122602197,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 32,
+        "unidades_capa2": 125,
+        "ventana": 29,
+        "dropout": 0.15501861355280078,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.0034159620263479133,
+        "log2_batch_size": 5
+      },
+      "atributos": {
+        "rmse_semillas": [
+          10.605083122602197
+        ]
+      },
+      "valores_intermedios": {
+        "0": 10.605083122602197
+      },
+      "duracion_segundos": 20.881043
+    },
+    {
+      "numero": 15,
+      "estado": "PRUNED",
+      "valor": 10.324902855679682,
+      "parametros": {
+        "capas": 1,
+        "unidades_capa1": 13,
+        "ventana": 42,
+        "dropout": 0.28464923299561107,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.004374662026814697,
+        "log2_batch_size": 4
+      },
+      "atributos": {
+        "rmse_semillas": [
+          10.324902855679682
+        ]
+      },
+      "valores_intermedios": {
+        "0": 10.324902855679682
+      },
+      "duracion_segundos": 20.860573
+    },
+    {
+      "numero": 16,
+      "estado": "PRUNED",
+      "valor": 10.78431360657598,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 40,
+        "unidades_capa2": 54,
+        "ventana": 23,
+        "dropout": 0.12070793485448444,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.0016539406162826068,
+        "log2_batch_size": 6
+      },
+      "atributos": {
+        "rmse_semillas": [
+          10.78431360657598
+        ]
+      },
+      "valores_intermedios": {
+        "0": 10.78431360657598
+      },
+      "duracion_segundos": 23.283013
+    },
+    {
+      "numero": 17,
+      "estado": "PRUNED",
+      "valor": 12.182089650044045,
+      "parametros": {
+        "capas": 1,
+        "unidades_capa1": 62,
+        "ventana": 32,
+        "dropout": 0.044516552226778736,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.0008030210217734256,
+        "log2_batch_size": 3
+      },
+      "atributos": {
+        "rmse_semillas": [
+          12.182089650044045
+        ]
+      },
+      "valores_intermedios": {
+        "0": 12.182089650044045
+      },
+      "duracion_segundos": 30.257887
+    },
+    {
+      "numero": 18,
+      "estado": "PRUNED",
+      "valor": 11.887861572715842,
+      "parametros": {
+        "capas": 2,
+        "unidades_capa1": 15,
+        "unidades_capa2": 14,
+        "ventana": 46,
+        "dropout": 0.24572656394671957,
+        "optimizador": "adam",
+        "tasa_aprendizaje": 0.002802305492176772,
+        "log2_batch_size": 4
+      },
+      "atributos": {
+        "rmse_semillas": [
+          11.887861572715842
+        ]
+      },
+      "valores_intermedios": {
+        "0": 11.887861572715842
+      },
+      "duracion_segundos": 22.017538
+    },
+    {
+      "numero": 19,
+      "estado": "PRUNED",
+      "valor": 15.57077871274593,
+      "parametros": {
+        "capas": 1,
+        "unidades_capa1": 30,
+        "ventana": 17,
+        "dropout": 0.30281607427583024,
+        "optimizador": "rmsprop",
+        "tasa_aprendizaje": 0.0002562795346449691,
+        "log2_batch_size": 5
+      },
+      "atributos": {
+        "rmse_semillas": [
+          15.57077871274593
+        ]
+      },
+      "valores_intermedios": {
+        "0": 15.57077871274593
+      },
+      "duracion_segundos": 22.705922
+    }
+  ]
+}
