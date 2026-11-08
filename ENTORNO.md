@@ -135,7 +135,7 @@ Duración del modo completo. La estimación previa salió del modo rápido (una 
 | 06 | SARIMA (25 pruebas de 1 a 4 minutos) | 1 a 2 horas | 67 minutos |
 | 07 | búsquedas de LSTM y N-BEATS (30 pruebas de 5 semillas cada una) | 2 a 6 horas | 150 minutos |
 
-El modo de sensibilidad del 07 (SENSIBILIDAD=1, METODOLOGIA_PRONOSTICO.md sección 6) duplica el presupuesto de las redes y permite redes más grandes, así que tarda bastante más.
+El modo de sensibilidad del 07 (SENSIBILIDAD=1, METODOLOGIA_PRONOSTICO.md sección 6) sube el presupuesto de las redes (80 pruebas LSTM, 60 N-BEATS) y permite redes más profundas y anchas, así que tarda bastante más. Antes de lanzarlo en el clúster conviene la prueba de humo (bash plan_b_cluster/correr.sh humo, de 5 a 10 minutos), que comprueba la GPU, los espacios, el determinismo de las redes más grandes y una búsqueda corta.
 
 El rango depende de cuántas configuraciones pode Optuna y del tamaño de las redes que proponga; en redes tan pequeñas la GPU acelera poco frente a una CPU moderna. El número de pruebas de cada modelo está en PRUEBAS de src/dengue/investigacion.py (03 y 05) y de src/dengue/produccion.py (06 y 07).
 

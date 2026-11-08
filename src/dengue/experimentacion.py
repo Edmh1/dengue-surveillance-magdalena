@@ -551,7 +551,37 @@ def resumen_estudio(estudio) -> dict[str, Any]:
             "mejor_prueba": mejor.number,
             "atributos_mejor": mejor.user_attrs,
         })
+    if modo_sensibilidad():
+        # Cuanto se exploro de verdad: con la poda, las pruebas pedidas no son
+        # entrenamientos completos de 5 semillas.
+        fallidas = [t for t in estudio.trials if t.state == optuna.trial.TrialState.FAIL]
+        duraciones = [t.duration.total_seconds() for t in estudio.trials if t.duration is not None]
+        inicios = [t.datetime_start for t in estudio.trials if t.datetime_start is not None]
+        finales = [t.datetime_complete for t in estudio.trials if t.datetime_complete is not None]
+        resumen.update({
+            "fallidas": len(fallidas),
+            "errores_fallidas": {t.number: t.user_attrs.get("error") for t in fallidas},
+            "segundos_suma_pruebas": round(sum(duraciones), 1),
+            "segundos_optimizacion": round((max(finales) - min(inicios)).total_seconds(), 1) if inicios and finales else None,
+            "mejor_valor_a_menos_de_2_por_ciento_desde_la_prueba": _prueba_meseta(completas),
+        })
     return _a_json(resumen)
+
+
+def _prueba_meseta(completas: list) -> int | None:
+    """Primera prueba (en orden de numero) desde la que el mejor valor acumulado
+    ya estaba a menos de un 2 % del mejor final: indica si la busqueda llego a
+    una meseta o seguia mejorando al final del presupuesto."""
+    if not completas:
+        return None
+    ordenadas = sorted(completas, key=lambda t: t.number)
+    mejor_final = min(t.value for t in ordenadas)
+    acumulado = float("inf")
+    for t in ordenadas:
+        acumulado = min(acumulado, t.value)
+        if acumulado <= mejor_final * 1.02:
+            return t.number
+    return None
 
 
 def importancias(estudio) -> dict[str, float]:
