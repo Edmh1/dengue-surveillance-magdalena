@@ -1,0 +1,1188 @@
+{
+  "estudio": "03_sarima_ordenes",
+  "muestreador": "TPESampler",
+  "semilla_muestreador": 42,
+  "podador": "MedianPruner",
+  "pruebas": [
+    {
+      "numero": 0,
+      "estado": "COMPLETE",
+      "valor": 14.890952672876153,
+      "parametros": {
+        "d": 0,
+        "p": 4,
+        "q": 2,
+        "P": 1,
+        "Q": 0
+      },
+      "atributos": {
+        "mae": 9.618369348676323,
+        "rmse_cortes": [
+          3.421439892022622,
+          28.69743310324734,
+          12.553985023358498
+        ],
+        "mae_cortes": [
+          2.603766603351614,
+          17.476708593953067,
+          8.774632848724291
+        ],
+        "hiperparametros": {
+          "orden": [
+            4,
+            0,
+            2
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "segundos": 74.6,
+        "aic_cortes": [
+          508.6184584233232,
+          666.3124577847285,
+          734.1146458808146
+        ]
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 74.565069
+    },
+    {
+      "numero": 1,
+      "estado": "COMPLETE",
+      "valor": 29.21428161803438,
+      "parametros": {
+        "d": 0,
+        "p": 0,
+        "q": 3,
+        "P": 1,
+        "Q": 1
+      },
+      "atributos": {
+        "mae": 21.779601167116322,
+        "rmse_cortes": [
+          9.725072050129313,
+          56.947242459915145,
+          20.970530344058687
+        ],
+        "mae_cortes": [
+          8.465796471492245,
+          42.93781056179574,
+          13.935196468060976
+        ],
+        "hiperparametros": {
+          "orden": [
+            0,
+            0,
+            3
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "segundos": 45.5,
+        "aic_cortes": [
+          718.2394019809383,
+          960.7738435745259,
+          1150.8994348956019
+        ]
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 45.491823
+    },
+    {
+      "numero": 2,
+      "estado": "COMPLETE",
+      "valor": 14.899975091388164,
+      "parametros": {
+        "d": 0,
+        "p": 4,
+        "q": 3,
+        "P": 0,
+        "Q": 0
+      },
+      "atributos": {
+        "mae": 9.568976561902332,
+        "rmse_cortes": [
+          3.432917034567903,
+          28.715222754908538,
+          12.551785484688052
+        ],
+        "mae_cortes": [
+          2.6129690758851174,
+          17.344231618481246,
+          8.749728991340634
+        ],
+        "hiperparametros": {
+          "orden": [
+            4,
+            0,
+            3
+          ],
+          "orden_estacional": [
+            0,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "segundos": 2.6,
+        "aic_cortes": [
+          571.7077124783887,
+          729.1965658988145,
+          796.2076631567531
+        ]
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 2.626417
+    },
+    {
+      "numero": 3,
+      "estado": "COMPLETE",
+      "valor": 15.44403933293357,
+      "parametros": {
+        "d": 0,
+        "p": 1,
+        "q": 2,
+        "P": 0,
+        "Q": 0
+      },
+      "atributos": {
+        "mae": 10.160390151336264,
+        "rmse_cortes": [
+          3.3216072415909923,
+          29.6523812624219,
+          13.358129494787816
+        ],
+        "mae_cortes": [
+          2.571638525105675,
+          18.507736078650233,
+          9.401795850252883
+        ],
+        "hiperparametros": {
+          "orden": [
+            1,
+            0,
+            2
+          ],
+          "orden_estacional": [
+            0,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "segundos": 1.8,
+        "aic_cortes": [
+          576.3453424174869,
+          739.0856887375921,
+          810.7547786271373
+        ]
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 1.770319
+    },
+    {
+      "numero": 4,
+      "estado": "COMPLETE",
+      "valor": 15.735516209933204,
+      "parametros": {
+        "d": 1,
+        "p": 0,
+        "q": 1,
+        "P": 0,
+        "Q": 0
+      },
+      "atributos": {
+        "mae": 10.708142737240692,
+        "rmse_cortes": [
+          3.2950608010015943,
+          29.384001682975544,
+          14.527486145822474
+        ],
+        "mae_cortes": [
+          2.5053155473513082,
+          19.606972811405328,
+          10.01213985296544
+        ],
+        "hiperparametros": {
+          "orden": [
+            0,
+            1,
+            1
+          ],
+          "orden_estacional": [
+            0,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "segundos": 1.1,
+        "aic_cortes": [
+          577.1545310430874,
+          739.2463647040643,
+          811.2946122309374
+        ]
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 1.146544
+    },
+    {
+      "numero": 5,
+      "estado": "COMPLETE",
+      "valor": 15.62761289977667,
+      "parametros": {
+        "d": 1,
+        "p": 0,
+        "q": 2,
+        "P": 1,
+        "Q": 0
+      },
+      "atributos": {
+        "mae": 10.61151317885584,
+        "rmse_cortes": [
+          3.3002948094569815,
+          29.285922479696225,
+          14.296621410176803
+        ],
+        "mae_cortes": [
+          2.507332835160379,
+          19.50817923321311,
+          9.819027468194033
+        ],
+        "hiperparametros": {
+          "orden": [
+            0,
+            1,
+            2
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "segundos": 30.9,
+        "aic_cortes": [
+          518.3577974205696,
+          680.0142531174865,
+          753.4079105249286
+        ]
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 30.881514
+    },
+    {
+      "numero": 6,
+      "estado": "COMPLETE",
+      "valor": 15.23472723337212,
+      "parametros": {
+        "d": 1,
+        "p": 0,
+        "q": 0,
+        "P": 1,
+        "Q": 1
+      },
+      "atributos": {
+        "mae": 10.265509637894944,
+        "rmse_cortes": [
+          3.8589470372399486,
+          27.98084622529968,
+          13.86438843757673
+        ],
+        "mae_cortes": [
+          2.8232520391605305,
+          18.389279667669896,
+          9.583997206854404
+        ],
+        "hiperparametros": {
+          "orden": [
+            0,
+            1,
+            0
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "segundos": 145.3,
+        "aic_cortes": [
+          621.6053515874219,
+          826.3457093446833,
+          913.893407773844
+        ]
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 145.317785
+    },
+    {
+      "numero": 7,
+      "estado": "COMPLETE",
+      "valor": 14.9340108104606,
+      "parametros": {
+        "d": 1,
+        "p": 1,
+        "q": 0,
+        "P": 1,
+        "Q": 0
+      },
+      "atributos": {
+        "mae": 10.035060497292763,
+        "rmse_cortes": [
+          3.5757121440476216,
+          27.62636436314866,
+          13.599955924185526
+        ],
+        "mae_cortes": [
+          2.657299181077026,
+          18.211781129263592,
+          9.236101181537675
+        ],
+        "hiperparametros": {
+          "orden": [
+            1,
+            1,
+            0
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "segundos": 65.3,
+        "aic_cortes": [
+          546.6780628083197,
+          730.6440467165205,
+          801.5132140505157
+        ]
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 65.309845
+    },
+    {
+      "numero": 8,
+      "estado": "COMPLETE",
+      "valor": 16.306245661093545,
+      "parametros": {
+        "d": 0,
+        "p": 2,
+        "q": 0,
+        "P": 1,
+        "Q": 0
+      },
+      "atributos": {
+        "mae": 10.68819572466066,
+        "rmse_cortes": [
+          3.6912980892402407,
+          32.661833751006505,
+          12.565605143033892
+        ],
+        "mae_cortes": [
+          2.85262037762165,
+          20.410803647125658,
+          8.801163149234675
+        ],
+        "hiperparametros": {
+          "orden": [
+            2,
+            0,
+            0
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "segundos": 88.0,
+        "aic_cortes": [
+          536.5463135600885,
+          719.1126502811327,
+          791.939427450292
+        ]
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 88.002319
+    },
+    {
+      "numero": 9,
+      "estado": "COMPLETE",
+      "valor": 15.366924573137863,
+      "parametros": {
+        "d": 1,
+        "p": 1,
+        "q": 2,
+        "P": 1,
+        "Q": 0
+      },
+      "atributos": {
+        "mae": 10.32579867854306,
+        "rmse_cortes": [
+          3.335751710512107,
+          28.80490097488936,
+          13.96012103401212
+        ],
+        "mae_cortes": [
+          2.5191294804760265,
+          19.10328959504751,
+          9.354976960105644
+        ],
+        "hiperparametros": {
+          "orden": [
+            1,
+            1,
+            2
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "segundos": 94.3,
+        "aic_cortes": [
+          519.9499516381262,
+          679.5322934226288,
+          748.993956097449
+        ]
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 94.339576
+    },
+    {
+      "numero": 10,
+      "estado": "COMPLETE",
+      "valor": 15.31892888320688,
+      "parametros": {
+        "d": 0,
+        "p": 4,
+        "q": 1,
+        "P": 0,
+        "Q": 1
+      },
+      "atributos": {
+        "mae": 10.082614427768585,
+        "rmse_cortes": [
+          3.2806944577001484,
+          29.432082044321582,
+          13.24401014759891
+        ],
+        "mae_cortes": [
+          2.539215877857827,
+          18.38989759761661,
+          9.318729807831318
+        ],
+        "hiperparametros": {
+          "orden": [
+            4,
+            0,
+            1
+          ],
+          "orden_estacional": [
+            0,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "segundos": 53.0,
+        "aic_cortes": [
+          515.3720638165169,
+          671.5131544352371,
+          742.330674992181
+        ]
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 52.991473
+    },
+    {
+      "numero": 11,
+      "estado": "COMPLETE",
+      "valor": 14.899975091388164,
+      "parametros": {
+        "d": 0,
+        "p": 4,
+        "q": 3,
+        "P": 0,
+        "Q": 0
+      },
+      "atributos": {
+        "mae": 9.568976561902332,
+        "rmse_cortes": [
+          3.432917034567903,
+          28.715222754908538,
+          12.551785484688052
+        ],
+        "mae_cortes": [
+          2.6129690758851174,
+          17.344231618481246,
+          8.749728991340634
+        ],
+        "hiperparametros": {
+          "orden": [
+            4,
+            0,
+            3
+          ],
+          "orden_estacional": [
+            0,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "segundos": 2.6,
+        "aic_cortes": [
+          571.7077124783887,
+          729.1965658988145,
+          796.2076631567531
+        ],
+        "repetida": true
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.005999
+    },
+    {
+      "numero": 12,
+      "estado": "COMPLETE",
+      "valor": 14.893718065309864,
+      "parametros": {
+        "d": 0,
+        "p": 3,
+        "q": 3,
+        "P": 0,
+        "Q": 0
+      },
+      "atributos": {
+        "mae": 9.581816743036095,
+        "rmse_cortes": [
+          3.4148735545408093,
+          28.7043411923278,
+          12.561939449060985
+        ],
+        "mae_cortes": [
+          2.598908191077276,
+          17.387839323363284,
+          8.758702714667727
+        ],
+        "hiperparametros": {
+          "orden": [
+            3,
+            0,
+            3
+          ],
+          "orden_estacional": [
+            0,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "segundos": 2.7,
+        "aic_cortes": [
+          569.8623591182828,
+          726.7126640038604,
+          794.7455484604836
+        ]
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 2.752522
+    },
+    {
+      "numero": 13,
+      "estado": "COMPLETE",
+      "valor": 14.86628052584769,
+      "parametros": {
+        "d": 0,
+        "p": 3,
+        "q": 2,
+        "P": 0,
+        "Q": 0
+      },
+      "atributos": {
+        "mae": 9.546979919814701,
+        "rmse_cortes": [
+          3.4335040676350803,
+          28.665475572609253,
+          12.49986193729874
+        ],
+        "mae_cortes": [
+          2.6091735572815242,
+          17.32405653297259,
+          8.707709669189992
+        ],
+        "hiperparametros": {
+          "orden": [
+            3,
+            0,
+            2
+          ],
+          "orden_estacional": [
+            0,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "segundos": 2.4,
+        "aic_cortes": [
+          572.0825238356884,
+          728.896370721133,
+          796.9252129221466
+        ]
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 2.393461
+    },
+    {
+      "numero": 14,
+      "estado": "COMPLETE",
+      "valor": 15.37427383274867,
+      "parametros": {
+        "d": 0,
+        "p": 3,
+        "q": 1,
+        "P": 0,
+        "Q": 1
+      },
+      "atributos": {
+        "mae": 10.118908244681805,
+        "rmse_cortes": [
+          3.2795410943577963,
+          29.582274925776723,
+          13.261005478111493
+        ],
+        "mae_cortes": [
+          2.5300061341924867,
+          18.491620431395013,
+          9.335098168457916
+        ],
+        "hiperparametros": {
+          "orden": [
+            3,
+            0,
+            1
+          ],
+          "orden_estacional": [
+            0,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "segundos": 53.0,
+        "aic_cortes": [
+          516.0464590263961,
+          672.284122030673,
+          743.7764443514037
+        ]
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 52.982337
+    },
+    {
+      "numero": 15,
+      "estado": "COMPLETE",
+      "valor": 14.934105659143567,
+      "parametros": {
+        "d": 0,
+        "p": 3,
+        "q": 2,
+        "P": 1,
+        "Q": 0
+      },
+      "atributos": {
+        "mae": 9.615042185111841,
+        "rmse_cortes": [
+          3.4180883019127224,
+          28.858969152899135,
+          12.525259522618839
+        ],
+        "mae_cortes": [
+          2.5935767351833228,
+          17.503661090169047,
+          8.747888729983156
+        ],
+        "hiperparametros": {
+          "orden": [
+            3,
+            0,
+            2
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "segundos": 82.4,
+        "aic_cortes": [
+          511.4109407222344,
+          667.4609527185387,
+          735.6051748811859
+        ]
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 82.397997
+    },
+    {
+      "numero": 16,
+      "estado": "COMPLETE",
+      "valor": 14.86628052584769,
+      "parametros": {
+        "d": 0,
+        "p": 3,
+        "q": 2,
+        "P": 0,
+        "Q": 0
+      },
+      "atributos": {
+        "mae": 9.546979919814701,
+        "rmse_cortes": [
+          3.4335040676350803,
+          28.665475572609253,
+          12.49986193729874
+        ],
+        "mae_cortes": [
+          2.6091735572815242,
+          17.32405653297259,
+          8.707709669189992
+        ],
+        "hiperparametros": {
+          "orden": [
+            3,
+            0,
+            2
+          ],
+          "orden_estacional": [
+            0,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "segundos": 2.4,
+        "aic_cortes": [
+          572.0825238356884,
+          728.896370721133,
+          796.9252129221466
+        ],
+        "repetida": true
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.007
+    },
+    {
+      "numero": 17,
+      "estado": "COMPLETE",
+      "valor": 15.515801704953972,
+      "parametros": {
+        "d": 0,
+        "p": 2,
+        "q": 1,
+        "P": 0,
+        "Q": 1
+      },
+      "atributos": {
+        "mae": 10.247043156402837,
+        "rmse_cortes": [
+          3.2917115615146275,
+          29.88637118638662,
+          13.369322366960672
+        ],
+        "mae_cortes": [
+          2.5440982884603223,
+          18.761483849919784,
+          9.435547330828406
+        ],
+        "hiperparametros": {
+          "orden": [
+            2,
+            0,
+            1
+          ],
+          "orden_estacional": [
+            0,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "segundos": 53.0,
+        "aic_cortes": [
+          516.222590646756,
+          678.3785704547811,
+          750.393762045423
+        ]
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 52.985742
+    },
+    {
+      "numero": 18,
+      "estado": "COMPLETE",
+      "valor": 14.884385130585104,
+      "parametros": {
+        "d": 0,
+        "p": 2,
+        "q": 2,
+        "P": 0,
+        "Q": 0
+      },
+      "atributos": {
+        "mae": 9.562335613464635,
+        "rmse_cortes": [
+          3.4783083587284556,
+          28.79621607761619,
+          12.378630955410665
+        ],
+        "mae_cortes": [
+          2.664707771378298,
+          17.449454368884492,
+          8.57284470013111
+        ],
+        "hiperparametros": {
+          "orden": [
+            2,
+            0,
+            2
+          ],
+          "orden_estacional": [
+            0,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "segundos": 2.5,
+        "aic_cortes": [
+          574.0666182146131,
+          734.4766903262921,
+          803.3179667788836
+        ]
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 2.461222
+    },
+    {
+      "numero": 19,
+      "estado": "COMPLETE",
+      "valor": 15.315802321383897,
+      "parametros": {
+        "d": 0,
+        "p": 3,
+        "q": 1,
+        "P": 0,
+        "Q": 0
+      },
+      "atributos": {
+        "mae": 10.059192846515288,
+        "rmse_cortes": [
+          3.3121449212211824,
+          29.33280865707956,
+          13.302453385850947
+        ],
+        "mae_cortes": [
+          2.5597754210129056,
+          18.26899450248407,
+          9.34880861604889
+        ],
+        "hiperparametros": {
+          "orden": [
+            3,
+            0,
+            1
+          ],
+          "orden_estacional": [
+            0,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "segundos": 2.1,
+        "aic_cortes": [
+          575.8158874546496,
+          732.9876325762514,
+          804.2041846691625
+        ]
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 2.11643
+    },
+    {
+      "numero": 20,
+      "estado": "COMPLETE",
+      "valor": 15.3236716224326,
+      "parametros": {
+        "d": 1,
+        "p": 3,
+        "q": 2,
+        "P": 0,
+        "Q": 1
+      },
+      "atributos": {
+        "mae": 10.2790617076056,
+        "rmse_cortes": [
+          3.404333339942084,
+          28.74735430321849,
+          13.819327224137231
+        ],
+        "mae_cortes": [
+          2.528589996288109,
+          19.006330235740325,
+          9.302264890788363
+        ],
+        "hiperparametros": {
+          "orden": [
+            3,
+            1,
+            2
+          ],
+          "orden_estacional": [
+            0,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "segundos": 44.8,
+        "aic_cortes": [
+          514.0611086596463,
+          671.5543629191675,
+          740.1009322135905
+        ]
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 44.838489
+    },
+    {
+      "numero": 21,
+      "estado": "COMPLETE",
+      "valor": 14.884385130585104,
+      "parametros": {
+        "d": 0,
+        "p": 2,
+        "q": 2,
+        "P": 0,
+        "Q": 0
+      },
+      "atributos": {
+        "mae": 9.562335613464635,
+        "rmse_cortes": [
+          3.4783083587284556,
+          28.79621607761619,
+          12.378630955410665
+        ],
+        "mae_cortes": [
+          2.664707771378298,
+          17.449454368884492,
+          8.57284470013111
+        ],
+        "hiperparametros": {
+          "orden": [
+            2,
+            0,
+            2
+          ],
+          "orden_estacional": [
+            0,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "segundos": 2.5,
+        "aic_cortes": [
+          574.0666182146131,
+          734.4766903262921,
+          803.3179667788836
+        ],
+        "repetida": true
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.005999
+    },
+    {
+      "numero": 22,
+      "estado": "COMPLETE",
+      "valor": 14.884385130585104,
+      "parametros": {
+        "d": 0,
+        "p": 2,
+        "q": 2,
+        "P": 0,
+        "Q": 0
+      },
+      "atributos": {
+        "mae": 9.562335613464635,
+        "rmse_cortes": [
+          3.4783083587284556,
+          28.79621607761619,
+          12.378630955410665
+        ],
+        "mae_cortes": [
+          2.664707771378298,
+          17.449454368884492,
+          8.57284470013111
+        ],
+        "hiperparametros": {
+          "orden": [
+            2,
+            0,
+            2
+          ],
+          "orden_estacional": [
+            0,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "segundos": 2.5,
+        "aic_cortes": [
+          574.0666182146131,
+          734.4766903262921,
+          803.3179667788836
+        ],
+        "repetida": true
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.005999
+    },
+    {
+      "numero": 23,
+      "estado": "COMPLETE",
+      "valor": 14.824678481889629,
+      "parametros": {
+        "d": 0,
+        "p": 2,
+        "q": 3,
+        "P": 0,
+        "Q": 0
+      },
+      "atributos": {
+        "mae": 9.509023255348634,
+        "rmse_cortes": [
+          3.420029013603775,
+          28.642891053236045,
+          12.41111537882907
+        ],
+        "mae_cortes": [
+          2.6023299032694625,
+          17.29133903997467,
+          8.633400822801768
+        ],
+        "hiperparametros": {
+          "orden": [
+            2,
+            0,
+            3
+          ],
+          "orden_estacional": [
+            0,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "segundos": 2.6,
+        "aic_cortes": [
+          569.6803780364497,
+          725.6359555968211,
+          793.5469670455677
+        ]
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 2.55908
+    },
+    {
+      "numero": 24,
+      "estado": "COMPLETE",
+      "valor": 14.893718065309864,
+      "parametros": {
+        "d": 0,
+        "p": 3,
+        "q": 3,
+        "P": 0,
+        "Q": 0
+      },
+      "atributos": {
+        "mae": 9.581816743036095,
+        "rmse_cortes": [
+          3.4148735545408093,
+          28.7043411923278,
+          12.561939449060985
+        ],
+        "mae_cortes": [
+          2.598908191077276,
+          17.387839323363284,
+          8.758702714667727
+        ],
+        "hiperparametros": {
+          "orden": [
+            3,
+            0,
+            3
+          ],
+          "orden_estacional": [
+            0,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "segundos": 2.7,
+        "aic_cortes": [
+          569.8623591182828,
+          726.7126640038604,
+          794.7455484604836
+        ],
+        "repetida": true
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.005
+    }
+  ]
+}

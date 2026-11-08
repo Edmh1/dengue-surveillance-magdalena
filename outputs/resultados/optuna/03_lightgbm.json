@@ -1,0 +1,4087 @@
+{
+  "estudio": "03_lightgbm",
+  "muestreador": "TPESampler",
+  "semilla_muestreador": 42,
+  "podador": "MedianPruner",
+  "pruebas": [
+    {
+      "numero": 0,
+      "estado": "COMPLETE",
+      "valor": 17.80193758273043,
+      "parametros": {
+        "rezagos": "1-2-3-4",
+        "transformacion": "log1p",
+        "n_estimators": 508,
+        "learning_rate": 0.09078835431980901,
+        "subsample": 0.5102922471479012,
+        "colsample_bytree": 0.9849549260809971,
+        "reg_alpha": 1.452824663751602,
+        "reg_lambda": 0.011526449540315618,
+        "num_leaves": 6,
+        "min_child_samples": 8
+      },
+      "atributos": {
+        "mae": 11.730714727027125,
+        "rmse_cortes": [
+          6.863347473222426,
+          34.11467565945668,
+          12.427789615512193
+        ],
+        "mae_cortes": [
+          4.731911259804751,
+          21.66609710303638,
+          8.794135818240248
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 508,
+          "learning_rate": 0.09078835431980901,
+          "subsample": 0.5102922471479012,
+          "colsample_bytree": 0.9849549260809971,
+          "reg_alpha": 1.452824663751602,
+          "reg_lambda": 0.011526449540315618,
+          "num_leaves": 6,
+          "min_child_samples": 8
+        },
+        "segundos": 0.4
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.379626
+    },
+    {
+      "numero": 1,
+      "estado": "COMPLETE",
+      "valor": 17.836134951687594,
+      "parametros": {
+        "rezagos": "1-2-3-4-6-8",
+        "transformacion": "log1p",
+        "n_estimators": 343,
+        "learning_rate": 0.12448918446337819,
+        "subsample": 0.5998368910791798,
+        "colsample_bytree": 0.7571172192068059,
+        "reg_alpha": 0.09163741808778776,
+        "reg_lambda": 0.0017070728830306638,
+        "num_leaves": 21,
+        "min_child_samples": 7
+      },
+      "atributos": {
+        "mae": 11.863087176347834,
+        "rmse_cortes": [
+          6.0627069123491815,
+          35.39260020871585,
+          12.053097733997749
+        ],
+        "mae_cortes": [
+          4.35425246503296,
+          22.50205409340305,
+          8.732954970607494
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 343,
+          "learning_rate": 0.12448918446337819,
+          "subsample": 0.5998368910791798,
+          "colsample_bytree": 0.7571172192068059,
+          "reg_alpha": 0.09163741808778776,
+          "reg_lambda": 0.0017070728830306638,
+          "num_leaves": 21,
+          "min_child_samples": 7
+        },
+        "segundos": 0.5
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.509078
+    },
+    {
+      "numero": 2,
+      "estado": "COMPLETE",
+      "valor": 18.633806570523095,
+      "parametros": {
+        "rezagos": "1-2-3-4-8",
+        "transformacion": "ninguna",
+        "n_estimators": 139,
+        "learning_rate": 0.03797252233376349,
+        "subsample": 0.5171942605576092,
+        "colsample_bytree": 0.954660201039391,
+        "reg_alpha": 0.0019674328025306126,
+        "reg_lambda": 2.0540519425388455,
+        "num_leaves": 9,
+        "min_child_samples": 20
+      },
+      "atributos": {
+        "mae": 11.929431153081318,
+        "rmse_cortes": [
+          6.8147443329006405,
+          32.77685181483882,
+          16.309823563829827
+        ],
+        "mae_cortes": [
+          5.4037922674972405,
+          20.771406920740965,
+          9.613094271005744
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4,
+            8
+          ],
+          "transformacion": "ninguna",
+          "n_estimators": 139,
+          "learning_rate": 0.03797252233376349,
+          "subsample": 0.5171942605576092,
+          "colsample_bytree": 0.954660201039391,
+          "reg_alpha": 0.0019674328025306126,
+          "reg_lambda": 2.0540519425388455,
+          "num_leaves": 9,
+          "min_child_samples": 20
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.132343
+    },
+    {
+      "numero": 3,
+      "estado": "COMPLETE",
+      "valor": 24.431317937026737,
+      "parametros": {
+        "rezagos": "1-2-3-4-8",
+        "transformacion": "log1p",
+        "n_estimators": 127,
+        "learning_rate": 0.011154681546966926,
+        "subsample": 0.522613644455269,
+        "colsample_bytree": 0.6626651653816322,
+        "reg_alpha": 0.00877781550471966,
+        "reg_lambda": 0.022737628102536857,
+        "num_leaves": 39,
+        "min_child_samples": 13
+      },
+      "atributos": {
+        "mae": 17.378299434443914,
+        "rmse_cortes": [
+          5.856900324358056,
+          50.78740706369268,
+          16.64964642302947
+        ],
+        "mae_cortes": [
+          5.109712583780224,
+          36.17466536284671,
+          10.850520356704815
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 127,
+          "learning_rate": 0.011154681546966926,
+          "subsample": 0.522613644455269,
+          "colsample_bytree": 0.6626651653816322,
+          "reg_alpha": 0.00877781550471966,
+          "reg_lambda": 0.022737628102536857,
+          "num_leaves": 39,
+          "min_child_samples": 13
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.165517
+    },
+    {
+      "numero": 4,
+      "estado": "COMPLETE",
+      "valor": 19.41220154252114,
+      "parametros": {
+        "rezagos": "1-2-4-8-16",
+        "transformacion": "ninguna",
+        "n_estimators": 101,
+        "learning_rate": 0.1409236110165583,
+        "subsample": 0.8534286719238086,
+        "colsample_bytree": 0.8645035840204937,
+        "reg_alpha": 0.7183758655813993,
+        "reg_lambda": 0.002345434227726052,
+        "num_leaves": 10,
+        "min_child_samples": 6
+      },
+      "atributos": {
+        "mae": 12.772625516028535,
+        "rmse_cortes": [
+          9.10430251224812,
+          35.92096135582307,
+          13.211340759492233
+        ],
+        "mae_cortes": [
+          6.974198528374848,
+          22.338399189682015,
+          9.005278830028747
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            16
+          ],
+          "transformacion": "ninguna",
+          "n_estimators": 101,
+          "learning_rate": 0.1409236110165583,
+          "subsample": 0.8534286719238086,
+          "colsample_bytree": 0.8645035840204937,
+          "reg_alpha": 0.7183758655813993,
+          "reg_lambda": 0.002345434227726052,
+          "num_leaves": 10,
+          "min_child_samples": 6
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.140512
+    },
+    {
+      "numero": 5,
+      "estado": "COMPLETE",
+      "valor": 20.77451970921021,
+      "parametros": {
+        "rezagos": "1-2-4-8",
+        "transformacion": "ninguna",
+        "n_estimators": 1105,
+        "learning_rate": 0.034565238985787616,
+        "subsample": 0.5597971229691509,
+        "colsample_bytree": 0.8566223936114975,
+        "reg_alpha": 0.6366859160799433,
+        "reg_lambda": 0.6403036652671171,
+        "num_leaves": 33,
+        "min_child_samples": 19
+      },
+      "atributos": {
+        "mae": 13.161775205329334,
+        "rmse_cortes": [
+          9.634893211456944,
+          31.903580797681347,
+          20.785085118492336
+        ],
+        "mae_cortes": [
+          7.746753266026628,
+          19.977353069203314,
+          11.761219280758061
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "transformacion": "ninguna",
+          "n_estimators": 1105,
+          "learning_rate": 0.034565238985787616,
+          "subsample": 0.5597971229691509,
+          "colsample_bytree": 0.8566223936114975,
+          "reg_alpha": 0.6366859160799433,
+          "reg_lambda": 0.6403036652671171,
+          "num_leaves": 33,
+          "min_child_samples": 19
+        },
+        "segundos": 1.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 1.201286
+    },
+    {
+      "numero": 6,
+      "estado": "COMPLETE",
+      "valor": 17.64814224243265,
+      "parametros": {
+        "rezagos": "1-2-4-8-16",
+        "transformacion": "log1p",
+        "n_estimators": 1168,
+        "learning_rate": 0.013875520816523178,
+        "subsample": 0.7051914615178149,
+        "colsample_bytree": 0.8777755692715243,
+        "reg_alpha": 0.0013931273790066707,
+        "reg_lambda": 0.002426048893216447,
+        "num_leaves": 8,
+        "min_child_samples": 7
+      },
+      "atributos": {
+        "mae": 11.574475686298138,
+        "rmse_cortes": [
+          5.556595042117641,
+          35.913520870317306,
+          11.474310814863008
+        ],
+        "mae_cortes": [
+          4.268812734067624,
+          22.346005941697396,
+          8.108608383129399
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            16
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 1168,
+          "learning_rate": 0.013875520816523178,
+          "subsample": 0.7051914615178149,
+          "colsample_bytree": 0.8777755692715243,
+          "reg_alpha": 0.0013931273790066707,
+          "reg_lambda": 0.002426048893216447,
+          "num_leaves": 8,
+          "min_child_samples": 7
+        },
+        "segundos": 1.0
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 1.006288
+    },
+    {
+      "numero": 7,
+      "estado": "COMPLETE",
+      "valor": 20.740064575052276,
+      "parametros": {
+        "rezagos": "1-2-4-8",
+        "transformacion": "ninguna",
+        "n_estimators": 890,
+        "learning_rate": 0.19604504485810242,
+        "subsample": 0.6590017374859319,
+        "colsample_bytree": 0.5550259622638384,
+        "reg_alpha": 0.001379354235277248,
+        "reg_lambda": 0.13662775841358915,
+        "num_leaves": 38,
+        "min_child_samples": 54
+      },
+      "atributos": {
+        "mae": 14.113668343410042,
+        "rmse_cortes": [
+          10.140448931511855,
+          34.67141698841256,
+          17.408327805232418
+        ],
+        "mae_cortes": [
+          7.776958959531285,
+          22.51018214505122,
+          12.053863925647622
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "transformacion": "ninguna",
+          "n_estimators": 890,
+          "learning_rate": 0.19604504485810242,
+          "subsample": 0.6590017374859319,
+          "colsample_bytree": 0.5550259622638384,
+          "reg_alpha": 0.001379354235277248,
+          "reg_lambda": 0.13662775841358915,
+          "num_leaves": 38,
+          "min_child_samples": 54
+        },
+        "segundos": 0.4
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.374598
+    },
+    {
+      "numero": 8,
+      "estado": "COMPLETE",
+      "valor": 20.285305870038602,
+      "parametros": {
+        "rezagos": "1-2-3-4",
+        "transformacion": "ninguna",
+        "n_estimators": 407,
+        "learning_rate": 0.08892913031456844,
+        "subsample": 0.681814801189647,
+        "colsample_bytree": 0.9858910413604803,
+        "reg_alpha": 6.489877132084344,
+        "reg_lambda": 0.01815145649657757,
+        "num_leaves": 15,
+        "min_child_samples": 11
+      },
+      "atributos": {
+        "mae": 13.20627114325623,
+        "rmse_cortes": [
+          10.030665803042696,
+          34.91653239190015,
+          15.908719415172959
+        ],
+        "mae_cortes": [
+          7.660844119436556,
+          21.632512648678702,
+          10.325456661653428
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "transformacion": "ninguna",
+          "n_estimators": 407,
+          "learning_rate": 0.08892913031456844,
+          "subsample": 0.681814801189647,
+          "colsample_bytree": 0.9858910413604803,
+          "reg_alpha": 6.489877132084344,
+          "reg_lambda": 0.01815145649657757,
+          "num_leaves": 15,
+          "min_child_samples": 11
+        },
+        "segundos": 0.5
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.5252
+    },
+    {
+      "numero": 9,
+      "estado": "COMPLETE",
+      "valor": 19.172415596424177,
+      "parametros": {
+        "rezagos": "1-2-3-4-8",
+        "transformacion": "ninguna",
+        "n_estimators": 147,
+        "learning_rate": 0.037092921636491055,
+        "subsample": 0.9928252270553004,
+        "colsample_bytree": 0.6210276357557503,
+        "reg_alpha": 0.22944454507601977,
+        "reg_lambda": 6.428328717564121,
+        "num_leaves": 7,
+        "min_child_samples": 37
+      },
+      "atributos": {
+        "mae": 12.217653521467389,
+        "rmse_cortes": [
+          7.355591675993794,
+          33.360523964137315,
+          16.80113114914143
+        ],
+        "mae_cortes": [
+          5.9280781822409345,
+          21.07329595582208,
+          9.651586426339154
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4,
+            8
+          ],
+          "transformacion": "ninguna",
+          "n_estimators": 147,
+          "learning_rate": 0.037092921636491055,
+          "subsample": 0.9928252270553004,
+          "colsample_bytree": 0.6210276357557503,
+          "reg_alpha": 0.22944454507601977,
+          "reg_lambda": 6.428328717564121,
+          "num_leaves": 7,
+          "min_child_samples": 37
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.119236
+    },
+    {
+      "numero": 10,
+      "estado": "COMPLETE",
+      "valor": 27.948466498983162,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 230,
+        "learning_rate": 0.005381569284367196,
+        "subsample": 0.7958041292349526,
+        "colsample_bytree": 0.7590425812204387,
+        "reg_alpha": 0.0001196668883226712,
+        "reg_lambda": 53.77643645117047,
+        "num_leaves": 4,
+        "min_child_samples": 79
+      },
+      "atributos": {
+        "mae": 20.480127901339582,
+        "rmse_cortes": [
+          7.5081948170002795,
+          56.57473783915198,
+          19.762466840797227
+        ],
+        "mae_cortes": [
+          6.787641967507414,
+          41.85191296923054,
+          12.800828767280796
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 230,
+          "learning_rate": 0.005381569284367196,
+          "subsample": 0.7958041292349526,
+          "colsample_bytree": 0.7590425812204387,
+          "reg_alpha": 0.0001196668883226712,
+          "reg_lambda": 53.77643645117047,
+          "num_leaves": 4,
+          "min_child_samples": 79
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.112177
+    },
+    {
+      "numero": 11,
+      "estado": "COMPLETE",
+      "valor": 17.629223942885208,
+      "parametros": {
+        "rezagos": "1-2-3-4",
+        "transformacion": "log1p",
+        "n_estimators": 672,
+        "learning_rate": 0.015128156539969219,
+        "subsample": 0.756881350841236,
+        "colsample_bytree": 0.8930373854314628,
+        "reg_alpha": 7.280781094653318,
+        "reg_lambda": 0.014122553855175671,
+        "num_leaves": 4,
+        "min_child_samples": 5
+      },
+      "atributos": {
+        "mae": 11.359944585593185,
+        "rmse_cortes": [
+          4.419212895711565,
+          37.207580669739116,
+          11.260878263204942
+        ],
+        "mae_cortes": [
+          3.6397957522695448,
+          22.564235244453915,
+          7.875802760056097
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 672,
+          "learning_rate": 0.015128156539969219,
+          "subsample": 0.756881350841236,
+          "colsample_bytree": 0.8930373854314628,
+          "reg_alpha": 7.280781094653318,
+          "reg_lambda": 0.014122553855175671,
+          "num_leaves": 4,
+          "min_child_samples": 5
+        },
+        "segundos": 0.3
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.29433
+    },
+    {
+      "numero": 12,
+      "estado": "COMPLETE",
+      "valor": 17.75831733888526,
+      "parametros": {
+        "rezagos": "1-2-4-8-16",
+        "transformacion": "log1p",
+        "n_estimators": 1462,
+        "learning_rate": 0.015383168700614196,
+        "subsample": 0.7698100534013987,
+        "colsample_bytree": 0.8766121970132359,
+        "reg_alpha": 0.03104935252017608,
+        "reg_lambda": 0.13350221565821666,
+        "num_leaves": 4,
+        "min_child_samples": 5
+      },
+      "atributos": {
+        "mae": 11.591284298724373,
+        "rmse_cortes": [
+          5.3262715578469,
+          37.05557412591092,
+          10.893106332897958
+        ],
+        "mae_cortes": [
+          4.163798994522981,
+          22.972104131261794,
+          7.637949770388341
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            16
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 1462,
+          "learning_rate": 0.015383168700614196,
+          "subsample": 0.7698100534013987,
+          "colsample_bytree": 0.8766121970132359,
+          "reg_alpha": 0.03104935252017608,
+          "reg_lambda": 0.13350221565821666,
+          "num_leaves": 4,
+          "min_child_samples": 5
+        },
+        "segundos": 0.7
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.716112
+    },
+    {
+      "numero": 13,
+      "estado": "COMPLETE",
+      "valor": 17.733531191222415,
+      "parametros": {
+        "rezagos": "1-2-4-8-16",
+        "transformacion": "log1p",
+        "n_estimators": 704,
+        "learning_rate": 0.015771897247148073,
+        "subsample": 0.7266505582605014,
+        "colsample_bytree": 0.7729689513604265,
+        "reg_alpha": 0.00011633263858100113,
+        "reg_lambda": 0.0012018223903099826,
+        "num_leaves": 5,
+        "min_child_samples": 5
+      },
+      "atributos": {
+        "mae": 11.685762850629246,
+        "rmse_cortes": [
+          5.323760357067208,
+          36.15656398560529,
+          11.720269230994743
+        ],
+        "mae_cortes": [
+          4.165502372567436,
+          22.74301493356859,
+          8.148771245751712
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            16
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 704,
+          "learning_rate": 0.015771897247148073,
+          "subsample": 0.7266505582605014,
+          "colsample_bytree": 0.7729689513604265,
+          "reg_alpha": 0.00011633263858100113,
+          "reg_lambda": 0.0012018223903099826,
+          "num_leaves": 5,
+          "min_child_samples": 5
+        },
+        "segundos": 0.4
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.386239
+    },
+    {
+      "numero": 14,
+      "estado": "COMPLETE",
+      "valor": 18.402201539860513,
+      "parametros": {
+        "rezagos": "1-2-3-4",
+        "transformacion": "log1p",
+        "n_estimators": 652,
+        "learning_rate": 0.007581769044770003,
+        "subsample": 0.8705765955899739,
+        "colsample_bytree": 0.9155738761320745,
+        "reg_alpha": 9.244260749056998,
+        "reg_lambda": 0.0071134228006931675,
+        "num_leaves": 14,
+        "min_child_samples": 10
+      },
+      "atributos": {
+        "mae": 12.137539885729462,
+        "rmse_cortes": [
+          4.441213351613556,
+          39.78056267810699,
+          10.984828589860998
+        ],
+        "mae_cortes": [
+          3.697452374715514,
+          24.841029673286393,
+          7.87413760918648
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 652,
+          "learning_rate": 0.007581769044770003,
+          "subsample": 0.8705765955899739,
+          "colsample_bytree": 0.9155738761320745,
+          "reg_alpha": 9.244260749056998,
+          "reg_lambda": 0.0071134228006931675,
+          "num_leaves": 14,
+          "min_child_samples": 10
+        },
+        "segundos": 0.4
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.380849
+    },
+    {
+      "numero": 15,
+      "estado": "COMPLETE",
+      "valor": 17.52149599802114,
+      "parametros": {
+        "rezagos": "1-2-3-4-6-8",
+        "transformacion": "log1p",
+        "n_estimators": 1497,
+        "learning_rate": 0.02351901356280144,
+        "subsample": 0.6599362867984438,
+        "colsample_bytree": 0.8104132261948989,
+        "reg_alpha": 0.0010462535239017746,
+        "reg_lambda": 0.06332847155758019,
+        "num_leaves": 9,
+        "min_child_samples": 15
+      },
+      "atributos": {
+        "mae": 11.485214043860767,
+        "rmse_cortes": [
+          6.185544459964017,
+          33.93530199919978,
+          12.443641534899628
+        ],
+        "mae_cortes": [
+          4.396967467131528,
+          21.496975137025164,
+          8.56169952742561
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 1497,
+          "learning_rate": 0.02351901356280144,
+          "subsample": 0.6599362867984438,
+          "colsample_bytree": 0.8104132261948989,
+          "reg_alpha": 0.0010462535239017746,
+          "reg_lambda": 0.06332847155758019,
+          "num_leaves": 9,
+          "min_child_samples": 15
+        },
+        "segundos": 1.4
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 1.369432
+    },
+    {
+      "numero": 16,
+      "estado": "COMPLETE",
+      "valor": 17.612273451206743,
+      "parametros": {
+        "rezagos": "1-2-3-4-6-8",
+        "transformacion": "log1p",
+        "n_estimators": 263,
+        "learning_rate": 0.02435596017488094,
+        "subsample": 0.6331445006802419,
+        "colsample_bytree": 0.8126726522628792,
+        "reg_alpha": 0.008777629242347509,
+        "reg_lambda": 0.0952754629943158,
+        "num_leaves": 59,
+        "min_child_samples": 24
+      },
+      "atributos": {
+        "mae": 11.366606713039344,
+        "rmse_cortes": [
+          5.68410852813999,
+          34.35193948097385,
+          12.800772344506388
+        ],
+        "mae_cortes": [
+          4.119733481643055,
+          21.564397105561092,
+          8.415689551913884
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 263,
+          "learning_rate": 0.02435596017488094,
+          "subsample": 0.6331445006802419,
+          "colsample_bytree": 0.8126726522628792,
+          "reg_alpha": 0.008777629242347509,
+          "reg_lambda": 0.0952754629943158,
+          "num_leaves": 59,
+          "min_child_samples": 24
+        },
+        "segundos": 0.3
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.289907
+    },
+    {
+      "numero": 17,
+      "estado": "COMPLETE",
+      "valor": 17.478480486683647,
+      "parametros": {
+        "rezagos": "1-2-3-4-6-8",
+        "transformacion": "log1p",
+        "n_estimators": 246,
+        "learning_rate": 0.024443097024958362,
+        "subsample": 0.6188484938305487,
+        "colsample_bytree": 0.7975724279525122,
+        "reg_alpha": 0.01478968736557192,
+        "reg_lambda": 0.13774152513175741,
+        "num_leaves": 59,
+        "min_child_samples": 28
+      },
+      "atributos": {
+        "mae": 11.249848214100881,
+        "rmse_cortes": [
+          5.242636127534229,
+          34.20520278385396,
+          12.98760254866275
+        ],
+        "mae_cortes": [
+          3.867044228016911,
+          21.475133187029112,
+          8.407367227256623
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 246,
+          "learning_rate": 0.024443097024958362,
+          "subsample": 0.6188484938305487,
+          "colsample_bytree": 0.7975724279525122,
+          "reg_alpha": 0.01478968736557192,
+          "reg_lambda": 0.13774152513175741,
+          "num_leaves": 59,
+          "min_child_samples": 28
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.199435
+    },
+    {
+      "numero": 18,
+      "estado": "COMPLETE",
+      "valor": 17.49590880811697,
+      "parametros": {
+        "rezagos": "1-2-3-4-6-8",
+        "transformacion": "log1p",
+        "n_estimators": 256,
+        "learning_rate": 0.06298822323156841,
+        "subsample": 0.595529624785103,
+        "colsample_bytree": 0.7051102112946549,
+        "reg_alpha": 0.0004957905363703248,
+        "reg_lambda": 0.5162815470161263,
+        "num_leaves": 64,
+        "min_child_samples": 31
+      },
+      "atributos": {
+        "mae": 11.565238748717169,
+        "rmse_cortes": [
+          5.407331541878745,
+          33.96514067577791,
+          13.11525420669425
+        ],
+        "mae_cortes": [
+          3.981918274453201,
+          21.748206160974032,
+          8.96559181072427
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 256,
+          "learning_rate": 0.06298822323156841,
+          "subsample": 0.595529624785103,
+          "colsample_bytree": 0.7051102112946549,
+          "reg_alpha": 0.0004957905363703248,
+          "reg_lambda": 0.5162815470161263,
+          "num_leaves": 64,
+          "min_child_samples": 31
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.201634
+    },
+    {
+      "numero": 19,
+      "estado": "COMPLETE",
+      "valor": 17.398217700202405,
+      "parametros": {
+        "rezagos": "1-2-3-4-6-8",
+        "transformacion": "log1p",
+        "n_estimators": 205,
+        "learning_rate": 0.0597481648534801,
+        "subsample": 0.5889289339638896,
+        "colsample_bytree": 0.690164390123489,
+        "reg_alpha": 0.0004941396430253842,
+        "reg_lambda": 0.5157818374124238,
+        "num_leaves": 63,
+        "min_child_samples": 31
+      },
+      "atributos": {
+        "mae": 11.415564829522781,
+        "rmse_cortes": [
+          5.377159365185081,
+          34.241615902166856,
+          12.575877833255275
+        ],
+        "mae_cortes": [
+          3.9167729447053397,
+          21.740291917589914,
+          8.589629626273089
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 205,
+          "learning_rate": 0.0597481648534801,
+          "subsample": 0.5889289339638896,
+          "colsample_bytree": 0.690164390123489,
+          "reg_alpha": 0.0004941396430253842,
+          "reg_lambda": 0.5157818374124238,
+          "num_leaves": 63,
+          "min_child_samples": 31
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.143156
+    },
+    {
+      "numero": 20,
+      "estado": "COMPLETE",
+      "valor": 18.81667232357476,
+      "parametros": {
+        "rezagos": "1-2-3-4-6-8",
+        "transformacion": "log1p",
+        "n_estimators": 190,
+        "learning_rate": 0.26907555740619604,
+        "subsample": 0.5837670107890773,
+        "colsample_bytree": 0.5104390307596286,
+        "reg_alpha": 0.008095563021580937,
+        "reg_lambda": 9.209282009089202,
+        "num_leaves": 50,
+        "min_child_samples": 46
+      },
+      "atributos": {
+        "mae": 12.596199230890655,
+        "rmse_cortes": [
+          4.998004553635996,
+          36.53583206941077,
+          14.91618034767752
+        ],
+        "mae_cortes": [
+          3.7924673944274394,
+          23.642646069646496,
+          10.353484228598028
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 190,
+          "learning_rate": 0.26907555740619604,
+          "subsample": 0.5837670107890773,
+          "colsample_bytree": 0.5104390307596286,
+          "reg_alpha": 0.008095563021580937,
+          "reg_lambda": 9.209282009089202,
+          "num_leaves": 50,
+          "min_child_samples": 46
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.10895
+    },
+    {
+      "numero": 21,
+      "estado": "COMPLETE",
+      "valor": 17.647703778278593,
+      "parametros": {
+        "rezagos": "1-2-3-4-6-8",
+        "transformacion": "log1p",
+        "n_estimators": 301,
+        "learning_rate": 0.061401652902422756,
+        "subsample": 0.6152595290680578,
+        "colsample_bytree": 0.6868099340253551,
+        "reg_alpha": 0.0003628065402692052,
+        "reg_lambda": 0.707175780002968,
+        "num_leaves": 61,
+        "min_child_samples": 31
+      },
+      "atributos": {
+        "mae": 11.60218571186104,
+        "rmse_cortes": [
+          5.556484965765081,
+          33.958711173738834,
+          13.42791519533187
+        ],
+        "mae_cortes": [
+          4.133603943789062,
+          21.38227900551082,
+          9.290674186283233
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 301,
+          "learning_rate": 0.061401652902422756,
+          "subsample": 0.6152595290680578,
+          "colsample_bytree": 0.6868099340253551,
+          "reg_alpha": 0.0003628065402692052,
+          "reg_lambda": 0.707175780002968,
+          "num_leaves": 61,
+          "min_child_samples": 31
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.193187
+    },
+    {
+      "numero": 22,
+      "estado": "COMPLETE",
+      "valor": 17.13765501347443,
+      "parametros": {
+        "rezagos": "1-2-3-4-6-8",
+        "transformacion": "log1p",
+        "n_estimators": 211,
+        "learning_rate": 0.04893893826272309,
+        "subsample": 0.5784205885373472,
+        "colsample_bytree": 0.6975631773850767,
+        "reg_alpha": 0.00043037894014125226,
+        "reg_lambda": 0.4164445248756539,
+        "num_leaves": 28,
+        "min_child_samples": 32
+      },
+      "atributos": {
+        "mae": 11.210265318248844,
+        "rmse_cortes": [
+          5.61954097173995,
+          33.706725362472575,
+          12.086698706210763
+        ],
+        "mae_cortes": [
+          4.038498955682161,
+          21.409625829245552,
+          8.182671169818818
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 211,
+          "learning_rate": 0.04893893826272309,
+          "subsample": 0.5784205885373472,
+          "colsample_bytree": 0.6975631773850767,
+          "reg_alpha": 0.00043037894014125226,
+          "reg_lambda": 0.4164445248756539,
+          "num_leaves": 28,
+          "min_child_samples": 32
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.140824
+    },
+    {
+      "numero": 23,
+      "estado": "COMPLETE",
+      "valor": 17.332721843452013,
+      "parametros": {
+        "rezagos": "1-2-3-4-6-8",
+        "transformacion": "log1p",
+        "n_estimators": 187,
+        "learning_rate": 0.054419364690348096,
+        "subsample": 0.559323347187397,
+        "colsample_bytree": 0.6219575561636724,
+        "reg_alpha": 0.0036651859038158456,
+        "reg_lambda": 0.29448243264081747,
+        "num_leaves": 26,
+        "min_child_samples": 26
+      },
+      "atributos": {
+        "mae": 11.041400941145092,
+        "rmse_cortes": [
+          5.52903462042612,
+          33.559776271956885,
+          12.90935463797304
+        ],
+        "mae_cortes": [
+          4.027347978199637,
+          20.643219316460044,
+          8.453635528775594
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 187,
+          "learning_rate": 0.054419364690348096,
+          "subsample": 0.559323347187397,
+          "colsample_bytree": 0.6219575561636724,
+          "reg_alpha": 0.0036651859038158456,
+          "reg_lambda": 0.29448243264081747,
+          "num_leaves": 26,
+          "min_child_samples": 26
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.141
+    },
+    {
+      "numero": 24,
+      "estado": "COMPLETE",
+      "valor": 17.72352916665061,
+      "parametros": {
+        "rezagos": "1-2-3-4-6-8",
+        "transformacion": "log1p",
+        "n_estimators": 176,
+        "learning_rate": 0.05260870846104879,
+        "subsample": 0.5447210679404215,
+        "colsample_bytree": 0.6084181480624418,
+        "reg_alpha": 0.00412136970630962,
+        "reg_lambda": 1.6337683570929495,
+        "num_leaves": 24,
+        "min_child_samples": 46
+      },
+      "atributos": {
+        "mae": 11.375469128704372,
+        "rmse_cortes": [
+          5.014402638727939,
+          35.16305107261981,
+          12.993133788604089
+        ],
+        "mae_cortes": [
+          3.8528715223777388,
+          21.73873779232878,
+          8.534798071406593
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 176,
+          "learning_rate": 0.05260870846104879,
+          "subsample": 0.5447210679404215,
+          "colsample_bytree": 0.6084181480624418,
+          "reg_alpha": 0.00412136970630962,
+          "reg_lambda": 1.6337683570929495,
+          "num_leaves": 24,
+          "min_child_samples": 46
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.102158
+    },
+    {
+      "numero": 25,
+      "estado": "COMPLETE",
+      "valor": 18.532696384079372,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 182,
+        "learning_rate": 0.07895184620805298,
+        "subsample": 0.5621906829813391,
+        "colsample_bytree": 0.6132237940945785,
+        "reg_alpha": 0.00036884263137474267,
+        "reg_lambda": 0.46968240853504256,
+        "num_leaves": 25,
+        "min_child_samples": 20
+      },
+      "atributos": {
+        "mae": 11.872537858493487,
+        "rmse_cortes": [
+          6.4120946414036,
+          34.931161372461865,
+          14.254833138372652
+        ],
+        "mae_cortes": [
+          4.753830406356435,
+          21.744469962289394,
+          9.119313206834631
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 182,
+          "learning_rate": 0.07895184620805298,
+          "subsample": 0.5621906829813391,
+          "colsample_bytree": 0.6132237940945785,
+          "reg_alpha": 0.00036884263137474267,
+          "reg_lambda": 0.46968240853504256,
+          "num_leaves": 25,
+          "min_child_samples": 20
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.146312
+    },
+    {
+      "numero": 26,
+      "estado": "COMPLETE",
+      "valor": 18.527451707085383,
+      "parametros": {
+        "rezagos": "1-2-3-4-6-8",
+        "transformacion": "log1p",
+        "n_estimators": 106,
+        "learning_rate": 0.048681282959667574,
+        "subsample": 0.5007082302079394,
+        "colsample_bytree": 0.7246944069980961,
+        "reg_alpha": 0.0005511231202331712,
+        "reg_lambda": 3.1815113893945393,
+        "num_leaves": 19,
+        "min_child_samples": 64
+      },
+      "atributos": {
+        "mae": 11.967124348633014,
+        "rmse_cortes": [
+          3.991592827396508,
+          39.217359151126075,
+          12.373403142733565
+        ],
+        "mae_cortes": [
+          3.4400634096928924,
+          24.006130968381196,
+          8.455178667824955
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 106,
+          "learning_rate": 0.048681282959667574,
+          "subsample": 0.5007082302079394,
+          "colsample_bytree": 0.7246944069980961,
+          "reg_alpha": 0.0005511231202331712,
+          "reg_lambda": 3.1815113893945393,
+          "num_leaves": 19,
+          "min_child_samples": 64
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.095599
+    },
+    {
+      "numero": 27,
+      "estado": "COMPLETE",
+      "valor": 17.81959115413574,
+      "parametros": {
+        "rezagos": "1-2-3-4-6-8",
+        "transformacion": "log1p",
+        "n_estimators": 369,
+        "learning_rate": 0.12261130951202437,
+        "subsample": 0.6489760981078228,
+        "colsample_bytree": 0.6521616473311415,
+        "reg_alpha": 0.0028544864362471984,
+        "reg_lambda": 0.2698127806682399,
+        "num_leaves": 32,
+        "min_child_samples": 40
+      },
+      "atributos": {
+        "mae": 11.970215158108184,
+        "rmse_cortes": [
+          5.736733363153599,
+          35.08485594213111,
+          12.63718415712252
+        ],
+        "mae_cortes": [
+          4.219102314182317,
+          22.433637732744,
+          9.257905427398233
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 369,
+          "learning_rate": 0.12261130951202437,
+          "subsample": 0.6489760981078228,
+          "colsample_bytree": 0.6521616473311415,
+          "reg_alpha": 0.0028544864362471984,
+          "reg_lambda": 0.2698127806682399,
+          "num_leaves": 32,
+          "min_child_samples": 40
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.235737
+    },
+    {
+      "numero": 28,
+      "estado": "COMPLETE",
+      "valor": 17.618470431141166,
+      "parametros": {
+        "rezagos": "1-2-3-4-6-8",
+        "transformacion": "log1p",
+        "n_estimators": 196,
+        "learning_rate": 0.03182782635697904,
+        "subsample": 0.5636956941519954,
+        "colsample_bytree": 0.5726336095332083,
+        "reg_alpha": 0.0002274428336489546,
+        "reg_lambda": 0.036427503109005666,
+        "num_leaves": 46,
+        "min_child_samples": 24
+      },
+      "atributos": {
+        "mae": 11.191351540460715,
+        "rmse_cortes": [
+          5.153405105995245,
+          34.41087771425742,
+          13.29112847317083
+        ],
+        "mae_cortes": [
+          3.808948612028398,
+          21.301302451561867,
+          8.46380355779188
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 196,
+          "learning_rate": 0.03182782635697904,
+          "subsample": 0.5636956941519954,
+          "colsample_bytree": 0.5726336095332083,
+          "reg_alpha": 0.0002274428336489546,
+          "reg_lambda": 0.036427503109005666,
+          "num_leaves": 46,
+          "min_child_samples": 24
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.170775
+    },
+    {
+      "numero": 29,
+      "estado": "COMPLETE",
+      "valor": 17.25326060136616,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 161,
+        "learning_rate": 0.08260433563472774,
+        "subsample": 0.5324814601065468,
+        "colsample_bytree": 0.731070111284105,
+        "reg_alpha": 0.02423026033388153,
+        "reg_lambda": 12.900028730360281,
+        "num_leaves": 15,
+        "min_child_samples": 37
+      },
+      "atributos": {
+        "mae": 11.212957985682806,
+        "rmse_cortes": [
+          5.396890112707298,
+          34.94028802757364,
+          11.422603663817556
+        ],
+        "mae_cortes": [
+          4.188620120182547,
+          21.376388648823813,
+          8.073865188042053
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 161,
+          "learning_rate": 0.08260433563472774,
+          "subsample": 0.5324814601065468,
+          "colsample_bytree": 0.731070111284105,
+          "reg_alpha": 0.02423026033388153,
+          "reg_lambda": 12.900028730360281,
+          "num_leaves": 15,
+          "min_child_samples": 37
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.119003
+    },
+    {
+      "numero": 30,
+      "estado": "COMPLETE",
+      "valor": 17.020274136998903,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 162,
+        "learning_rate": 0.10226812171410722,
+        "subsample": 0.5287175940030525,
+        "colsample_bytree": 0.6487318454892516,
+        "reg_alpha": 0.06960407737707917,
+        "reg_lambda": 73.27142814998406,
+        "num_leaves": 13,
+        "min_child_samples": 16
+      },
+      "atributos": {
+        "mae": 11.002266302981587,
+        "rmse_cortes": [
+          5.064917769182911,
+          35.28280669600484,
+          10.71309794580895
+        ],
+        "mae_cortes": [
+          3.9667719189895823,
+          21.21504288109426,
+          7.824984108860915
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 162,
+          "learning_rate": 0.10226812171410722,
+          "subsample": 0.5287175940030525,
+          "colsample_bytree": 0.6487318454892516,
+          "reg_alpha": 0.06960407737707917,
+          "reg_lambda": 73.27142814998406,
+          "num_leaves": 13,
+          "min_child_samples": 16
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.131692
+    },
+    {
+      "numero": 31,
+      "estado": "COMPLETE",
+      "valor": 17.02544171611332,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 151,
+        "learning_rate": 0.0807426614706537,
+        "subsample": 0.5360036530168851,
+        "colsample_bytree": 0.7236030568694743,
+        "reg_alpha": 0.05020484344310827,
+        "reg_lambda": 92.51101202121589,
+        "num_leaves": 12,
+        "min_child_samples": 16
+      },
+      "atributos": {
+        "mae": 10.99308147010388,
+        "rmse_cortes": [
+          4.423671345783533,
+          36.48231453829342,
+          10.17033926426301
+        ],
+        "mae_cortes": [
+          3.6641482805356795,
+          22.08429633880586,
+          7.230799790970094
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 151,
+          "learning_rate": 0.0807426614706537,
+          "subsample": 0.5360036530168851,
+          "colsample_bytree": 0.7236030568694743,
+          "reg_alpha": 0.05020484344310827,
+          "reg_lambda": 92.51101202121589,
+          "num_leaves": 12,
+          "min_child_samples": 16
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.13118
+    },
+    {
+      "numero": 32,
+      "estado": "COMPLETE",
+      "valor": 17.18025701421197,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 152,
+        "learning_rate": 0.11563041375398413,
+        "subsample": 0.5292974634151916,
+        "colsample_bytree": 0.7253283519363636,
+        "reg_alpha": 0.061603209840436435,
+        "reg_lambda": 70.73408955415621,
+        "num_leaves": 13,
+        "min_child_samples": 16
+      },
+      "atributos": {
+        "mae": 11.179696372883157,
+        "rmse_cortes": [
+          5.765287747385337,
+          35.235506728170954,
+          10.539976567079623
+        ],
+        "mae_cortes": [
+          4.336164396964662,
+          21.49579631023987,
+          7.707128411444935
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 152,
+          "learning_rate": 0.11563041375398413,
+          "subsample": 0.5292974634151916,
+          "colsample_bytree": 0.7253283519363636,
+          "reg_alpha": 0.061603209840436435,
+          "reg_lambda": 70.73408955415621,
+          "num_leaves": 13,
+          "min_child_samples": 16
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.141533
+    },
+    {
+      "numero": 33,
+      "estado": "COMPLETE",
+      "valor": 17.30547909903153,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 127,
+        "learning_rate": 0.11629600949435862,
+        "subsample": 0.5064540495886128,
+        "colsample_bytree": 0.658537430969332,
+        "reg_alpha": 0.0751358606820788,
+        "reg_lambda": 85.30835813885484,
+        "num_leaves": 12,
+        "min_child_samples": 14
+      },
+      "atributos": {
+        "mae": 11.247492233821037,
+        "rmse_cortes": [
+          5.104212448701866,
+          36.151568666604966,
+          10.66065618178776
+        ],
+        "mae_cortes": [
+          4.095064525388486,
+          21.933147457185395,
+          7.714264718889227
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 127,
+          "learning_rate": 0.11629600949435862,
+          "subsample": 0.5064540495886128,
+          "colsample_bytree": 0.658537430969332,
+          "reg_alpha": 0.0751358606820788,
+          "reg_lambda": 85.30835813885484,
+          "num_leaves": 12,
+          "min_child_samples": 14
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.124241
+    },
+    {
+      "numero": 34,
+      "estado": "COMPLETE",
+      "valor": 17.13873183215163,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 123,
+        "learning_rate": 0.1685030622005255,
+        "subsample": 0.5351013618105769,
+        "colsample_bytree": 0.7265997120061549,
+        "reg_alpha": 0.10820319952578258,
+        "reg_lambda": 25.85791886593382,
+        "num_leaves": 18,
+        "min_child_samples": 17
+      },
+      "atributos": {
+        "mae": 11.347034870226997,
+        "rmse_cortes": [
+          6.067080359129575,
+          34.11713606030822,
+          11.231979077017103
+        ],
+        "mae_cortes": [
+          4.71884029757058,
+          21.217906812724223,
+          8.104357500386184
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 123,
+          "learning_rate": 0.1685030622005255,
+          "subsample": 0.5351013618105769,
+          "colsample_bytree": 0.7265997120061549,
+          "reg_alpha": 0.10820319952578258,
+          "reg_lambda": 25.85791886593382,
+          "num_leaves": 18,
+          "min_child_samples": 17
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.124
+    },
+    {
+      "numero": 35,
+      "estado": "COMPLETE",
+      "valor": 17.269987612420213,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 115,
+        "learning_rate": 0.1642469207551373,
+        "subsample": 0.6026768830531773,
+        "colsample_bytree": 0.7805395586377127,
+        "reg_alpha": 0.22428858809500352,
+        "reg_lambda": 28.906940934153756,
+        "num_leaves": 18,
+        "min_child_samples": 10
+      },
+      "atributos": {
+        "mae": 11.262863093050916,
+        "rmse_cortes": [
+          6.109852931172433,
+          34.9798788364364,
+          10.720231069651804
+        ],
+        "mae_cortes": [
+          4.557530117599213,
+          21.405489833904294,
+          7.825569327649239
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 115,
+          "learning_rate": 0.1642469207551373,
+          "subsample": 0.6026768830531773,
+          "colsample_bytree": 0.7805395586377127,
+          "reg_alpha": 0.22428858809500352,
+          "reg_lambda": 28.906940934153756,
+          "num_leaves": 18,
+          "min_child_samples": 10
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.153549
+    },
+    {
+      "numero": 36,
+      "estado": "COMPLETE",
+      "valor": 20.089564662442047,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "ninguna",
+        "n_estimators": 126,
+        "learning_rate": 0.22732786185839104,
+        "subsample": 0.5368757585033531,
+        "colsample_bytree": 0.7494233341469868,
+        "reg_alpha": 0.16847703746737083,
+        "reg_lambda": 23.108311153329513,
+        "num_leaves": 19,
+        "min_child_samples": 17
+      },
+      "atributos": {
+        "mae": 13.048370523014748,
+        "rmse_cortes": [
+          9.502173107193034,
+          31.371965749957006,
+          19.394555130176098
+        ],
+        "mae_cortes": [
+          7.459590293822998,
+          19.671890722486506,
+          12.013630552734746
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "ninguna",
+          "n_estimators": 126,
+          "learning_rate": 0.22732786185839104,
+          "subsample": 0.5368757585033531,
+          "colsample_bytree": 0.7494233341469868,
+          "reg_alpha": 0.16847703746737083,
+          "reg_lambda": 23.108311153329513,
+          "num_leaves": 19,
+          "min_child_samples": 17
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.148001
+    },
+    {
+      "numero": 37,
+      "estado": "COMPLETE",
+      "valor": 16.931514252362078,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 140,
+        "learning_rate": 0.16945765324270606,
+        "subsample": 0.5730065944462842,
+        "colsample_bytree": 0.8340141875903644,
+        "reg_alpha": 1.7070204060498837,
+        "reg_lambda": 30.267969937140563,
+        "num_leaves": 11,
+        "min_child_samples": 12
+      },
+      "atributos": {
+        "mae": 11.005426116101864,
+        "rmse_cortes": [
+          6.12969654685594,
+          34.3865021140182,
+          10.278344096212098
+        ],
+        "mae_cortes": [
+          4.465504705057105,
+          20.968435769667458,
+          7.582337873581029
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 140,
+          "learning_rate": 0.16945765324270606,
+          "subsample": 0.5730065944462842,
+          "colsample_bytree": 0.8340141875903644,
+          "reg_alpha": 1.7070204060498837,
+          "reg_lambda": 30.267969937140563,
+          "num_leaves": 11,
+          "min_child_samples": 12
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.140339
+    },
+    {
+      "numero": 38,
+      "estado": "COMPLETE",
+      "valor": 19.47925674821754,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "ninguna",
+        "n_estimators": 223,
+        "learning_rate": 0.0969665977147169,
+        "subsample": 0.5772241419858727,
+        "colsample_bytree": 0.8396839907197563,
+        "reg_alpha": 2.460631694249589,
+        "reg_lambda": 4.289320517770285,
+        "num_leaves": 10,
+        "min_child_samples": 12
+      },
+      "atributos": {
+        "mae": 12.495568484595998,
+        "rmse_cortes": [
+          9.454856466091506,
+          33.80045805888744,
+          15.182455719673671
+        ],
+        "mae_cortes": [
+          7.388066907988773,
+          20.50254276678316,
+          9.596095779016053
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "ninguna",
+          "n_estimators": 223,
+          "learning_rate": 0.0969665977147169,
+          "subsample": 0.5772241419858727,
+          "colsample_bytree": 0.8396839907197563,
+          "reg_alpha": 2.460631694249589,
+          "reg_lambda": 4.289320517770285,
+          "num_leaves": 10,
+          "min_child_samples": 12
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.234281
+    },
+    {
+      "numero": 39,
+      "estado": "COMPLETE",
+      "valor": 17.14739094547509,
+      "parametros": {
+        "rezagos": "1-2-4-8",
+        "transformacion": "log1p",
+        "n_estimators": 291,
+        "learning_rate": 0.07232238814979201,
+        "subsample": 0.6362891636412638,
+        "colsample_bytree": 0.5792505946446863,
+        "reg_alpha": 0.6930211397598975,
+        "reg_lambda": 44.57078831798528,
+        "num_leaves": 11,
+        "min_child_samples": 7
+      },
+      "atributos": {
+        "mae": 11.18703427616493,
+        "rmse_cortes": [
+          6.129373057040246,
+          35.05937078255162,
+          10.253428996833412
+        ],
+        "mae_cortes": [
+          4.628914544266659,
+          21.402568903316322,
+          7.52961938091181
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 291,
+          "learning_rate": 0.07232238814979201,
+          "subsample": 0.6362891636412638,
+          "colsample_bytree": 0.5792505946446863,
+          "reg_alpha": 0.6930211397598975,
+          "reg_lambda": 44.57078831798528,
+          "num_leaves": 11,
+          "min_child_samples": 7
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.252121
+    },
+    {
+      "numero": 40,
+      "estado": "COMPLETE",
+      "valor": 20.580533861098676,
+      "parametros": {
+        "rezagos": "1-2-3-4-8",
+        "transformacion": "ninguna",
+        "n_estimators": 142,
+        "learning_rate": 0.293082048618552,
+        "subsample": 0.6808896447572949,
+        "colsample_bytree": 0.934110959086558,
+        "reg_alpha": 3.54976978094063,
+        "reg_lambda": 16.241894687545575,
+        "num_leaves": 7,
+        "min_child_samples": 20
+      },
+      "atributos": {
+        "mae": 13.2194487739444,
+        "rmse_cortes": [
+          8.979170608324957,
+          33.36198995073442,
+          19.40044102423666
+        ],
+        "mae_cortes": [
+          6.993364681534522,
+          20.897942210492122,
+          11.767039429806555
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4,
+            8
+          ],
+          "transformacion": "ninguna",
+          "n_estimators": 142,
+          "learning_rate": 0.293082048618552,
+          "subsample": 0.6808896447572949,
+          "colsample_bytree": 0.934110959086558,
+          "reg_alpha": 3.54976978094063,
+          "reg_lambda": 16.241894687545575,
+          "num_leaves": 7,
+          "min_child_samples": 20
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.13423
+    },
+    {
+      "numero": 41,
+      "estado": "COMPLETE",
+      "valor": 17.89443910692848,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 162,
+        "learning_rate": 0.1601881113178561,
+        "subsample": 0.5011904001280167,
+        "colsample_bytree": 0.6873405259873754,
+        "reg_alpha": 0.40165824913867465,
+        "reg_lambda": 33.47475820928903,
+        "num_leaves": 16,
+        "min_child_samples": 9
+      },
+      "atributos": {
+        "mae": 11.713223640941791,
+        "rmse_cortes": [
+          6.999722573588317,
+          36.139586561457385,
+          10.54400818573974
+        ],
+        "mae_cortes": [
+          5.176572435089638,
+          22.006672029619693,
+          7.9564264581160415
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 162,
+          "learning_rate": 0.1601881113178561,
+          "subsample": 0.5011904001280167,
+          "colsample_bytree": 0.6873405259873754,
+          "reg_alpha": 0.40165824913867465,
+          "reg_lambda": 33.47475820928903,
+          "num_leaves": 16,
+          "min_child_samples": 9
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.18775
+    },
+    {
+      "numero": 42,
+      "estado": "COMPLETE",
+      "valor": 17.27176062927458,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 115,
+        "learning_rate": 0.20261596997139986,
+        "subsample": 0.5475617852011027,
+        "colsample_bytree": 0.6619660477883443,
+        "reg_alpha": 0.12499483985205884,
+        "reg_lambda": 83.86732098982071,
+        "num_leaves": 12,
+        "min_child_samples": 12
+      },
+      "atributos": {
+        "mae": 11.19772330191652,
+        "rmse_cortes": [
+          5.359895928345124,
+          35.31475399227802,
+          11.140631967200601
+        ],
+        "mae_cortes": [
+          4.194954428954427,
+          21.461697799791967,
+          7.936517677003166
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 115,
+          "learning_rate": 0.20261596997139986,
+          "subsample": 0.5475617852011027,
+          "colsample_bytree": 0.6619660477883443,
+          "reg_alpha": 0.12499483985205884,
+          "reg_lambda": 83.86732098982071,
+          "num_leaves": 12,
+          "min_child_samples": 12
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.115002
+    },
+    {
+      "numero": 43,
+      "estado": "COMPLETE",
+      "valor": 17.535283964984753,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 100,
+        "learning_rate": 0.14755469309689748,
+        "subsample": 0.5230076702488687,
+        "colsample_bytree": 0.6454827835520344,
+        "reg_alpha": 1.2900613574904638,
+        "reg_lambda": 18.425742669339932,
+        "num_leaves": 22,
+        "min_child_samples": 18
+      },
+      "atributos": {
+        "mae": 11.432532930681624,
+        "rmse_cortes": [
+          5.309816470569807,
+          36.3788957962122,
+          10.917139628172258
+        ],
+        "mae_cortes": [
+          4.084498062116627,
+          22.2494009890937,
+          7.963699740834547
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 100,
+          "learning_rate": 0.14755469309689748,
+          "subsample": 0.5230076702488687,
+          "colsample_bytree": 0.6454827835520344,
+          "reg_alpha": 1.2900613574904638,
+          "reg_lambda": 18.425742669339932,
+          "num_leaves": 22,
+          "min_child_samples": 18
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.102319
+    },
+    {
+      "numero": 44,
+      "estado": "COMPLETE",
+      "valor": 17.66861277801016,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 136,
+        "learning_rate": 0.09427301560613495,
+        "subsample": 0.580001011712892,
+        "colsample_bytree": 0.7446484541447336,
+        "reg_alpha": 0.04625275711832032,
+        "reg_lambda": 7.853736630581239,
+        "num_leaves": 29,
+        "min_child_samples": 14
+      },
+      "atributos": {
+        "mae": 11.603063461088345,
+        "rmse_cortes": [
+          6.272584330908936,
+          34.75802285297205,
+          11.9752311501495
+        ],
+        "mae_cortes": [
+          4.653946035655246,
+          21.960874979139515,
+          8.194369368470271
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 136,
+          "learning_rate": 0.09427301560613495,
+          "subsample": 0.580001011712892,
+          "colsample_bytree": 0.7446484541447336,
+          "reg_alpha": 0.04625275711832032,
+          "reg_lambda": 7.853736630581239,
+          "num_leaves": 29,
+          "min_child_samples": 14
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.187747
+    },
+    {
+      "numero": 45,
+      "estado": "COMPLETE",
+      "valor": 17.563250479847692,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 164,
+        "learning_rate": 0.1879477108367125,
+        "subsample": 0.6142190629946513,
+        "colsample_bytree": 0.83705266944628,
+        "reg_alpha": 0.38483789845993793,
+        "reg_lambda": 42.84827251570207,
+        "num_leaves": 17,
+        "min_child_samples": 8
+      },
+      "atributos": {
+        "mae": 11.486757714917566,
+        "rmse_cortes": [
+          6.7517400538583,
+          35.77902535047071,
+          10.158986035214065
+        ],
+        "mae_cortes": [
+          4.947330638025536,
+          21.97156338505159,
+          7.541379121675573
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 164,
+          "learning_rate": 0.1879477108367125,
+          "subsample": 0.6142190629946513,
+          "colsample_bytree": 0.83705266944628,
+          "reg_alpha": 0.38483789845993793,
+          "reg_lambda": 42.84827251570207,
+          "num_leaves": 17,
+          "min_child_samples": 8
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.231927
+    },
+    {
+      "numero": 46,
+      "estado": "COMPLETE",
+      "valor": 18.103686784787538,
+      "parametros": {
+        "rezagos": "1-2-4-8",
+        "transformacion": "log1p",
+        "n_estimators": 221,
+        "learning_rate": 0.04366985483970137,
+        "subsample": 0.5615404910961932,
+        "colsample_bytree": 0.698756923927732,
+        "reg_alpha": 1.110717165054267,
+        "reg_lambda": 98.90328999151845,
+        "num_leaves": 21,
+        "min_child_samples": 22
+      },
+      "atributos": {
+        "mae": 11.745441613278658,
+        "rmse_cortes": [
+          4.095893905146613,
+          38.78260014426701,
+          11.432566304948997
+        ],
+        "mae_cortes": [
+          3.479117732932317,
+          23.849104278103518,
+          7.908102828800137
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 221,
+          "learning_rate": 0.04366985483970137,
+          "subsample": 0.5615404910961932,
+          "colsample_bytree": 0.698756923927732,
+          "reg_alpha": 1.110717165054267,
+          "reg_lambda": 98.90328999151845,
+          "num_leaves": 21,
+          "min_child_samples": 22
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.152038
+    },
+    {
+      "numero": 47,
+      "estado": "COMPLETE",
+      "valor": 18.484485997983416,
+      "parametros": {
+        "rezagos": "1-2-3-4-8",
+        "transformacion": "ninguna",
+        "n_estimators": 123,
+        "learning_rate": 0.10792338559988006,
+        "subsample": 0.5241158369644754,
+        "colsample_bytree": 0.7806522854375306,
+        "reg_alpha": 0.018315308482509392,
+        "reg_lambda": 1.3086432395457754,
+        "num_leaves": 8,
+        "min_child_samples": 13
+      },
+      "atributos": {
+        "mae": 11.649769677841462,
+        "rmse_cortes": [
+          6.624787684059078,
+          33.245090239257046,
+          15.58358007063412
+        ],
+        "mae_cortes": [
+          5.137092127255557,
+          20.459554065324863,
+          9.352662840943966
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4,
+            8
+          ],
+          "transformacion": "ninguna",
+          "n_estimators": 123,
+          "learning_rate": 0.10792338559988006,
+          "subsample": 0.5241158369644754,
+          "colsample_bytree": 0.7806522854375306,
+          "reg_alpha": 0.018315308482509392,
+          "reg_lambda": 1.3086432395457754,
+          "num_leaves": 8,
+          "min_child_samples": 13
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.134223
+    },
+    {
+      "numero": 48,
+      "estado": "COMPLETE",
+      "valor": 18.18344876914884,
+      "parametros": {
+        "rezagos": "1-2-3-4",
+        "transformacion": "log1p",
+        "n_estimators": 487,
+        "learning_rate": 0.13813150423535187,
+        "subsample": 0.5471581463218521,
+        "colsample_bytree": 0.7075837636209097,
+        "reg_alpha": 3.0792586764034184,
+        "reg_lambda": 0.006588438374463987,
+        "num_leaves": 10,
+        "min_child_samples": 11
+      },
+      "atributos": {
+        "mae": 11.86348791901296,
+        "rmse_cortes": [
+          6.487659150130536,
+          35.95828395778277,
+          12.104403199533206
+        ],
+        "mae_cortes": [
+          4.728796766881172,
+          22.411669441092016,
+          8.449997549065689
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 487,
+          "learning_rate": 0.13813150423535187,
+          "subsample": 0.5471581463218521,
+          "colsample_bytree": 0.7075837636209097,
+          "reg_alpha": 3.0792586764034184,
+          "reg_lambda": 0.006588438374463987,
+          "num_leaves": 10,
+          "min_child_samples": 11
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.250432
+    },
+    {
+      "numero": 49,
+      "estado": "COMPLETE",
+      "valor": 17.19365347999508,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 137,
+        "learning_rate": 0.22433733751275753,
+        "subsample": 0.9690028906523548,
+        "colsample_bytree": 0.677858068176078,
+        "reg_alpha": 0.39009868326294445,
+        "reg_lambda": 4.221242648817215,
+        "num_leaves": 6,
+        "min_child_samples": 17
+      },
+      "atributos": {
+        "mae": 11.419181869551506,
+        "rmse_cortes": [
+          5.485723650357206,
+          34.57511490090904,
+          11.520121888718998
+        ],
+        "mae_cortes": [
+          4.361475006229685,
+          21.640230120533115,
+          8.255840481891717
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 137,
+          "learning_rate": 0.22433733751275753,
+          "subsample": 0.9690028906523548,
+          "colsample_bytree": 0.677858068176078,
+          "reg_alpha": 0.39009868326294445,
+          "reg_lambda": 4.221242648817215,
+          "num_leaves": 6,
+          "min_child_samples": 17
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.122251
+    },
+    {
+      "numero": 50,
+      "estado": "COMPLETE",
+      "valor": 17.28197304278748,
+      "parametros": {
+        "rezagos": "1-2-4-8-16",
+        "transformacion": "log1p",
+        "n_estimators": 114,
+        "learning_rate": 0.07074387468990995,
+        "subsample": 0.6818386970927978,
+        "colsample_bytree": 0.6331405037406519,
+        "reg_alpha": 0.036535741713623185,
+        "reg_lambda": 51.799458517852905,
+        "num_leaves": 14,
+        "min_child_samples": 15
+      },
+      "atributos": {
+        "mae": 11.272667006578414,
+        "rmse_cortes": [
+          4.993171900116124,
+          36.05991814018273,
+          10.79282908806358
+        ],
+        "mae_cortes": [
+          3.988534913439442,
+          22.117633031441198,
+          7.711833074854602
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            16
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 114,
+          "learning_rate": 0.07074387468990995,
+          "subsample": 0.6818386970927978,
+          "colsample_bytree": 0.6331405037406519,
+          "reg_alpha": 0.036535741713623185,
+          "reg_lambda": 51.799458517852905,
+          "num_leaves": 14,
+          "min_child_samples": 15
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.124508
+    },
+    {
+      "numero": 51,
+      "estado": "COMPLETE",
+      "valor": 17.202842996805803,
+      "parametros": {
+        "rezagos": "1-2-4-8",
+        "transformacion": "log1p",
+        "n_estimators": 291,
+        "learning_rate": 0.06712699499226628,
+        "subsample": 0.6456531909035537,
+        "colsample_bytree": 0.5772813119719917,
+        "reg_alpha": 0.8175799999196133,
+        "reg_lambda": 39.71478511375168,
+        "num_leaves": 11,
+        "min_child_samples": 6
+      },
+      "atributos": {
+        "mae": 11.153152261356523,
+        "rmse_cortes": [
+          6.259895858278827,
+          35.1709926590754,
+          10.177640473063187
+        ],
+        "mae_cortes": [
+          4.703757312331236,
+          21.244272717978383,
+          7.511426753759948
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 291,
+          "learning_rate": 0.06712699499226628,
+          "subsample": 0.6456531909035537,
+          "colsample_bytree": 0.5772813119719917,
+          "reg_alpha": 0.8175799999196133,
+          "reg_lambda": 39.71478511375168,
+          "num_leaves": 11,
+          "min_child_samples": 6
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.236443
+    },
+    {
+      "numero": 52,
+      "estado": "COMPLETE",
+      "valor": 17.262007109509778,
+      "parametros": {
+        "rezagos": "1-2-4-8",
+        "transformacion": "log1p",
+        "n_estimators": 294,
+        "learning_rate": 0.08310720899450369,
+        "subsample": 0.6346859526431792,
+        "colsample_bytree": 0.5416672823591138,
+        "reg_alpha": 1.9714845240889636,
+        "reg_lambda": 12.296595379715532,
+        "num_leaves": 9,
+        "min_child_samples": 7
+      },
+      "atributos": {
+        "mae": 11.243435376834904,
+        "rmse_cortes": [
+          6.36826049233548,
+          34.84234019832627,
+          10.57542063786759
+        ],
+        "mae_cortes": [
+          4.749285876652518,
+          21.223080372903006,
+          7.757939880949194
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 294,
+          "learning_rate": 0.08310720899450369,
+          "subsample": 0.6346859526431792,
+          "colsample_bytree": 0.5416672823591138,
+          "reg_alpha": 1.9714845240889636,
+          "reg_lambda": 12.296595379715532,
+          "num_leaves": 9,
+          "min_child_samples": 7
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.208156
+    },
+    {
+      "numero": 53,
+      "estado": "COMPLETE",
+      "valor": 17.554282613388654,
+      "parametros": {
+        "rezagos": "1-2-4-8",
+        "transformacion": "log1p",
+        "n_estimators": 210,
+        "learning_rate": 0.1770647274340175,
+        "subsample": 0.5778559798095224,
+        "colsample_bytree": 0.5909223264992518,
+        "reg_alpha": 5.011745821226731,
+        "reg_lambda": 54.33715892896985,
+        "num_leaves": 12,
+        "min_child_samples": 6
+      },
+      "atributos": {
+        "mae": 11.616260980345942,
+        "rmse_cortes": [
+          4.6260879630154035,
+          37.95584251304542,
+          10.08091736410514
+        ],
+        "mae_cortes": [
+          3.7491441277728565,
+          23.749275392633304,
+          7.350363420631667
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 210,
+          "learning_rate": 0.1770647274340175,
+          "subsample": 0.5778559798095224,
+          "colsample_bytree": 0.5909223264992518,
+          "reg_alpha": 5.011745821226731,
+          "reg_lambda": 54.33715892896985,
+          "num_leaves": 12,
+          "min_child_samples": 6
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.132026
+    },
+    {
+      "numero": 54,
+      "estado": "COMPLETE",
+      "valor": 17.488542467846404,
+      "parametros": {
+        "rezagos": "1-2-4-8",
+        "transformacion": "log1p",
+        "n_estimators": 327,
+        "learning_rate": 0.04125716189553009,
+        "subsample": 0.6006789244092082,
+        "colsample_bytree": 0.5345944922056024,
+        "reg_alpha": 0.11579514115177794,
+        "reg_lambda": 22.516810045472408,
+        "num_leaves": 11,
+        "min_child_samples": 8
+      },
+      "atributos": {
+        "mae": 11.463461266755054,
+        "rmse_cortes": [
+          6.496101100806842,
+          35.079863825561915,
+          10.889662477170452
+        ],
+        "mae_cortes": [
+          4.845432494017092,
+          21.613045548368245,
+          7.931905757879825
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 327,
+          "learning_rate": 0.04125716189553009,
+          "subsample": 0.6006789244092082,
+          "colsample_bytree": 0.5345944922056024,
+          "reg_alpha": 0.11579514115177794,
+          "reg_lambda": 22.516810045472408,
+          "num_leaves": 11,
+          "min_child_samples": 8
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.260195
+    },
+    {
+      "numero": 55,
+      "estado": "COMPLETE",
+      "valor": 17.258785727506236,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 243,
+        "learning_rate": 0.10409250436870057,
+        "subsample": 0.6312930484050704,
+        "colsample_bytree": 0.5965008146612463,
+        "reg_alpha": 0.6471240729568308,
+        "reg_lambda": 27.14204872619048,
+        "num_leaves": 14,
+        "min_child_samples": 21
+      },
+      "atributos": {
+        "mae": 11.265656320488638,
+        "rmse_cortes": [
+          6.148317009598341,
+          34.50595791814947,
+          11.122082254770891
+        ],
+        "mae_cortes": [
+          4.57972975487069,
+          21.175894535250304,
+          8.04134467134492
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 243,
+          "learning_rate": 0.10409250436870057,
+          "subsample": 0.6312930484050704,
+          "colsample_bytree": 0.5965008146612463,
+          "reg_alpha": 0.6471240729568308,
+          "reg_lambda": 27.14204872619048,
+          "num_leaves": 14,
+          "min_child_samples": 21
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.196673
+    },
+    {
+      "numero": 56,
+      "estado": "COMPLETE",
+      "valor": 17.59034452526613,
+      "parametros": {
+        "rezagos": "1-2-4-8-16",
+        "transformacion": "log1p",
+        "n_estimators": 170,
+        "learning_rate": 0.13944011091113187,
+        "subsample": 0.7169262328831888,
+        "colsample_bytree": 0.9576848822761458,
+        "reg_alpha": 0.011899536839959635,
+        "reg_lambda": 63.89513008110596,
+        "num_leaves": 38,
+        "min_child_samples": 10
+      },
+      "atributos": {
+        "mae": 11.645170168692966,
+        "rmse_cortes": [
+          5.956431235730675,
+          36.30385604655763,
+          10.510746293510081
+        ],
+        "mae_cortes": [
+          4.4951820819282995,
+          22.521134031012128,
+          7.919194393138471
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            16
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 170,
+          "learning_rate": 0.13944011091113187,
+          "subsample": 0.7169262328831888,
+          "colsample_bytree": 0.9576848822761458,
+          "reg_alpha": 0.011899536839959635,
+          "reg_lambda": 63.89513008110596,
+          "num_leaves": 38,
+          "min_child_samples": 10
+        },
+        "segundos": 0.3
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.275199
+    },
+    {
+      "numero": 57,
+      "estado": "COMPLETE",
+      "valor": 20.528987995697705,
+      "parametros": {
+        "rezagos": "1-2-3-4",
+        "transformacion": "ninguna",
+        "n_estimators": 446,
+        "learning_rate": 0.24672256701842712,
+        "subsample": 0.6044154745959958,
+        "colsample_bytree": 0.7620757771686224,
+        "reg_alpha": 0.2726890821181795,
+        "reg_lambda": 10.989405725924716,
+        "num_leaves": 8,
+        "min_child_samples": 12
+      },
+      "atributos": {
+        "mae": 13.470820180536549,
+        "rmse_cortes": [
+          9.660714713102582,
+          33.14191271919071,
+          18.784336554799825
+        ],
+        "mae_cortes": [
+          7.493182709131596,
+          21.22753050601908,
+          11.691747326458975
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "transformacion": "ninguna",
+          "n_estimators": 446,
+          "learning_rate": 0.24672256701842712,
+          "subsample": 0.6044154745959958,
+          "colsample_bytree": 0.7620757771686224,
+          "reg_alpha": 0.2726890821181795,
+          "reg_lambda": 10.989405725924716,
+          "num_leaves": 8,
+          "min_child_samples": 12
+        },
+        "segundos": 0.3
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.341417
+    },
+    {
+      "numero": 58,
+      "estado": "COMPLETE",
+      "valor": 18.785765982142017,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 150,
+        "learning_rate": 0.029701668841703537,
+        "subsample": 0.6694153409710515,
+        "colsample_bytree": 0.6713640792504791,
+        "reg_alpha": 1.7359153837302366,
+        "reg_lambda": 38.72277011019951,
+        "num_leaves": 10,
+        "min_child_samples": 8
+      },
+      "atributos": {
+        "mae": 12.57695589792902,
+        "rmse_cortes": [
+          4.5938678636085815,
+          40.6862231296448,
+          11.077206953172668
+        ],
+        "mae_cortes": [
+          3.880414648824667,
+          25.9458538759041,
+          7.904599169058297
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 150,
+          "learning_rate": 0.029701668841703537,
+          "subsample": 0.6694153409710515,
+          "colsample_bytree": 0.6713640792504791,
+          "reg_alpha": 1.7359153837302366,
+          "reg_lambda": 38.72277011019951,
+          "num_leaves": 10,
+          "min_child_samples": 8
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.128156
+    },
+    {
+      "numero": 59,
+      "estado": "COMPLETE",
+      "valor": 17.737765782802928,
+      "parametros": {
+        "rezagos": "1-2-3-4-8",
+        "transformacion": "log1p",
+        "n_estimators": 278,
+        "learning_rate": 0.07293104625060762,
+        "subsample": 0.5175191484578199,
+        "colsample_bytree": 0.7125141843136584,
+        "reg_alpha": 0.0061983899516676886,
+        "reg_lambda": 7.071763641480463,
+        "num_leaves": 17,
+        "min_child_samples": 18
+      },
+      "atributos": {
+        "mae": 11.682322389404446,
+        "rmse_cortes": [
+          5.685752254065989,
+          34.801410422189136,
+          12.726134672153657
+        ],
+        "mae_cortes": [
+          4.143751077373595,
+          22.237985469096547,
+          8.665230621743197
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            3,
+            4,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 278,
+          "learning_rate": 0.07293104625060762,
+          "subsample": 0.5175191484578199,
+          "colsample_bytree": 0.7125141843136584,
+          "reg_alpha": 0.0061983899516676886,
+          "reg_lambda": 7.071763641480463,
+          "num_leaves": 17,
+          "min_child_samples": 18
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.260906
+    },
+    {
+      "numero": 60,
+      "estado": "COMPLETE",
+      "valor": 17.388453802684264,
+      "parametros": {
+        "rezagos": "1-2-4-8",
+        "transformacion": "log1p",
+        "n_estimators": 341,
+        "learning_rate": 0.047004755789880316,
+        "subsample": 0.571421716552226,
+        "colsample_bytree": 0.637382833350577,
+        "reg_alpha": 0.000992515543072284,
+        "reg_lambda": 2.603238995456766,
+        "num_leaves": 7,
+        "min_child_samples": 7
+      },
+      "atributos": {
+        "mae": 11.45943124790975,
+        "rmse_cortes": [
+          6.126006368669733,
+          35.27986562678508,
+          10.759489412597977
+        ],
+        "mae_cortes": [
+          4.64544223309494,
+          21.969749306957144,
+          7.763102203677165
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 341,
+          "learning_rate": 0.047004755789880316,
+          "subsample": 0.571421716552226,
+          "colsample_bytree": 0.637382833350577,
+          "reg_alpha": 0.000992515543072284,
+          "reg_lambda": 2.603238995456766,
+          "num_leaves": 7,
+          "min_child_samples": 7
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.219266
+    },
+    {
+      "numero": 61,
+      "estado": "COMPLETE",
+      "valor": 17.28206182076793,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 152,
+        "learning_rate": 0.12291697513878991,
+        "subsample": 0.5419083148002608,
+        "colsample_bytree": 0.7279465687054464,
+        "reg_alpha": 0.04815414964696987,
+        "reg_lambda": 61.66681516961467,
+        "num_leaves": 13,
+        "min_child_samples": 17
+      },
+      "atributos": {
+        "mae": 11.126328883040037,
+        "rmse_cortes": [
+          6.186324420308645,
+          34.975387360682795,
+          10.68447368131235
+        ],
+        "mae_cortes": [
+          4.547787106196074,
+          21.12283221864026,
+          7.70836732428378
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 152,
+          "learning_rate": 0.12291697513878991,
+          "subsample": 0.5419083148002608,
+          "colsample_bytree": 0.7279465687054464,
+          "reg_alpha": 0.04815414964696987,
+          "reg_lambda": 61.66681516961467,
+          "num_leaves": 13,
+          "min_child_samples": 17
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.139087
+    },
+    {
+      "numero": 62,
+      "estado": "COMPLETE",
+      "valor": 16.832438253492867,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 146,
+        "learning_rate": 0.09231815084535622,
+        "subsample": 0.550583798843628,
+        "colsample_bytree": 0.8052528582735865,
+        "reg_alpha": 0.11328136800270261,
+        "reg_lambda": 72.36726156673069,
+        "num_leaves": 13,
+        "min_child_samples": 15
+      },
+      "atributos": {
+        "mae": 10.869597772149284,
+        "rmse_cortes": [
+          4.750711432304814,
+          35.531634594239634,
+          10.214968733934157
+        ],
+        "mae_cortes": [
+          3.770729650005938,
+          21.445160465880488,
+          7.392903200561428
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 146,
+          "learning_rate": 0.09231815084535622,
+          "subsample": 0.550583798843628,
+          "colsample_bytree": 0.8052528582735865,
+          "reg_alpha": 0.11328136800270261,
+          "reg_lambda": 72.36726156673069,
+          "num_leaves": 13,
+          "min_child_samples": 15
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.149768
+    },
+    {
+      "numero": 63,
+      "estado": "COMPLETE",
+      "valor": 17.479585606136183,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 183,
+        "learning_rate": 0.05823208654790742,
+        "subsample": 0.5524296665333503,
+        "colsample_bytree": 0.822172903058197,
+        "reg_alpha": 0.09727569789606566,
+        "reg_lambda": 15.031864880395977,
+        "num_leaves": 15,
+        "min_child_samples": 15
+      },
+      "atributos": {
+        "mae": 11.408347747289275,
+        "rmse_cortes": [
+          5.981002231766539,
+          35.10498056085114,
+          11.352774025790874
+        ],
+        "mae_cortes": [
+          4.449431536039427,
+          21.711887831338746,
+          8.063723874489646
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 183,
+          "learning_rate": 0.05823208654790742,
+          "subsample": 0.5524296665333503,
+          "colsample_bytree": 0.822172903058197,
+          "reg_alpha": 0.09727569789606566,
+          "reg_lambda": 15.031864880395977,
+          "num_leaves": 15,
+          "min_child_samples": 15
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.197231
+    },
+    {
+      "numero": 64,
+      "estado": "COMPLETE",
+      "valor": 17.028581811466292,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 137,
+        "learning_rate": 0.07789997467179086,
+        "subsample": 0.5899102434650138,
+        "colsample_bytree": 0.8681256016010281,
+        "reg_alpha": 0.9572713084654353,
+        "reg_lambda": 35.104159671540394,
+        "num_leaves": 11,
+        "min_child_samples": 26
+      },
+      "atributos": {
+        "mae": 11.085935281573121,
+        "rmse_cortes": [
+          4.885488543778656,
+          35.675371224745334,
+          10.524885665874884
+        ],
+        "mae_cortes": [
+          3.8010142989006384,
+          21.962142874970024,
+          7.494648670848703
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 137,
+          "learning_rate": 0.07789997467179086,
+          "subsample": 0.5899102434650138,
+          "colsample_bytree": 0.8681256016010281,
+          "reg_alpha": 0.9572713084654353,
+          "reg_lambda": 35.104159671540394,
+          "num_leaves": 11,
+          "min_child_samples": 26
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.121557
+    },
+    {
+      "numero": 65,
+      "estado": "COMPLETE",
+      "valor": 17.0855577279102,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 135,
+        "learning_rate": 0.09235114606905587,
+        "subsample": 0.5895393971817431,
+        "colsample_bytree": 0.865160947309939,
+        "reg_alpha": 0.1614657987418067,
+        "reg_lambda": 90.05836031781622,
+        "num_leaves": 13,
+        "min_child_samples": 23
+      },
+      "atributos": {
+        "mae": 11.036573360152433,
+        "rmse_cortes": [
+          4.678395684746952,
+          36.00302103643036,
+          10.575256462553288
+        ],
+        "mae_cortes": [
+          3.7049138267473145,
+          21.79679903678021,
+          7.608007216929775
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 135,
+          "learning_rate": 0.09235114606905587,
+          "subsample": 0.5895393971817431,
+          "colsample_bytree": 0.865160947309939,
+          "reg_alpha": 0.1614657987418067,
+          "reg_lambda": 90.05836031781622,
+          "num_leaves": 13,
+          "min_child_samples": 23
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.122164
+    },
+    {
+      "numero": 66,
+      "estado": "COMPLETE",
+      "valor": 17.236386726406973,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 135,
+        "learning_rate": 0.08392935348385548,
+        "subsample": 0.5951931550184058,
+        "colsample_bytree": 0.8909077990793166,
+        "reg_alpha": 0.16329779636353056,
+        "reg_lambda": 99.88304118129453,
+        "num_leaves": 9,
+        "min_child_samples": 24
+      },
+      "atributos": {
+        "mae": 11.16315679171168,
+        "rmse_cortes": [
+          4.451087658192304,
+          36.47747394525059,
+          10.780598575778026
+        ],
+        "mae_cortes": [
+          3.603834868328081,
+          22.13558458438794,
+          7.750050922419018
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 135,
+          "learning_rate": 0.08392935348385548,
+          "subsample": 0.5951931550184058,
+          "colsample_bytree": 0.8909077990793166,
+          "reg_alpha": 0.16329779636353056,
+          "reg_lambda": 99.88304118129453,
+          "num_leaves": 9,
+          "min_child_samples": 24
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.122212
+    },
+    {
+      "numero": 67,
+      "estado": "COMPLETE",
+      "valor": 16.915399379393197,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 201,
+        "learning_rate": 0.09241929324892678,
+        "subsample": 0.5884156810881404,
+        "colsample_bytree": 0.8654463935343886,
+        "reg_alpha": 0.02879224651883751,
+        "reg_lambda": 70.6254662361827,
+        "num_leaves": 13,
+        "min_child_samples": 28
+      },
+      "atributos": {
+        "mae": 11.023916722694201,
+        "rmse_cortes": [
+          5.570904137635697,
+          34.50701478146017,
+          10.668279219083729
+        ],
+        "mae_cortes": [
+          4.245243889822382,
+          21.1932703825115,
+          7.6332358957487205
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 201,
+          "learning_rate": 0.09241929324892678,
+          "subsample": 0.5884156810881404,
+          "colsample_bytree": 0.8654463935343886,
+          "reg_alpha": 0.02879224651883751,
+          "reg_lambda": 70.6254662361827,
+          "num_leaves": 13,
+          "min_child_samples": 28
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.181164
+    },
+    {
+      "numero": 68,
+      "estado": "COMPLETE",
+      "valor": 16.9026882372434,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 175,
+        "learning_rate": 0.0987745764452258,
+        "subsample": 0.6170771460619968,
+        "colsample_bytree": 0.8578183282621067,
+        "reg_alpha": 0.02265795327061519,
+        "reg_lambda": 66.67519689036534,
+        "num_leaves": 13,
+        "min_child_samples": 27
+      },
+      "atributos": {
+        "mae": 11.117232453805235,
+        "rmse_cortes": [
+          5.223818751249139,
+          34.685167907670035,
+          10.799078052811021
+        ],
+        "mae_cortes": [
+          4.048050353169285,
+          21.57546855393515,
+          7.728178454311268
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 175,
+          "learning_rate": 0.0987745764452258,
+          "subsample": 0.6170771460619968,
+          "colsample_bytree": 0.8578183282621067,
+          "reg_alpha": 0.02265795327061519,
+          "reg_lambda": 66.67519689036534,
+          "num_leaves": 13,
+          "min_child_samples": 27
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.157261
+    },
+    {
+      "numero": 69,
+      "estado": "COMPLETE",
+      "valor": 17.175833034182038,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 200,
+        "learning_rate": 0.09990093490779495,
+        "subsample": 0.6180903705767524,
+        "colsample_bytree": 0.9117346133430756,
+        "reg_alpha": 0.033844450694707234,
+        "reg_lambda": 64.0815118663235,
+        "num_leaves": 8,
+        "min_child_samples": 28
+      },
+      "atributos": {
+        "mae": 11.17123684174829,
+        "rmse_cortes": [
+          5.976619937523262,
+          34.32003822614732,
+          11.230840938875541
+        ],
+        "mae_cortes": [
+          4.496663484270247,
+          21.071580020430947,
+          7.945467020543677
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 200,
+          "learning_rate": 0.09990093490779495,
+          "subsample": 0.6180903705767524,
+          "colsample_bytree": 0.9117346133430756,
+          "reg_alpha": 0.033844450694707234,
+          "reg_lambda": 64.0815118663235,
+          "num_leaves": 8,
+          "min_child_samples": 28
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.158422
+    },
+    {
+      "numero": 70,
+      "estado": "COMPLETE",
+      "valor": 17.301898372423977,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 172,
+        "learning_rate": 0.12992012496401184,
+        "subsample": 0.8651742987767396,
+        "colsample_bytree": 0.84980860566692,
+        "reg_alpha": 0.01980734117594674,
+        "reg_lambda": 20.198771376529287,
+        "num_leaves": 11,
+        "min_child_samples": 35
+      },
+      "atributos": {
+        "mae": 11.539517583137055,
+        "rmse_cortes": [
+          6.860379783874989,
+          33.94992239707482,
+          11.095392936322124
+        ],
+        "mae_cortes": [
+          5.110475177463809,
+          21.427240340243706,
+          8.08083723170365
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 172,
+          "learning_rate": 0.12992012496401184,
+          "subsample": 0.8651742987767396,
+          "colsample_bytree": 0.84980860566692,
+          "reg_alpha": 0.01980734117594674,
+          "reg_lambda": 20.198771376529287,
+          "num_leaves": 11,
+          "min_child_samples": 35
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.16325
+    },
+    {
+      "numero": 71,
+      "estado": "COMPLETE",
+      "valor": 16.921889035567897,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 152,
+        "learning_rate": 0.0893015535768472,
+        "subsample": 0.5891373152322383,
+        "colsample_bytree": 0.8706774267821645,
+        "reg_alpha": 0.06685250555641983,
+        "reg_lambda": 33.40660442426324,
+        "num_leaves": 13,
+        "min_child_samples": 27
+      },
+      "atributos": {
+        "mae": 10.981389439690778,
+        "rmse_cortes": [
+          5.132610774345271,
+          34.56833797086242,
+          11.064718361495997
+        ],
+        "mae_cortes": [
+          3.942203858074412,
+          21.14245126905413,
+          7.859513191943787
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 152,
+          "learning_rate": 0.0893015535768472,
+          "subsample": 0.5891373152322383,
+          "colsample_bytree": 0.8706774267821645,
+          "reg_alpha": 0.06685250555641983,
+          "reg_lambda": 33.40660442426324,
+          "num_leaves": 13,
+          "min_child_samples": 27
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.132788
+    },
+    {
+      "numero": 72,
+      "estado": "COMPLETE",
+      "valor": 17.13751502849256,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 152,
+        "learning_rate": 0.07595427295258504,
+        "subsample": 0.5599174344500767,
+        "colsample_bytree": 0.8870818600330697,
+        "reg_alpha": 0.06482447867084452,
+        "reg_lambda": 29.76348964919886,
+        "num_leaves": 12,
+        "min_child_samples": 28
+      },
+      "atributos": {
+        "mae": 10.99568089812359,
+        "rmse_cortes": [
+          5.170470119758593,
+          35.497739053810044,
+          10.744335911909053
+        ],
+        "mae_cortes": [
+          3.934060866121549,
+          21.5680023621942,
+          7.484979466055021
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 152,
+          "learning_rate": 0.07595427295258504,
+          "subsample": 0.5599174344500767,
+          "colsample_bytree": 0.8870818600330697,
+          "reg_alpha": 0.06482447867084452,
+          "reg_lambda": 29.76348964919886,
+          "num_leaves": 12,
+          "min_child_samples": 28
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.129017
+    },
+    {
+      "numero": 73,
+      "estado": "COMPLETE",
+      "valor": 17.74073686636501,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 189,
+        "learning_rate": 0.11065176241138433,
+        "subsample": 0.5147479103055808,
+        "colsample_bytree": 0.7990410997009991,
+        "reg_alpha": 0.02441460267098958,
+        "reg_lambda": 46.9736334848067,
+        "num_leaves": 9,
+        "min_child_samples": 43
+      },
+      "atributos": {
+        "mae": 11.403728896869803,
+        "rmse_cortes": [
+          5.766847428423528,
+          35.90202490186666,
+          11.553338268804838
+        ],
+        "mae_cortes": [
+          4.407110382563413,
+          21.750401746392352,
+          8.053674561653645
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 189,
+          "learning_rate": 0.11065176241138433,
+          "subsample": 0.5147479103055808,
+          "colsample_bytree": 0.7990410997009991,
+          "reg_alpha": 0.02441460267098958,
+          "reg_lambda": 46.9736334848067,
+          "num_leaves": 9,
+          "min_child_samples": 43
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.12
+    },
+    {
+      "numero": 74,
+      "estado": "COMPLETE",
+      "valor": 17.26719849752438,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 109,
+        "learning_rate": 0.08417692524617498,
+        "subsample": 0.6247878333613414,
+        "colsample_bytree": 0.869718120717765,
+        "reg_alpha": 0.010766334112194678,
+        "reg_lambda": 35.56323701793588,
+        "num_leaves": 15,
+        "min_child_samples": 26
+      },
+      "atributos": {
+        "mae": 11.118686723978923,
+        "rmse_cortes": [
+          5.1016319138223105,
+          35.74900742447728,
+          10.950956154273555
+        ],
+        "mae_cortes": [
+          3.853367185761792,
+          21.71949231060238,
+          7.783200675572597
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 109,
+          "learning_rate": 0.08417692524617498,
+          "subsample": 0.6247878333613414,
+          "colsample_bytree": 0.869718120717765,
+          "reg_alpha": 0.010766334112194678,
+          "reg_lambda": 35.56323701793588,
+          "num_leaves": 15,
+          "min_child_samples": 26
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.116469
+    },
+    {
+      "numero": 75,
+      "estado": "COMPLETE",
+      "valor": 17.150907859841084,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 159,
+        "learning_rate": 0.06304570104149343,
+        "subsample": 0.6111075687808375,
+        "colsample_bytree": 0.8264209208382846,
+        "reg_alpha": 0.04525607129141659,
+        "reg_lambda": 72.08082089235732,
+        "num_leaves": 13,
+        "min_child_samples": 34
+      },
+      "atributos": {
+        "mae": 11.010319517804897,
+        "rmse_cortes": [
+          4.590198802528843,
+          36.25423654708185,
+          10.60828822991255
+        ],
+        "mae_cortes": [
+          3.7184320726598226,
+          21.857843750303683,
+          7.4546827304511885
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 159,
+          "learning_rate": 0.06304570104149343,
+          "subsample": 0.6111075687808375,
+          "colsample_bytree": 0.8264209208382846,
+          "reg_alpha": 0.04525607129141659,
+          "reg_lambda": 72.08082089235732,
+          "num_leaves": 13,
+          "min_child_samples": 34
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.12719
+    },
+    {
+      "numero": 76,
+      "estado": "COMPLETE",
+      "valor": 19.121600441431767,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "ninguna",
+        "n_estimators": 175,
+        "learning_rate": 0.0924412991442797,
+        "subsample": 0.561585246718418,
+        "colsample_bytree": 0.8534284334162018,
+        "reg_alpha": 0.08235720174345687,
+        "reg_lambda": 19.385978546190977,
+        "num_leaves": 10,
+        "min_child_samples": 26
+      },
+      "atributos": {
+        "mae": 12.171710844407366,
+        "rmse_cortes": [
+          8.489058168416738,
+          32.470557625785105,
+          16.40518553009346
+        ],
+        "mae_cortes": [
+          6.746969870481093,
+          20.114291998717977,
+          9.653870664023032
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "ninguna",
+          "n_estimators": 175,
+          "learning_rate": 0.0924412991442797,
+          "subsample": 0.561585246718418,
+          "colsample_bytree": 0.8534284334162018,
+          "reg_alpha": 0.08235720174345687,
+          "reg_lambda": 19.385978546190977,
+          "num_leaves": 10,
+          "min_child_samples": 26
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.152038
+    },
+    {
+      "numero": 77,
+      "estado": "COMPLETE",
+      "valor": 17.83048865780335,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 124,
+        "learning_rate": 0.15227560331124124,
+        "subsample": 0.5894018305152459,
+        "colsample_bytree": 0.9143702562186409,
+        "reg_alpha": 0.029508179261503804,
+        "reg_lambda": 52.89096946247823,
+        "num_leaves": 16,
+        "min_child_samples": 53
+      },
+      "atributos": {
+        "mae": 11.43730501259062,
+        "rmse_cortes": [
+          5.233823779228116,
+          36.038648244207565,
+          12.21899394997437
+        ],
+        "mae_cortes": [
+          4.022375389718963,
+          21.760182013410656,
+          8.529357634642244
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 124,
+          "learning_rate": 0.15227560331124124,
+          "subsample": 0.5894018305152459,
+          "colsample_bytree": 0.9143702562186409,
+          "reg_alpha": 0.029508179261503804,
+          "reg_lambda": 52.89096946247823,
+          "num_leaves": 16,
+          "min_child_samples": 53
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.097998
+    },
+    {
+      "numero": 78,
+      "estado": "COMPLETE",
+      "valor": 26.67107152479105,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 143,
+        "learning_rate": 0.009771806398892482,
+        "subsample": 0.5733715946618668,
+        "colsample_bytree": 0.8020402103349833,
+        "reg_alpha": 0.013598152791282517,
+        "reg_lambda": 32.752442443194,
+        "num_leaves": 14,
+        "min_child_samples": 19
+      },
+      "atributos": {
+        "mae": 19.30071922406111,
+        "rmse_cortes": [
+          6.040414861855092,
+          55.01423197556239,
+          18.958567736955676
+        ],
+        "mae_cortes": [
+          5.423890869986804,
+          40.15721166410004,
+          12.321055138096476
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 143,
+          "learning_rate": 0.009771806398892482,
+          "subsample": 0.5733715946618668,
+          "colsample_bytree": 0.8020402103349833,
+          "reg_alpha": 0.013598152791282517,
+          "reg_lambda": 32.752442443194,
+          "num_leaves": 14,
+          "min_child_samples": 19
+        },
+        "segundos": 0.1
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.111
+    },
+    {
+      "numero": 79,
+      "estado": "COMPLETE",
+      "valor": 17.253769566782648,
+      "parametros": {
+        "rezagos": "1-2-4-8-12",
+        "transformacion": "log1p",
+        "n_estimators": 235,
+        "learning_rate": 0.10657681104894194,
+        "subsample": 0.6595808256945259,
+        "colsample_bytree": 0.8973532965453677,
+        "reg_alpha": 0.06633919332034878,
+        "reg_lambda": 70.39844984155081,
+        "num_leaves": 12,
+        "min_child_samples": 29
+      },
+      "atributos": {
+        "mae": 11.31499309049937,
+        "rmse_cortes": [
+          6.426534087961014,
+          34.11963328869875,
+          11.215141323688176
+        ],
+        "mae_cortes": [
+          4.713616998508904,
+          21.182881593231393,
+          8.048480679757807
+        ],
+        "hiperparametros": {
+          "rezagos": [
+            1,
+            2,
+            4,
+            8,
+            12
+          ],
+          "transformacion": "log1p",
+          "n_estimators": 235,
+          "learning_rate": 0.10657681104894194,
+          "subsample": 0.6595808256945259,
+          "colsample_bytree": 0.8973532965453677,
+          "reg_alpha": 0.06633919332034878,
+          "reg_lambda": 70.39844984155081,
+          "num_leaves": 12,
+          "min_child_samples": 29
+        },
+        "segundos": 0.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.179175
+    }
+  ]
+}

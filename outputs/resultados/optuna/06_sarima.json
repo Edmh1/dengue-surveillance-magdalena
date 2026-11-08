@@ -1,0 +1,1066 @@
+{
+  "estudio": "06_sarima",
+  "muestreador": "TPESampler",
+  "semilla_muestreador": 42,
+  "podador": "MedianPruner",
+  "pruebas": [
+    {
+      "numero": 0,
+      "estado": "COMPLETE",
+      "valor": 32.115701210331494,
+      "parametros": {
+        "d": 0,
+        "estructura_estacional": "AR",
+        "p": 0,
+        "q": 0
+      },
+      "atributos": {
+        "mae": 24.65089645915864,
+        "rmse_cortes": [
+          11.446889784593562,
+          61.95809344735438,
+          22.942120399046548
+        ],
+        "mae_cortes": [
+          10.802977227672406,
+          47.66139535436655,
+          15.48831679543697
+        ],
+        "hiperparametros": {
+          "orden": [
+            0,
+            0,
+            0
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "aic": 2180.6067908376763,
+        "segundos": 68.8
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 68.793223
+    },
+    {
+      "numero": 1,
+      "estado": "COMPLETE",
+      "valor": 29.118221688535428,
+      "parametros": {
+        "d": 0,
+        "estructura_estacional": "AR",
+        "p": 0,
+        "q": 3
+      },
+      "atributos": {
+        "mae": 21.6428938857764,
+        "rmse_cortes": [
+          10.05452261730449,
+          56.301454321014965,
+          20.99868812728683
+        ],
+        "mae_cortes": [
+          8.627925694978272,
+          42.4280966096532,
+          13.872659352697717
+        ],
+        "hiperparametros": {
+          "orden": [
+            0,
+            0,
+            3
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "aic": 1252.3788170750447,
+        "segundos": 134.5
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 134.551938
+    },
+    {
+      "numero": 2,
+      "estado": "COMPLETE",
+      "valor": 15.269672178751343,
+      "parametros": {
+        "d": 1,
+        "estructura_estacional": "AR",
+        "p": 1,
+        "q": 2
+      },
+      "atributos": {
+        "mae": 10.464974822501816,
+        "rmse_cortes": [
+          3.244242261552631,
+          28.25324501270083,
+          14.311529262000567
+        ],
+        "mae_cortes": [
+          2.4599129625201734,
+          19.125733855792397,
+          9.809277649192877
+        ],
+        "hiperparametros": {
+          "orden": [
+            1,
+            1,
+            2
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "aic": 769.2463163579768,
+        "segundos": 33.9
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 33.895096
+    },
+    {
+      "numero": 3,
+      "estado": "COMPLETE",
+      "valor": 15.219897000541016,
+      "parametros": {
+        "d": 0,
+        "estructura_estacional": "MA",
+        "p": 1,
+        "q": 1
+      },
+      "atributos": {
+        "mae": 10.294584354988281,
+        "rmse_cortes": [
+          3.2602771575729577,
+          28.98376803944917,
+          13.415645804600917
+        ],
+        "mae_cortes": [
+          2.521303555047953,
+          18.872401847974757,
+          9.490047661942134
+        ],
+        "hiperparametros": {
+          "orden": [
+            1,
+            0,
+            1
+          ],
+          "orden_estacional": [
+            0,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "aic": 770.5523259034326,
+        "segundos": 132.5
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 132.451117
+    },
+    {
+      "numero": 4,
+      "estado": "COMPLETE",
+      "valor": 15.710378685755863,
+      "parametros": {
+        "d": 0,
+        "estructura_estacional": "AR",
+        "p": 2,
+        "q": 0
+      },
+      "atributos": {
+        "mae": 10.525778220211626,
+        "rmse_cortes": [
+          3.5184499966414933,
+          30.84633149931664,
+          12.766354561309454
+        ],
+        "mae_cortes": [
+          2.6955035152328963,
+          19.99199427644401,
+          8.889836868957966
+        ],
+        "hiperparametros": {
+          "orden": [
+            2,
+            0,
+            0
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "aic": 796.3145304965726,
+        "segundos": 200.3
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 200.319099
+    },
+    {
+      "numero": 5,
+      "estado": "COMPLETE",
+      "valor": 15.155397455880498,
+      "parametros": {
+        "d": 1,
+        "estructura_estacional": "ARMA",
+        "p": 4,
+        "q": 3
+      },
+      "atributos": {
+        "mae": 10.421902744795437,
+        "rmse_cortes": [
+          3.3290324366219437,
+          28.123308562819652,
+          14.0138513681999
+        ],
+        "mae_cortes": [
+          2.5173096180570234,
+          19.105652887653598,
+          9.642745728675688
+        ],
+        "hiperparametros": {
+          "orden": [
+            4,
+            1,
+            3
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "aic": 768.3442943561555,
+        "segundos": 322.2
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 322.191584
+    },
+    {
+      "numero": 6,
+      "estado": "COMPLETE",
+      "valor": 31.02586813572457,
+      "parametros": {
+        "d": 0,
+        "estructura_estacional": "MA",
+        "p": 0,
+        "q": 1
+      },
+      "atributos": {
+        "mae": 23.558455947746726,
+        "rmse_cortes": [
+          10.78887985586804,
+          60.10127894716198,
+          22.18744560414369
+        ],
+        "mae_cortes": [
+          9.92030287505218,
+          45.760604323333524,
+          14.994460644854477
+        ],
+        "hiperparametros": {
+          "orden": [
+            0,
+            0,
+            1
+          ],
+          "orden_estacional": [
+            0,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "aic": 1655.361510894698,
+        "segundos": 132.5
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 132.544132
+    },
+    {
+      "numero": 7,
+      "estado": "COMPLETE",
+      "valor": 15.191766212890647,
+      "parametros": {
+        "d": 0,
+        "estructura_estacional": "AR",
+        "p": 1,
+        "q": 2
+      },
+      "atributos": {
+        "mae": 10.219937897517262,
+        "rmse_cortes": [
+          3.2954081740880063,
+          28.982800083789016,
+          13.29709038079491
+        ],
+        "mae_cortes": [
+          2.537839745851073,
+          18.768611278444446,
+          9.353362668256265
+        ],
+        "hiperparametros": {
+          "orden": [
+            1,
+            0,
+            2
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "c"
+        },
+        "aic": 767.3815451650482,
+        "segundos": 397.0
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 396.991002
+    },
+    {
+      "numero": 8,
+      "estado": "COMPLETE",
+      "valor": 15.15824374388752,
+      "parametros": {
+        "d": 1,
+        "estructura_estacional": "MA",
+        "p": 4,
+        "q": 3
+      },
+      "atributos": {
+        "mae": 10.41118616195129,
+        "rmse_cortes": [
+          3.2930895235763367,
+          28.071966769802586,
+          14.109674938283632
+        ],
+        "mae_cortes": [
+          2.485415706894339,
+          19.027377435743315,
+          9.720765343216216
+        ],
+        "hiperparametros": {
+          "orden": [
+            4,
+            1,
+            3
+          ],
+          "orden_estacional": [
+            0,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "aic": 761.130427197982,
+        "segundos": 256.5
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 256.514633
+    },
+    {
+      "numero": 9,
+      "estado": "COMPLETE",
+      "valor": 15.531418165796367,
+      "parametros": {
+        "d": 1,
+        "estructura_estacional": "AR",
+        "p": 0,
+        "q": 1
+      },
+      "atributos": {
+        "mae": 10.748633774910553,
+        "rmse_cortes": [
+          3.2228899872075147,
+          28.965618014564416,
+          14.405746495617171
+        ],
+        "mae_cortes": [
+          2.446949987118829,
+          19.782110249467507,
+          10.016841088145325
+        ],
+        "hiperparametros": {
+          "orden": [
+            0,
+            1,
+            1
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            0,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "aic": 775.8702809469694,
+        "segundos": 41.9
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 41.873962
+    },
+    {
+      "numero": 10,
+      "estado": "COMPLETE",
+      "valor": 14.961061098803787,
+      "parametros": {
+        "d": 1,
+        "estructura_estacional": "ARMA",
+        "p": 4,
+        "q": 2
+      },
+      "atributos": {
+        "mae": 10.31135647613688,
+        "rmse_cortes": [
+          3.2804891695200653,
+          27.933125392344433,
+          13.669568734546857
+        ],
+        "mae_cortes": [
+          2.487510175210414,
+          19.095281449408382,
+          9.351277803791843
+        ],
+        "hiperparametros": {
+          "orden": [
+            4,
+            1,
+            2
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "aic": 2267.3082357517974,
+        "segundos": 352.9
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 352.910243
+    },
+    {
+      "numero": 11,
+      "estado": "COMPLETE",
+      "valor": 14.961061098803787,
+      "parametros": {
+        "d": 1,
+        "estructura_estacional": "ARMA",
+        "p": 4,
+        "q": 2
+      },
+      "atributos": {
+        "mae": 10.31135647613688,
+        "rmse_cortes": [
+          3.2804891695200653,
+          27.933125392344433,
+          13.669568734546857
+        ],
+        "mae_cortes": [
+          2.487510175210414,
+          19.095281449408382,
+          9.351277803791843
+        ],
+        "hiperparametros": {
+          "orden": [
+            4,
+            1,
+            2
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "aic": 2267.3082357517974,
+        "segundos": 352.9,
+        "repetida": true
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.004005
+    },
+    {
+      "numero": 12,
+      "estado": "COMPLETE",
+      "valor": 15.00451133795759,
+      "parametros": {
+        "d": 1,
+        "estructura_estacional": "ARMA",
+        "p": 3,
+        "q": 2
+      },
+      "atributos": {
+        "mae": 10.284267936863516,
+        "rmse_cortes": [
+          3.2880092615993886,
+          27.834603139014117,
+          13.890921613259263
+        ],
+        "mae_cortes": [
+          2.4975479720769904,
+          18.892016354627394,
+          9.463239483886165
+        ],
+        "hiperparametros": {
+          "orden": [
+            3,
+            1,
+            2
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "aic": 766.837192725043,
+        "segundos": 192.6
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 192.596583
+    },
+    {
+      "numero": 13,
+      "estado": "COMPLETE",
+      "valor": 15.00451133795759,
+      "parametros": {
+        "d": 1,
+        "estructura_estacional": "ARMA",
+        "p": 3,
+        "q": 2
+      },
+      "atributos": {
+        "mae": 10.284267936863516,
+        "rmse_cortes": [
+          3.2880092615993886,
+          27.834603139014117,
+          13.890921613259263
+        ],
+        "mae_cortes": [
+          2.4975479720769904,
+          18.892016354627394,
+          9.463239483886165
+        ],
+        "hiperparametros": {
+          "orden": [
+            3,
+            1,
+            2
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "aic": 766.837192725043,
+        "segundos": 192.6,
+        "repetida": true
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.004001
+    },
+    {
+      "numero": 14,
+      "estado": "COMPLETE",
+      "valor": 14.961061098803787,
+      "parametros": {
+        "d": 1,
+        "estructura_estacional": "ARMA",
+        "p": 4,
+        "q": 2
+      },
+      "atributos": {
+        "mae": 10.31135647613688,
+        "rmse_cortes": [
+          3.2804891695200653,
+          27.933125392344433,
+          13.669568734546857
+        ],
+        "mae_cortes": [
+          2.487510175210414,
+          19.095281449408382,
+          9.351277803791843
+        ],
+        "hiperparametros": {
+          "orden": [
+            4,
+            1,
+            2
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "aic": 2267.3082357517974,
+        "segundos": 352.9,
+        "repetida": true
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.003999
+    },
+    {
+      "numero": 15,
+      "estado": "COMPLETE",
+      "valor": 15.102552670884272,
+      "parametros": {
+        "d": 1,
+        "estructura_estacional": "ARMA",
+        "p": 3,
+        "q": 1
+      },
+      "atributos": {
+        "mae": 10.425438098759818,
+        "rmse_cortes": [
+          3.2614882315666094,
+          28.02851290263124,
+          14.017656878454968
+        ],
+        "mae_cortes": [
+          2.4818996723503233,
+          19.15829447631376,
+          9.636120147615372
+        ],
+        "hiperparametros": {
+          "orden": [
+            3,
+            1,
+            1
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "aic": 768.1423766167557,
+        "segundos": 187.6
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 187.577693
+    },
+    {
+      "numero": 16,
+      "estado": "COMPLETE",
+      "valor": 15.155397455880498,
+      "parametros": {
+        "d": 1,
+        "estructura_estacional": "ARMA",
+        "p": 4,
+        "q": 3
+      },
+      "atributos": {
+        "mae": 10.421902744795437,
+        "rmse_cortes": [
+          3.3290324366219437,
+          28.123308562819652,
+          14.0138513681999
+        ],
+        "mae_cortes": [
+          2.5173096180570234,
+          19.105652887653598,
+          9.642745728675688
+        ],
+        "hiperparametros": {
+          "orden": [
+            4,
+            1,
+            3
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "aic": 768.3442943561555,
+        "segundos": 322.2,
+        "repetida": true
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.00352
+    },
+    {
+      "numero": 17,
+      "estado": "COMPLETE",
+      "valor": 15.00451133795759,
+      "parametros": {
+        "d": 1,
+        "estructura_estacional": "ARMA",
+        "p": 3,
+        "q": 2
+      },
+      "atributos": {
+        "mae": 10.284267936863516,
+        "rmse_cortes": [
+          3.2880092615993886,
+          27.834603139014117,
+          13.890921613259263
+        ],
+        "mae_cortes": [
+          2.4975479720769904,
+          18.892016354627394,
+          9.463239483886165
+        ],
+        "hiperparametros": {
+          "orden": [
+            3,
+            1,
+            2
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "aic": 766.837192725043,
+        "segundos": 192.6,
+        "repetida": true
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.004002
+    },
+    {
+      "numero": 18,
+      "estado": "COMPLETE",
+      "valor": 15.107990953769074,
+      "parametros": {
+        "d": 1,
+        "estructura_estacional": "ARMA",
+        "p": 4,
+        "q": 1
+      },
+      "atributos": {
+        "mae": 10.429559083000415,
+        "rmse_cortes": [
+          3.279972110977906,
+          28.02157575476738,
+          14.022424995561936
+        ],
+        "mae_cortes": [
+          2.4884627894778752,
+          19.160457274609733,
+          9.639757184913636
+        ],
+        "hiperparametros": {
+          "orden": [
+            4,
+            1,
+            1
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "aic": 768.1586387873889,
+        "segundos": 285.6
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 285.564239
+    },
+    {
+      "numero": 19,
+      "estado": "COMPLETE",
+      "valor": 15.016136884441979,
+      "parametros": {
+        "d": 1,
+        "estructura_estacional": "ARMA",
+        "p": 2,
+        "q": 2
+      },
+      "atributos": {
+        "mae": 10.332474254952837,
+        "rmse_cortes": [
+          3.283785372065897,
+          27.70647984801442,
+          14.058145433245622
+        ],
+        "mae_cortes": [
+          2.494442589844634,
+          18.82336314189176,
+          9.679617033122119
+        ],
+        "hiperparametros": {
+          "orden": [
+            2,
+            1,
+            2
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "aic": 764.8383728805773,
+        "segundos": 245.6
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 245.61654
+    },
+    {
+      "numero": 20,
+      "estado": "COMPLETE",
+      "valor": 14.878408903001656,
+      "parametros": {
+        "d": 1,
+        "estructura_estacional": "ARMA",
+        "p": 3,
+        "q": 3
+      },
+      "atributos": {
+        "mae": 10.212639663187268,
+        "rmse_cortes": [
+          3.2651577654243074,
+          27.65363977673931,
+          13.716429166841348
+        ],
+        "mae_cortes": [
+          2.4940469660518456,
+          18.84883701687351,
+          9.295035006636448
+        ],
+        "hiperparametros": {
+          "orden": [
+            3,
+            1,
+            3
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "aic": 766.408142100088,
+        "segundos": 344.8
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 344.768536
+    },
+    {
+      "numero": 21,
+      "estado": "COMPLETE",
+      "valor": 14.878408903001656,
+      "parametros": {
+        "d": 1,
+        "estructura_estacional": "ARMA",
+        "p": 3,
+        "q": 3
+      },
+      "atributos": {
+        "mae": 10.212639663187268,
+        "rmse_cortes": [
+          3.2651577654243074,
+          27.65363977673931,
+          13.716429166841348
+        ],
+        "mae_cortes": [
+          2.4940469660518456,
+          18.84883701687351,
+          9.295035006636448
+        ],
+        "hiperparametros": {
+          "orden": [
+            3,
+            1,
+            3
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "aic": 766.408142100088,
+        "segundos": 344.8,
+        "repetida": true
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.00313
+    },
+    {
+      "numero": 22,
+      "estado": "COMPLETE",
+      "valor": 14.966376197078716,
+      "parametros": {
+        "d": 1,
+        "estructura_estacional": "ARMA",
+        "p": 2,
+        "q": 3
+      },
+      "atributos": {
+        "mae": 10.24551312141261,
+        "rmse_cortes": [
+          3.268296283538742,
+          27.88776294729214,
+          13.743069360405272
+        ],
+        "mae_cortes": [
+          2.4946017575008903,
+          18.93304285843683,
+          9.308894748300109
+        ],
+        "hiperparametros": {
+          "orden": [
+            2,
+            1,
+            3
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "aic": 767.0182691405706,
+        "segundos": 296.5
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 296.510366
+    },
+    {
+      "numero": 23,
+      "estado": "COMPLETE",
+      "valor": 14.878408903001656,
+      "parametros": {
+        "d": 1,
+        "estructura_estacional": "ARMA",
+        "p": 3,
+        "q": 3
+      },
+      "atributos": {
+        "mae": 10.212639663187268,
+        "rmse_cortes": [
+          3.2651577654243074,
+          27.65363977673931,
+          13.716429166841348
+        ],
+        "mae_cortes": [
+          2.4940469660518456,
+          18.84883701687351,
+          9.295035006636448
+        ],
+        "hiperparametros": {
+          "orden": [
+            3,
+            1,
+            3
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "aic": 766.408142100088,
+        "segundos": 344.8,
+        "repetida": true
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.002998
+    },
+    {
+      "numero": 24,
+      "estado": "COMPLETE",
+      "valor": 14.878408903001656,
+      "parametros": {
+        "d": 1,
+        "estructura_estacional": "ARMA",
+        "p": 3,
+        "q": 3
+      },
+      "atributos": {
+        "mae": 10.212639663187268,
+        "rmse_cortes": [
+          3.2651577654243074,
+          27.65363977673931,
+          13.716429166841348
+        ],
+        "mae_cortes": [
+          2.4940469660518456,
+          18.84883701687351,
+          9.295035006636448
+        ],
+        "hiperparametros": {
+          "orden": [
+            3,
+            1,
+            3
+          ],
+          "orden_estacional": [
+            1,
+            0,
+            1,
+            52
+          ],
+          "tendencia": "n"
+        },
+        "aic": 766.408142100088,
+        "segundos": 344.8,
+        "repetida": true
+      },
+      "valores_intermedios": {},
+      "duracion_segundos": 0.004001
+    }
+  ]
+}

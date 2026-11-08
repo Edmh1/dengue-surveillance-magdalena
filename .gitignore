@@ -10,3 +10,5 @@ clima**
 mlruns/
 mlflow.db
 p.ipynb
+# Salidas del modo rapido de los notebooks (solo comprueban que corren)
+_rapido/
