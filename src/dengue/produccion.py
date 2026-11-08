@@ -15,7 +15,6 @@ acepta cada clase (hiperparametros_por_defecto).
 from __future__ import annotations
 
 import copy
-import json
 import os
 import sys
 import time
@@ -54,68 +53,6 @@ EPOCAS_MAXIMAS = 200
 PACIENCIA = 20
 EPOCAS_RAPIDO = 4
 PACIENCIA_RAPIDO = 2
-
-# ---------------------------------------------------------------------------
-# Analisis de sensibilidad de la busqueda de las redes (SENSIBILIDAD=1, ver
-# experimentacion.modo_sensibilidad y METODOLOGIA_PRONOSTICO.md, seccion 6).
-# Solo cambia los espacios de busqueda, el presupuesto de Optuna y el techo de
-# epocas de la LSTM; el protocolo (periodos, walk-forward, H1 a H6, objetivo
-# RMSE global, 5 semillas, MedianPruner, regla del 5 %, criterios de ganador)
-# es el mismo de la corrida oficial. Sin la variable, todo es identico a ella.
-#
-# Motivo de cada cambio (historial de Optuna de la corrida oficial del 07):
-# - LSTM: la segunda capa quedo entre 124 y 127 unidades en tres de las cinco
-#   mejores configuraciones (techo 128) y el 11 % de las semillas llego al techo
-#   de 200 epocas. Se amplian capas (1 a 5), unidades (hasta 256), tasa (hasta
-#   0,03) y epocas (300); la paciencia queda en 20.
-# - N-BEATS: la tasa quedo cerca del techo de 0,01 en dos de las cinco mejores.
-#   La implementacion generica del tablero apila num_pilas x bloques_por_pila
-#   bloques sin otra diferencia entre pila y bloque (3 x 1 y 1 x 3 son la misma
-#   red), asi que se busca directamente el numero de bloques (1 a 16, con
-#   bloques_por_pila = 1), capas por bloque de 1 a 6, ancho hasta 512 y tasa
-#   hasta 0,03. Ninguna semilla oficial paso de 134 epocas: el techo queda en 200.
-# ---------------------------------------------------------------------------
-SENSIBILIDAD = os.environ.get("SENSIBILIDAD") == "1"
-RANGOS_SENSIBILIDAD = {
-    "lstm": {
-        "capas": [1, 5], "unidades_por_capa": [8, 256], "escala_unidades": "logaritmica, independiente por capa",
-        "tasa_aprendizaje": [1e-4, 3e-2], "epocas_maximas": 300, "paciencia": PACIENCIA,
-        "pruebas": 80,
-    },
-    "nbeats": {
-        "bloques": [1, 16], "escala_bloques": "logaritmica (num_pilas, con bloques_por_pila = 1)",
-        "capas_por_bloque": [1, 6], "ancho_capa": [32, 512], "tasa_aprendizaje": [1e-4, 3e-2],
-        "epocas_maximas": EPOCAS_MAXIMAS, "paciencia": PACIENCIA, "pruebas": 60,
-    },
-    "sin_cambios": ["ventana_semanas", "dropout", "batch_size", "optimizador (LSTM)", "semillas", "periodos",
-                    "walk-forward H1 a H6", "objetivo RMSE global", "MedianPruner", "regla del 5 %",
-                    "criterios de ganador", "paciencia", "reduccion de la tasa (LSTM)"],
-}
-if SENSIBILIDAD:
-    PRUEBAS = {**PRUEBAS, "lstm": RANGOS_SENSIBILIDAD["lstm"]["pruebas"],
-               "nbeats": RANGOS_SENSIBILIDAD["nbeats"]["pruebas"]}
-
-
-def guardar_rangos_sensibilidad() -> Path | None:
-    """Deja los rangos usados junto a los resultados de la sensibilidad
-    (outputs/resultados/_sensibilidad, o _rapido en modo rapido). Lo llama la
-    busqueda de las redes la primera vez; sin SENSIBILIDAD no hace nada."""
-    if not SENSIBILIDAD:
-        return None
-    from dengue.experimentacion import RAIZ
-
-    sufijo = "_rapido" if os.environ.get("MODO_RAPIDO") == "1" else "_sensibilidad"
-    carpeta = RAIZ / "outputs" / "resultados" / sufijo
-    carpeta.mkdir(parents=True, exist_ok=True)
-    ruta = carpeta / "rangos_sensibilidad.json"
-    contenido = {"rangos": RANGOS_SENSIBILIDAD, "pruebas": PRUEBAS,
-                 "oficial": {"lstm": {"capas": [1, 3], "unidades_por_capa": [8, 128], "tasa_aprendizaje": [1e-4, 1e-2],
-                                      "epocas_maximas": EPOCAS_MAXIMAS, "pruebas": 30},
-                             "nbeats": {"num_pilas": [2, 30], "bloques_por_pila": [1, 2], "capas_por_bloque": [1, 4],
-                                        "ancho_capa": [32, 256], "tasa_aprendizaje": [1e-4, 1e-2],
-                                        "epocas_maximas": EPOCAS_MAXIMAS, "pruebas": 30}}}
-    ruta.write_text(json.dumps(contenido, ensure_ascii=False, indent=2), encoding="utf-8")
-    return ruta
 
 
 # ---------------------------------------------------------------------------
@@ -291,8 +228,6 @@ def objetivo_red(clase, espacio: Callable, serie_entrenamiento: pd.DataFrame, se
     import optuna
 
     def objetivo(trial):
-        if SENSIBILIDAD:
-            return _objetivo_red_sensibilidad(trial, clase, espacio, serie_entrenamiento, semillas)
         hiperparametros = espacio(trial)
         rmses, maes, epocas = [], [], []
         inicio = time.time()
@@ -317,59 +252,6 @@ def objetivo_red(clase, espacio: Callable, serie_entrenamiento: pd.DataFrame, se
         return float(np.mean(rmses))
 
     return objetivo
-
-
-def _objetivo_red_sensibilidad(trial, clase, espacio: Callable, serie_entrenamiento: pd.DataFrame,
-                               semillas: list[int]) -> float:
-    """Mismo objetivo que objetivo_red (RMSE global medio de las semillas en la
-    validacion, poda por mediana despues de cada semilla) con dos agregados:
-    guarda tambien R2 y MAPE por semilla, y si una prueba lanza un error (por
-    ejemplo, memoria de la GPU) la deja como fallida (Optuna marca FAIL un valor
-    NaN) en lugar de detener la busqueda; el error queda en sus atributos."""
-    import keras
-    import optuna
-
-    if trial.number == 0:
-        guardar_rangos_sensibilidad()
-    hiperparametros = espacio(trial)
-    trial.set_user_attr("hiperparametros", hiperparametros)
-    rmses, maes, r2s, mapes, epocas = [], [], [], [], []
-    inicio = time.time()
-
-    def registrar_semillas():
-        for clave, contenido in {"rmse_semillas": rmses, "mae_semillas": maes, "r2_semillas": r2s,
-                                 "mape_semillas": mapes, "epocas": epocas,
-                                 "segundos": round(time.time() - inicio, 1)}.items():
-            trial.set_user_attr(clave, contenido)
-
-    try:
-        for paso, semilla in enumerate(semillas):
-            keras.backend.clear_session()
-            resultado = evaluar_red_en_validacion(clase, {**hiperparametros, "semilla": semilla}, serie_entrenamiento)
-            globales = resultado["metricas"]["global"]["modelo"]
-            rmses.append(globales["RMSE"])
-            maes.append(globales["MAE"])
-            r2s.append(globales.get("R2"))
-            mapes.append(globales.get("MAPE"))
-            epocas.append(resultado["detalles"].get("epocas_ejecutadas"))
-            trial.report(float(np.mean(rmses)), paso)
-            if paso < len(semillas) - 1 and trial.should_prune():
-                registrar_semillas()
-                raise optuna.TrialPruned()
-    except optuna.TrialPruned:
-        raise
-    except Exception as error:  # noqa: BLE001 (se registra y la prueba queda FAIL)
-        registrar_semillas()
-        trial.set_user_attr("error", f"{type(error).__name__}: {str(error)[:300]}")
-        return float("nan")
-    registrar_semillas()
-    if not np.all(np.isfinite(rmses)):
-        trial.set_user_attr("error", "RMSE no finito en alguna semilla")
-        return float("nan")
-    trial.set_user_attr("rmse_media", float(np.mean(rmses)))
-    trial.set_user_attr("rmse_sd", float(np.std(rmses, ddof=1)) if len(rmses) > 1 else 0.0)
-    trial.set_user_attr("mae", float(np.mean(maes)))
-    return float(np.mean(rmses))
 
 
 # ---------------------------------------------------------------------------
@@ -439,17 +321,15 @@ def espacio_lightgbm(trial) -> dict[str, Any]:
     return hp
 
 
-def fijos_redes(modo_rapido: bool, epocas_maximas: int = EPOCAS_MAXIMAS) -> dict[str, Any]:
+def fijos_redes(modo_rapido: bool) -> dict[str, Any]:
     return {
-        "epocas_maximas": EPOCAS_RAPIDO if modo_rapido else epocas_maximas,
+        "epocas_maximas": EPOCAS_RAPIDO if modo_rapido else EPOCAS_MAXIMAS,
         "paciencia": PACIENCIA_RAPIDO if modo_rapido else PACIENCIA,
         "fraccion_validacion": FRACCION_VALIDACION_REDES,
     }
 
 
 def espacio_lstm(trial, modo_rapido: bool = False) -> dict[str, Any]:
-    if SENSIBILIDAD:
-        return _espacio_lstm_sensibilidad(trial, modo_rapido)
     capas = trial.suggest_int("capas", 1, 3)
     unidades = [trial.suggest_int(f"unidades_capa{k + 1}", 8, 128, log=True) for k in range(capas)]
     nombre_optimizador = trial.suggest_categorical("optimizador", ["adam", "rmsprop"])
@@ -469,8 +349,6 @@ def espacio_lstm(trial, modo_rapido: bool = False) -> dict[str, Any]:
 
 
 def espacio_nbeats(trial, modo_rapido: bool = False) -> dict[str, Any]:
-    if SENSIBILIDAD:
-        return _espacio_nbeats_sensibilidad(trial, modo_rapido)
     return {
         "ventana_semanas": trial.suggest_int("ventana_semanas", 6, 52),
         "num_pilas": trial.suggest_int("num_pilas", 2, 30, log=True),
@@ -481,45 +359,6 @@ def espacio_nbeats(trial, modo_rapido: bool = False) -> dict[str, Any]:
         "tasa_aprendizaje": trial.suggest_float("tasa_aprendizaje", 1e-4, 1e-2, log=True),
         "batch_size": 2 ** trial.suggest_int("log2_batch_size", 3, 6),
         **fijos_redes(modo_rapido),
-    }
-
-
-def _espacio_lstm_sensibilidad(trial, modo_rapido: bool) -> dict[str, Any]:
-    """Espacio ampliado de la LSTM (RANGOS_SENSIBILIDAD). Optuna elige el numero
-    de capas y, para cada una, sus unidades; la clase Lstm del tablero construye
-    la red desde esa lista (return_sequences en todas menos la ultima)."""
-    r = RANGOS_SENSIBILIDAD["lstm"]
-    capas = trial.suggest_int("capas", *r["capas"])
-    unidades = [trial.suggest_int(f"unidades_capa{k + 1}", *r["unidades_por_capa"], log=True) for k in range(capas)]
-    nombre_optimizador = trial.suggest_categorical("optimizador", ["adam", "rmsprop"])
-    tasa = trial.suggest_float("tasa_aprendizaje", *r["tasa_aprendizaje"], log=True)
-    clase_keras = {"adam": "Adam", "rmsprop": "RMSprop"}[nombre_optimizador]
-    return {
-        "ventana_semanas": trial.suggest_int("ventana_semanas", 6, 52),
-        "unidades": unidades,
-        "dropout": trial.suggest_float("dropout", 0.0, 0.5),
-        "optimizador": {"class_name": clase_keras, "config": {"learning_rate": tasa}},
-        "batch_size": 2 ** trial.suggest_int("log2_batch_size", 3, 6),
-        "paciencia_tasa_aprendizaje": PACIENCIA_RAPIDO if modo_rapido else 10,
-        **fijos_redes(modo_rapido, r["epocas_maximas"]),
-    }
-
-
-def _espacio_nbeats_sensibilidad(trial, modo_rapido: bool) -> dict[str, Any]:
-    """Espacio ampliado de N-BEATS (RANGOS_SENSIBILIDAD). El numero de bloques se
-    busca directamente: num_pilas = bloques y bloques_por_pila = 1, la misma red
-    que construye NBeats con num_pilas x bloques_por_pila bloques."""
-    r = RANGOS_SENSIBILIDAD["nbeats"]
-    return {
-        "ventana_semanas": trial.suggest_int("ventana_semanas", 6, 52),
-        "num_pilas": trial.suggest_int("bloques", *r["bloques"], log=True),
-        "bloques_por_pila": 1,
-        "capas_por_bloque": trial.suggest_int("capas_por_bloque", *r["capas_por_bloque"]),
-        "ancho_capa": trial.suggest_int("ancho_capa", *r["ancho_capa"], log=True),
-        "dropout": trial.suggest_float("dropout", 0.0, 0.5),
-        "tasa_aprendizaje": trial.suggest_float("tasa_aprendizaje", *r["tasa_aprendizaje"], log=True),
-        "batch_size": 2 ** trial.suggest_int("log2_batch_size", 3, 6),
-        **fijos_redes(modo_rapido, r["epocas_maximas"]),
     }
 
 

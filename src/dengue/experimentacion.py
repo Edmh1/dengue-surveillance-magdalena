@@ -75,22 +75,14 @@ class Salidas:
         return Path(ruta).resolve().relative_to(RAIZ).as_posix()
 
 
-def modo_sensibilidad() -> bool:
-    """Analisis de sensibilidad de la busqueda de las redes (variable de entorno
-    SENSIBILIDAD=1): rangos y presupuesto ampliados en produccion.espacio_lstm,
-    espacio_nbeats y PRUEBAS, con todas las salidas en subcarpetas _sensibilidad.
-    No cambia la corrida oficial."""
-    return os.environ.get("SENSIBILIDAD") == "1"
-
-
 def configurar_salidas(carpeta_figuras: str, modo_rapido: bool) -> Salidas:
-    sufijo = "_rapido" if modo_rapido else ("_sensibilidad" if modo_sensibilidad() else "")
+    sufijo = "_rapido" if modo_rapido else ""
     salidas_base = RAIZ / "outputs"
     figuras = salidas_base / "figures" / carpeta_figuras
     resultados = salidas_base / "resultados"
     paquetes = salidas_base / "paquetes"
     informe = salidas_base
-    if sufijo:
+    if modo_rapido:
         figuras = figuras / sufijo
         resultados = resultados / sufijo
         paquetes = paquetes / sufijo
@@ -551,37 +543,7 @@ def resumen_estudio(estudio) -> dict[str, Any]:
             "mejor_prueba": mejor.number,
             "atributos_mejor": mejor.user_attrs,
         })
-    if modo_sensibilidad():
-        # Cuanto se exploro de verdad: con la poda, las pruebas pedidas no son
-        # entrenamientos completos de 5 semillas.
-        fallidas = [t for t in estudio.trials if t.state == optuna.trial.TrialState.FAIL]
-        duraciones = [t.duration.total_seconds() for t in estudio.trials if t.duration is not None]
-        inicios = [t.datetime_start for t in estudio.trials if t.datetime_start is not None]
-        finales = [t.datetime_complete for t in estudio.trials if t.datetime_complete is not None]
-        resumen.update({
-            "fallidas": len(fallidas),
-            "errores_fallidas": {t.number: t.user_attrs.get("error") for t in fallidas},
-            "segundos_suma_pruebas": round(sum(duraciones), 1),
-            "segundos_optimizacion": round((max(finales) - min(inicios)).total_seconds(), 1) if inicios and finales else None,
-            "mejor_valor_a_menos_de_2_por_ciento_desde_la_prueba": _prueba_meseta(completas),
-        })
     return _a_json(resumen)
-
-
-def _prueba_meseta(completas: list) -> int | None:
-    """Primera prueba (en orden de numero) desde la que el mejor valor acumulado
-    ya estaba a menos de un 2 % del mejor final: indica si la busqueda llego a
-    una meseta o seguia mejorando al final del presupuesto."""
-    if not completas:
-        return None
-    ordenadas = sorted(completas, key=lambda t: t.number)
-    mejor_final = min(t.value for t in ordenadas)
-    acumulado = float("inf")
-    for t in ordenadas:
-        acumulado = min(acumulado, t.value)
-        if acumulado <= mejor_final * 1.02:
-            return t.number
-    return None
 
 
 def importancias(estudio) -> dict[str, float]:

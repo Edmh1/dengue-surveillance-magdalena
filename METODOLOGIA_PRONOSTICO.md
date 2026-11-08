@@ -81,26 +81,7 @@ Aprendizaje profundo (esquema 70/15/15). El 85 % se divide en entrenamiento (200
 
 Estabilidad de las redes. Una misma configuración da resultados distintos según la semilla aleatoria: en la búsqueda del notebook 07 de la corrida oficial, una misma configuración de N-BEATS dio, con los mismos datos, RMSE de validación entre 33,9 y 248,0 según la semilla (la configuración elegida, entre 13,3 y 14,1). Por eso cada configuración se entrena con 5 semillas, con el determinismo de TensorFlow activado, y se registran la media y la dispersión. Regla de elección: entre las configuraciones cuyo RMSE global medio está a menos de un 5 % del mejor, se elige la de menor dispersión entre semillas. No se usan ensambles.
 
-Presupuesto de las redes y análisis de sensibilidad. Las redes tienen 30 pruebas en producción (20 en investigación) porque cada prueba entrena hasta 5 redes. En la corrida oficial las dos búsquedas del notebook 07 llegaron a una meseta: desde la prueba 11 (LSTM) y la 10 (N-BEATS) el mejor valor mejoró menos de un 2 %, la misma tolerancia con que se declara un empate entre candidatos. Dos hiperparámetros quedaron cerca del borde de su rango: la segunda capa de la LSTM, entre 124 y 127 unidades en tres de las cinco mejores configuraciones (techo 128), y la tasa de aprendizaje de N-BEATS, cerca de 0,01 en dos de las cinco mejores. Para comprobar si ampliar la búsqueda, incluida la profundidad de las redes, cambia el resultado, el notebook 07 tiene un modo de sensibilidad (variable de entorno SENSIBILIDAD=1, en src/dengue/produccion.py, RANGOS_SENSIBILIDAD). Solo cambian los espacios de búsqueda, el presupuesto de Optuna y el techo de épocas de la LSTM; el protocolo es el mismo de la corrida oficial: periodos, walk-forward, horizontes 1 a 6, objetivo (RMSE global medio de las 5 semillas en la validación), semillas, poda por mediana, regla del 5 % y criterios de ganador.
-
-| Hiperparámetro | Oficial | Sensibilidad | Motivo |
-|---|---|---|---|
-| LSTM: capas | 1 a 3 | 1 a 5 | explorar la profundidad sin imponerla; cada capa con sus propias unidades |
-| LSTM: unidades por capa | 8 a 128 (log) | 8 a 256 (log) | la segunda capa quedó cerca del techo de 128 |
-| LSTM: tasa de aprendizaje | 0,0001 a 0,01 (log) | 0,0001 a 0,03 (log) | mismo techo que N-BEATS |
-| LSTM: épocas máximas / paciencia | 200 / 20 | 300 / 20 | el 11 % de las semillas oficiales llegó a 200; la paciencia no cambia para no alterar la regla de entrenamiento |
-| LSTM: pruebas | 30 | 80 | el espacio crece con una dimensión de unidades por cada capa adicional |
-| N-BEATS: bloques | num_pilas 2 a 30 (log) × bloques_por_pila 1 a 2 | 1 a 16 (log), bloques_por_pila = 1 | en la implementación genérica del tablero pila y bloque no se distinguen (3 × 1 y 1 × 3 son la misma red); la búsqueda oficial ya probó hasta 52 bloques y ganaron 3 y 4 |
-| N-BEATS: capas por bloque | 1 a 4 | 1 a 6 | se conserva 1, que usan dos de las cinco mejores oficiales |
-| N-BEATS: ancho de capa | 32 a 256 (log) | 32 a 512 (log) | el ancho interactúa con la profundidad |
-| N-BEATS: tasa de aprendizaje | 0,0001 a 0,01 (log) | 0,0001 a 0,03 (log) | quedó cerca del techo de 0,01 |
-| N-BEATS: épocas máximas / paciencia | 200 / 20 | 200 / 20 | ninguna semilla oficial pasó de 134 épocas: subir el techo no tendría efecto |
-| N-BEATS: pruebas | 30 | 60 | |
-| Ventana, dropout, lotes, optimizador | | sin cambios | no estaban en el borde de su rango |
-
-El bloque con que ajustan las redes tiene 657 semanas (2007 a agosto de 2019), unas 600 a 650 ventanas según su largo. Las arquitecturas más grandes del espacio ampliado tienen muchos más parámetros que la elegida en la corrida oficial (LSTM de 5 × 256: 2,4 millones; N-BEATS de 16 bloques × 6 capas × 512: 21,5 millones; la LSTM y el N-BEATS oficiales tienen 143 mil y 21 mil). Por eso el resultado esperable, y también relevante, es que la búsqueda prefiera redes pequeñas: la parada temprana con validación separada contiene el sobreajuste y la regla del 5 % penaliza las configuraciones que varían mucho entre semillas.
-
-Además de lo que registra la corrida oficial, la sensibilidad guarda, por modelo, las pruebas pedidas, completas, podadas y fallidas (una prueba que lanza un error, por ejemplo por memoria, queda fallida y no detiene la búsqueda), el tiempo total de optimización, la prueba desde la que el mejor valor ya estaba a menos de un 2 % del final, y por cada configuración el RMSE, el MAE, el R² y el MAPE de cada semilla. Con la poda, las pruebas pedidas no son entrenamientos completos: en la corrida oficial, de 30 pruebas completaron las 5 semillas 14 (LSTM) y 16 (N-BEATS). Los rangos usados quedan en outputs/resultados/_sensibilidad/rangos_sensibilidad.json y todas las salidas en subcarpetas _sensibilidad; no cambia la corrida oficial ni los paquetes exportados.
+Presupuesto de las redes. Las redes tienen 30 pruebas en producción (20 en investigación) porque cada prueba entrena hasta 5 redes. Con la poda, no todas son entrenamientos completos: en la corrida oficial, de 30 pruebas completaron las 5 semillas 14 (LSTM) y 16 (N-BEATS). Las dos búsquedas del notebook 07 llegaron a una meseta: desde la prueba 11 (LSTM) y la 10 (N-BEATS) el mejor valor mejoró menos de un 2 %, la misma tolerancia con que se declara un empate entre candidatos. La búsqueda prefirió redes pequeñas: N-BEATS probó hasta 52 bloques y ganaron configuraciones de 3 y 4, y la LSTM y el N-BEATS elegidos tienen 143 mil y 21 mil parámetros, frente a unas 600 a 650 ventanas de ajuste; la parada temprana con validación separada contiene el sobreajuste y la regla del 5 % penaliza las configuraciones que varían mucho entre semillas. Dos hiperparámetros quedaron cerca del borde de su rango (la segunda capa de la LSTM, cerca del techo de 128 unidades, y la tasa de aprendizaje de N-BEATS, cerca de 0,01); ampliar esos rangos queda como trabajo futuro.
 
 # 7. Selección del ganador de cada familia
 
@@ -165,7 +146,7 @@ Orden: 01, 02, 04, 03, 05, 06, 07. Las instrucciones de instalación para Window
 
 # 13. Corrida oficial y resultados principales
 
-Los resultados de los notebooks 03, 05, 06 y 07 son los de la corrida completa (MODO_RAPIDO = 0) del 7 de noviembre de 2026 en la máquina A (tabla de equipos al final de esta sección). TensorFlow corrió en CPU (en Windows no usa la GPU) y PyTorch en GPU (CUDA 13.0), así que en el 03 y el 05 N-BEATS (darts) entrenó en GPU y las demás redes en CPU. Versiones: statsmodels 0.15.0, prophet 1.5.0, xgboost 3.4.1, lightgbm 4.7.0, tensorflow 2.21.0, keras 3.15.1, torch 2.14.1, darts 0.48.1, optuna 4.9.0. Los notebooks 01, 02 y 04 no se reejecutaron. Las tablas completas están en outputs/RESULTADOS_PARA_INFORME.md, generado desde los JSON.
+Los resultados de los notebooks 03, 05, 06 y 07 son los de la corrida completa (MODO_RAPIDO = 0) del 7 de noviembre de 2026 en la máquina A: Intel Core i7-13650HX (14 núcleos), 24 GB de RAM, NVIDIA RTX 5050 de 8 GB, Windows 11 y Python 3.12.10; la duración de cada notebook está en ENTORNO.md, sección 7. TensorFlow corrió en CPU (en Windows no usa la GPU) y PyTorch en GPU (CUDA 13.0), así que en el 03 y el 05 N-BEATS (darts) entrenó en GPU y las demás redes en CPU. Versiones: statsmodels 0.15.0, prophet 1.5.0, xgboost 3.4.1, lightgbm 4.7.0, tensorflow 2.21.0, keras 3.15.1, torch 2.14.1, darts 0.48.1, optuna 4.9.0. Los notebooks 01, 02 y 04 no se reejecutaron. Las tablas completas están en outputs/RESULTADOS_PARA_INFORME.md, generado desde los JSON.
 
 Clima (notebook 05, serie de investigación). Quitar el clima reduce el R² en cinco de los siete modelos (ARIMA y SARIMA frente a SARIMAX, Prophet-AR, XGBoost desde el horizonte 3 y N-BEATS) y lo mejora en LightGBM y LSTM. A una semana la diferencia es casi nula (de 0,001 a 0,026 de R² en los modelos que mejoran con clima) y crece con el horizonte, hasta 0,22 a seis semanas en Prophet-AR y N-BEATS. La decisión de pronosticar sin clima en esta versión se sostiene en tres hechos: la ganancia se midió con clima observado también dentro del horizonte (con el rezago mínimo de 4 semanas, los horizontes 5 y 6 usan clima posterior a la semana de origen, que en operación sería un pronóstico), así que es un techo; el dataset climático termina en 2024, de modo que un modelo con clima no podría pasar la prueba final de 2025 ni entrenarse hasta 2025; y operarlo exige adquirir, actualizar y validar tres fuentes cada semana. Incorporar el clima, empezando por extender las series a 2025 y usar solo clima disponible en la semana de origen, queda como trabajo futuro.
 
@@ -179,16 +160,4 @@ Ganadores (serie del tablero, prueba de abril de 2022 a diciembre de 2024, RMSE 
 
 Prophet-AR es el mejor de los siete candidatos y el único que supera a la persistencia en la prueba, en los horizontes 2 a 6. En 2025, un brote mayor que todo lo observado, ningún ganador supera a la persistencia; Prophet-AR queda entre un 4 % y un 7 % por encima de ella de H3 a H6. Horizonte recomendado: 4 semanas (sección 9). Los tres paquetes pasan la revisión del tablero.
 
-Equipos de la experimentación. Toda la experimentación se ejecuta en dos equipos:
-
-| | Máquina A (corrida oficial) | Máquina B (clúster) |
-|---|---|---|
-| Procesador | Intel Core i7-13650HX (14 núcleos), 24 GB de RAM | por registrar |
-| GPU | NVIDIA RTX 5050, 8 GB | NVIDIA RTX 6000 Ada, 48 GB (gpu2) |
-| Sistema | Windows 11, Python 3.12.10 | Rocky Linux, Python 3.12 |
-| TensorFlow | CPU | GPU |
-| PyTorch | GPU (CUDA 13.0) | GPU |
-| Qué corre | 03, 05, 06 y 07 | 03, 05, 06 y 07, y el análisis de sensibilidad del 07 (sección 6) |
-| Dónde quedan los resultados | outputs/ (los que usa el tablero) | resultados_cluster/ |
-
-Las cifras de este documento, de los notebooks y los paquetes del tablero son las de la máquina A. Duración en la máquina A, con las cadenas 03-05 y 06-07 en paralelo: 03, 94 minutos; 05, 154; 06, 67; 07, 150. La corrida de la máquina B repite la misma metodología con otro hardware y con TensorFlow en GPU, para comprobar si las decisiones (ganadores, horizonte, aporte del clima) se mantienen; sus resultados completos quedan en resultados_cluster/, junto a los de la máquina A, para que la comparación sea transparente. Entre CPU y GPU las métricas pueden diferir en los últimos decimales (ENTORNO.md, sección 7).
+Las cifras de este documento, de los notebooks y de los paquetes del tablero son las de la corrida oficial.
