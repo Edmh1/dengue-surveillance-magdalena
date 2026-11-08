@@ -35,7 +35,7 @@ repository (see [Dashboard & deployment](#dashboard--deployment)).
 - Weekly modeling dataset combining confirmed cases with the winning climate
   source per variable
 - Systematic model comparison (MAE, RMSE, MAPE, R²) tracked with MLflow
-- Model interpretability with SHAP for the gradient-boosting models
+- Feature importance for the gradient-boosting models
 - Climate-based clustering of Magdalena municipalities
 - Ablation study isolating the predictive contribution of climate vs. dengue lags
 
@@ -53,22 +53,8 @@ repository (see [Dashboard & deployment](#dashboard--deployment)).
 | Deep learning | tensorflow / keras (LSTM; N-BEATS in notebooks 06-07), darts (N-BEATS in notebooks 03-05) |
 | Hyperparameter search | Optuna |
 | Experiment tracking | MLflow |
-| Interpretability | SHAP |
 | Visualization | matplotlib, seaborn, plotly |
 | Version control | Git + GitHub |
-
----
-
-## Models evaluated
-
-All models are evaluated on the same weekly dataset with the same metrics
-(MAE, RMSE, MAPE, R²) and tracked with MLflow.
-
-| Family | Models |
-|---|---|
-| Statistical | ARIMA / SARIMA (baselines), SARIMAX, Prophet |
-| Gradient boosting | XGBoost, LightGBM |
-| Deep learning | LSTM, N-BEATS |
 
 ---
 
@@ -88,37 +74,13 @@ All models are evaluated on the same weekly dataset with the same metrics
 
 ## Forecasting methodology (dashboard models)
 
-The full methodology, written in Spanish for the technical report, is in
-[METODOLOGIA_PRONOSTICO.md](METODOLOGIA_PRONOSTICO.md). Summary:
-
-- Notebooks 01 to 05 are research (series 2007-2024, with climate): they make the
-  design decisions (case definition, climate source, log1p transform,
-  autoregressive inputs, viable families, multi-step evaluation, forecasting
-  without climate). Notebooks 06 and 07 are production: with those decisions
-  fixed, they choose and tune the concrete model of each family on the dashboard
-  series (2007-2025) with the dashboard's own forecasting code, so what is
-  evaluated here is exactly what the dashboard runs. Metrics from the two series
-  are not comparable. The methodology has a table with the question each
-  notebook answers and the decision it supports.
-- One model per family (statistical, machine learning, deep learning), no climate.
-- Periods, identical for all families: training 2007 to April 2022 (85 % of
-  2007-2024), test April 2022 to December 2024 (15 %), final prospective test on
-  2025 (never used for any decision).
-- Walk-forward multi-step evaluation at every horizon from 1 to 6 weeks.
-- Hyperparameters tuned with Optuna (TPE sampler, fixed seed) inside the
-  training period only, minimizing the global RMSE over horizons 1 to 6:
-  temporal cross-validation with three folds for statistical and ML models
-  (85/15); a separate validation block for deep learning (70/15/15), with 5
-  seeds, determinism and median pruning, choosing the most stable configuration.
-- Winner per family chosen on the test period by the global RMSE over all
-  horizon 1 to 6 records at once (the same global metric the dashboard stores
-  in each manifest); within 2 % of RMSE the lower global MAE wins, and for deep
-  learning the lower spread across seeds breaks a remaining tie. Persistence is
-  a control, not a selection criterion. Full report: MAE, RMSE, MAPE and R²,
-  global and at horizons 1 to 6.
-- Export: validation on the last 15 % of 2007-2025 (metrics and blind forecasts
-  saved for the dashboard), then the final model trained on the full range,
-  packaged as a .zip and uploaded from the dashboard's management section.
+The methodology, written in Spanish for the technical report, is in
+[METODOLOGIA_PRONOSTICO.md](METODOLOGIA_PRONOSTICO.md), the single reference for
+how models are chosen, evaluated and exported. In short: notebooks 01 to 05 are
+research and make the design decisions; notebooks 06 and 07 are production and,
+with those decisions fixed, choose and tune one model per family (statistical,
+machine learning, deep learning, no climate) on the dashboard series with the
+dashboard's own forecasting code, then export the packages the dashboard runs.
 
 ---
 
@@ -205,64 +167,18 @@ covers the data pipeline, feature engineering and modeling.
 
 ## Experimentation hardware
 
-All experimentation runs on two machines. Machine A produces the official results
-(the ones in `outputs/`, the notebooks and the dashboard packages); machine B
-repeats the same methodology on different hardware, with TensorFlow on GPU, and
-also runs the sensitivity analysis of the deep learning search. Its full results
-go to `resultados_cluster/`, next to machine A's, so both can be compared openly.
-
-| | Machine A (official run) | Machine B (cluster) |
-|---|---|---|
-| CPU | Intel Core i7-13650HX (14 cores), 24 GB RAM | to be recorded |
-| GPU | NVIDIA RTX 5050, 8 GB | NVIDIA RTX 6000 Ada, 48 GB (gpu2) |
-| OS / Python | Windows 11 / 3.12.10 | Rocky Linux / 3.12 |
-| TensorFlow | CPU (no GPU support on native Windows) | GPU |
-| PyTorch | GPU (CUDA 13.0) | GPU |
-| Runs | notebooks 03, 05, 06, 07 | notebooks 03, 05, 06, 07 + sensitivity analysis (`SENSIBILIDAD=1`) |
-| Results | `outputs/` | `resultados_cluster/` |
-
-Run times on machine A (full mode, chains 03→05 and 06→07 in parallel):
-
-| Notebook | Minutes |
-|---|---|
-| 03 Modeling with climate | 94 |
-| 05 Climate vs. lags ablation | 154 |
-| 06 Production: statistical and ML | 67 |
-| 07 Production: deep learning | 150 |
-
-Notebooks 01, 02 and 04 were not re-run (they need the raw SIVIGILA files and
-Earth Engine credentials); their outputs come from the original data preparation.
+The official run of notebooks 03, 05, 06 and 07 was done on one machine (Intel
+Core i7-13650HX, NVIDIA RTX 5050, Windows 11); its results are the ones in
+`outputs/`, the notebooks and the dashboard packages. Details are in section 13
+of [METODOLOGIA_PRONOSTICO.md](METODOLOGIA_PRONOSTICO.md); run times are in
+[ENTORNO.md](ENTORNO.md).
 
 ---
 
 ## Conclusion
 
-Results of the official full run on machine A (MODO_RAPIDO = 0, 7 November 2026).
-Details and library versions are in section 13 of
-[METODOLOGIA_PRONOSTICO.md](METODOLOGIA_PRONOSTICO.md); all tables are in
-`outputs/RESULTADOS_PARA_INFORME.md`.
-
-Dashboard winners (dashboard series, test April 2022 to December 2024, global
-RMSE over horizons 1 to 6; persistence 18.12):
-
-| Family | Winner | RMSE | R² | RMSE / persistence | RMSE 2025 (persistence 38.73) |
-|---|---|---|---|---|---|
-| Statistical | Prophet-AR | 16.21 | 0.768 | 0.894 | 41.74 |
-| Machine learning | XGBoost | 20.15 | 0.641 | 1.112 | 44.24 |
-| Deep learning | LSTM (5 seeds) | 18.86 ± 0.38 | 0.685 | 1.041 | 44.58 ± 0.65 |
-
-- Prophet-AR is the best of the seven candidates and the only one that beats
-  persistence on the test period (horizons 2 to 6).
-- In 2025, an outbreak larger than anything in the history, no winner beats
-  persistence.
-- Recommended horizon: 4 weeks, the longest horizon at which all three winners
-  explain at least 60 % of the weekly variation on the test period (R² 0.750,
-  0.624 and 0.658); in 2025 they still explain about half (0.537, 0.532, 0.469).
-- Climate (notebook 05) improves five of the seven research models, little at one
-  week and more at long horizons, but not every family. It was measured with
-  observed climate inside the horizon, and there is no climate data for 2025. The
-  dashboard therefore forecasts without climate in this version; adding climate
-  is future work.
-- Machine B's full run and the sensitivity analysis of the deep learning search
-  (`SENSIBILIDAD=1`) will be added in `resultados_cluster/` and compared with
-  this run.
+The results of the official run on machine A (7 November 2026) are summarized in
+section 13 of [METODOLOGIA_PRONOSTICO.md](METODOLOGIA_PRONOSTICO.md), and all
+tables are in `outputs/RESULTADOS_PARA_INFORME.md`. The dashboard uses Prophet-AR
+(statistical), XGBoost (machine learning) and LSTM (deep learning), forecasts
+without climate and recommends a 4-week horizon.
